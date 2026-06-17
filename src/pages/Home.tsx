@@ -16,7 +16,7 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <a href="https://clients.mindbodyonline.com/classic/mainclass?studioid=470306" target="_blank" rel="noreferrer" className="btn primary">
+            <a href="https://clients.mindbodyonline.com/classic/mainclass" target="_blank" rel="noreferrer" className="btn primary">
               Book a Free Trial
             </a>
 
