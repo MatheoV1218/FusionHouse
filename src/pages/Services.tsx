@@ -1,9 +1,21 @@
+import { useEffect } from "react";
 import "./Services.css";
 
-const mindbodyLink =
+export const mindbodyLink =
   "https://clients.mindbodyonline.com/classic/mainclass?studioid=470306&tg=&vt=&lvl=&stype=-7&view=day&trn=0&page=&catid=&prodid=&date=6%2f17%2f2026&classid=0&prodGroupId=&sSU=&optForwardingLink=&qParam=&justloggedin=&nLgIn=&pMode=0&loc=1";
 
 function Services() {
+  useEffect(() => {
+    if (window.location.hash) {
+      const section = document.querySelector(window.location.hash);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <main className="services-page">
       <section className="services-hero">
@@ -25,7 +37,6 @@ function Services() {
           </div>
         </div>
       </section>
-
 
       <section className="services-grid-section">
         <article className="service-card-large" id="personal">
@@ -99,7 +110,7 @@ function Services() {
             <strong>$150</strong>
           </div>
 
-          <div className="price-card highlighted">
+          <div className="price-card">
             <h3>12 Sessions</h3>
             <p>Three times a week training package.</p>
             <strong>$720</strong>
@@ -119,7 +130,7 @@ function Services() {
         </div>
       </section>
 
-      <section className="membership-section">
+      <section className="membership-section" id="membership-options">
         <div>
           <p className="services-eyebrow dark">Memberships</p>
           <h2>Group class options without the confusion.</h2>
@@ -152,11 +163,9 @@ function Services() {
         </div>
       </section>
 
-      <section className="services-booking">
+      <section className="services-booking" id="booking">
         <h2>Ready to book?</h2>
-        <p>
-          View available classes and appointments through Mindbody.
-        </p>
+        <p>View available classes and appointments through Mindbody.</p>
 
         <a href={mindbodyLink} target="_blank" rel="noopener noreferrer">
           Open Booking Schedule

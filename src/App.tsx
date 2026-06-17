@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FitnessCorner from "./pages/FitnessCorner";
+import FAQ from "./components/FAQ";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/fitness-corner" element={<FitnessCorner />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
 
         <Footer />
