@@ -1,6 +1,8 @@
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import "./Contact.css";
 
+const ownerEmail = "mateovillada1@outlook.com";
+
 function Contact() {
   return (
     <main className="contact-page">
@@ -46,18 +48,26 @@ function Contact() {
       </section>
 
       <section className="contact-main">
-        <form className="contact-form">
+        <form
+          className="contact-form"
+          action={`https://formsubmit.co/${ownerEmail}`}
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New Fusion House Website Message" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
           <h2>Send a message</h2>
 
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" required></textarea>
 
           <button type="submit">Send Message</button>
 
           <p className="form-note">
-            This form is a placeholder for now. Later, it can send messages to
-            the owner’s email.
+            Your message will be sent by email. The team can reply directly to
+            the email address you provide.
           </p>
         </form>
 

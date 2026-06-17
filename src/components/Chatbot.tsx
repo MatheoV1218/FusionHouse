@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaCommentDots, FaTimes, FaPaperPlane, FaChevronDown } from "react-icons/fa";
 import "./Chatbot.css";
 
-const ownerEmail = "OWNER_EMAIL_HERE";
+const ownerEmail = "mateovillada1@outlook.com";
 
 const mindbodyLink =
   "https://clients.mindbodyonline.com/classic/mainclass?studioid=470306&tg=&vt=&lvl=&stype=-7&view=day&trn=0&page=&catid=&prodid=&date=6%2f17%2f2026&classid=0&prodGroupId=&sSU=&optForwardingLink=&qParam=&justloggedin=&nLgIn=&pMode=0&loc=1";
