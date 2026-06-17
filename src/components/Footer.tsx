@@ -72,7 +72,7 @@ function Footer() {
           <h3>Ready to train?</h3>
           <p>Book a free trial class and take the first step.</p>
           <a
-            href="https://clients.mindbodyonline.com/classic/mainclass?studioid=470306&tg=&vt=&lvl=&stype=-7&view=day&trn=0&page=&catid=&prodid=&date=6%2f17%2f2026&classid=0&prodGroupId=&sSU=&optForwardingLink=&qParam=&justloggedin=&nLgIn=&pMode=0&loc=1"
+            href="https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7"
             target="_blank"
             rel="noreferrer"
             className="footer-btn"
