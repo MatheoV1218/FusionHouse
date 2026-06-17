@@ -5,7 +5,7 @@ import "./Chatbot.css";
 const ownerEmail = "mateovillada1@outlook.com";
 
 const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/mainclass?studioid=470306";
+  "https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7";
 
 const knowledgeBase = [
   {
