@@ -8,6 +8,9 @@ import Contact from "./pages/Contact";
 import FAQ from "./components/FAQ";
 import Chatbot from "./components/Chatbot";
 
+import { Analytics } from "@vercel/analytics/react";
+
+
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
@@ -29,6 +32,7 @@ function App() {
         <Footer />
         <Chatbot />
       </div>
+      <Analytics />
     </BrowserRouter>
   );
 }
