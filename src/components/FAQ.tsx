@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./FAQ.css";
 
 const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7";
+  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
 const faqs = [
   {

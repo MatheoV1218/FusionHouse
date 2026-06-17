@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./Services.css";
 
 export const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7";
+  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
 function Services() {
   useEffect(() => {

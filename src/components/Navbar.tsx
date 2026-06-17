@@ -22,7 +22,7 @@ function Navbar() {
         <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
 
         <a
-          href="https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7"
+          href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
           target="_blank"
           rel="noreferrer"
           className="mobile-book"
@@ -34,7 +34,7 @@ function Navbar() {
 
       <div className="nav-right">
         <a
-          href="https://clients.mindbodyonline.com/classic/mainclass?fl=true&tabID=7"
+          href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
           target="_blank"
           rel="noreferrer"
           className="nav-book"
