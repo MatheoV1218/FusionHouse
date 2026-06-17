@@ -16,7 +16,7 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <a href="https://clients.mindbodyonline.com/classic/mainclass?studioid=470306&stype=-7&view=week&trn=0&loc=1" target="_blank" rel="noreferrer" className="btn primary">
+            <a href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1" target="_blank" rel="noreferrer" className="btn primary">
               Book a Free Trial
             </a>
 
@@ -26,7 +26,7 @@ function Home() {
           </div>
 
           <div className="action-cards">
-            <a href="https://clients.mindbodyonline.com/classic/mainclass?studioid=470306&stype=-7&view=week&trn=0&loc=1" target="_blank" rel="noreferrer">
+            <a href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1" target="_blank" rel="noreferrer">
               <span>01</span>
               <h3>Book Now</h3>
               <p>Reserve a class or appointment through Mindbody.</p>
@@ -113,7 +113,7 @@ function Home() {
         <h2>Ready to try Fusion House?</h2>
         <p>Book a free trial class and take the first step toward a stronger routine.</p>
 
-        <a href="https://clients.mindbodyonline.com/classic/mainclass?studioid=470306&stype=-7&view=week&trn=0&loc=1" target="_blank" rel="noreferrer" className="btn primary">
+        <a href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1" target="_blank" rel="noreferrer" className="btn primary">
           Book a Free Trial
         </a>
       </section>
