@@ -1,0 +1,62 @@
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FiMenu, FiX, FiSearch } from "react-icons/fi";
+import "./Navbar.css";
+
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const closeMenu = () => setOpen(false);
+
+  return (
+    <header className="navbar">
+      <Link to="/" className="nav-logo" onClick={closeMenu}>
+        <span>Fusion</span> House
+      </Link>
+
+      <nav className={`nav-menu ${open ? "show" : ""}`}>
+        <div className="mobile-search">
+          <FiSearch />
+          <input placeholder="Search..." />
+        </div>
+
+        <NavLink to="/" onClick={closeMenu}>Home</NavLink>
+        <NavLink to="/services" onClick={closeMenu}>Services</NavLink>
+        <NavLink to="/about" onClick={closeMenu}>About</NavLink>
+        <NavLink to="/faq" onClick={closeMenu}>FAQ</NavLink>
+        <NavLink to="/fitness-corner" onClick={closeMenu}>Fitness Corner</NavLink>
+
+        <a
+          href="https://clients.mindbodyonline.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="mobile-book"
+          onClick={closeMenu}
+        >
+          Book Now
+        </a>
+      </nav>
+
+      <div className="nav-right">
+        <div className="nav-search">
+          <FiSearch />
+          <input placeholder="Search..." />
+        </div>
+
+        <a
+          href="https://clients.mindbodyonline.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="nav-book"
+        >
+          Book Now
+        </a>
+
+        <button className="hamburger" onClick={() => setOpen(!open)}>
+          {open ? <FiX /> : <FiMenu />}
+        </button>
+      </div>
+    </header>
+  );
+}
+
+export default Navbar;
