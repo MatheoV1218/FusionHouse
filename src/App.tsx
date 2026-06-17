@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FitnessCorner from "./pages/FitnessCorner";
 import FAQ from "./components/FAQ";
+import Chatbot from "./components/Chatbot";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         </Routes>
 
         <Footer />
+        <Chatbot />
       </div>
     </BrowserRouter>
   );
