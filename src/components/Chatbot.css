@@ -290,33 +290,60 @@
 @media (max-width: 768px) {
   .chatbot-widget {
     position: fixed;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+    inset: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     max-width: none;
     max-height: none;
-
     border-radius: 0;
-
     z-index: 9999;
   }
 
   .chatbot-header {
+    flex-shrink: 0;
     padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .chatbot-tabs {
+    flex-shrink: 0;
   }
 
   .chatbot-messages {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
+    padding-bottom: 1rem;
+  }
+
+  .suggested-questions {
+    flex-shrink: 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.7rem;
+  }
+
+  .suggested-questions button {
+    white-space: nowrap;
   }
 
   .chatbot-input {
-    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    padding: 0.85rem;
+    padding-bottom: max(0.85rem, env(safe-area-inset-bottom));
+    background: #0c0c0c;
+  }
+
+  .chatbot-input input {
+    height: 46px;
+    font-size: 16px;
+  }
+
+  .chatbot-input button {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
   }
 
   .chatbot-button.hidden {
