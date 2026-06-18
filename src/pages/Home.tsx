@@ -34,7 +34,7 @@ function Home() {
               rel="noreferrer"
               className="btn primary"
               onClick={() =>
-                track("Book Free Trial", {
+                track("Book Free Trial Home", {
                   location: "Hero",
                 })
               }
@@ -46,7 +46,7 @@ function Home() {
               to="/services"
               className="btn secondary"
               onClick={() =>
-                track("View Programs", {
+                track("View Programs Home", {
                   location: "Hero",
                 })
               }
@@ -61,7 +61,7 @@ function Home() {
               target="_blank"
               rel="noreferrer"
               onClick={() =>
-                track("Book Now", {
+                track("Book Now Home", {
                   location: "Action Card",
                 })
               }
@@ -74,7 +74,7 @@ function Home() {
             <Link
               to="/faq"
               onClick={() =>
-                track("FAQ Opened", {
+                track("FAQ Opened Home", {
                   location: "Action Card",
                 })
               }
@@ -87,7 +87,7 @@ function Home() {
             <a
               href="tel:9145529619"
               onClick={() =>
-                track("Call Gym", {
+                track("Call Gym Home", {
                   location: "Action Card",
                 })
               }
@@ -128,7 +128,7 @@ function Home() {
           <Link
             to="/services"
             onClick={() =>
-              track("Personal Training Learn More", {
+              track("Personal Training Learn More Home", {
                 section: "Programs",
               })
             }
@@ -151,7 +151,7 @@ function Home() {
           <Link
             to="/services"
             onClick={() =>
-              track("Group Training View Classes", {
+              track("Group Training View Classes Home", {
                 section: "Programs",
               })
             }
@@ -174,7 +174,7 @@ function Home() {
           <Link
             to="/services"
             onClick={() =>
-              track("Memberships See Options", {
+              track("Memberships See Options Home", {
                 section: "Programs",
               })
             }
@@ -231,7 +231,7 @@ function Home() {
           rel="noreferrer"
           className="btn primary"
           onClick={() =>
-            track("Book Free Trial", {
+            track("Book Free Trial Home", {
               location: "Final CTA",
             })
           }

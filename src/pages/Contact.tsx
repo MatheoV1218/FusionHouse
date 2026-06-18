@@ -24,7 +24,7 @@ function Contact() {
           href="tel:9145529619"
           className="contact-card"
           onClick={() =>
-            track("Call Gym", {
+            track("Call Gym Contact", {
               location: "Contact Page",
             })
           }
@@ -40,7 +40,7 @@ function Contact() {
           rel="noopener noreferrer"
           className="contact-card"
           onClick={() =>
-            track("WhatsApp Click", {
+            track("WhatsApp Click Contact", {
               location: "Contact Page",
             })
           }
@@ -56,7 +56,7 @@ function Contact() {
           rel="noopener noreferrer"
           className="contact-card"
           onClick={() =>
-            track("Directions Click", {
+            track("Directions Click Contact", {
               location: "Contact Page",
             })
           }
@@ -73,7 +73,7 @@ function Contact() {
           action={`https://formsubmit.co/${ownerEmail}`}
           method="POST"
           onSubmit={() =>
-            track("Contact Form Submitted", {
+            track("Contact Form Submitted Contact Page", {
               location: "Contact Page",
             })
           }

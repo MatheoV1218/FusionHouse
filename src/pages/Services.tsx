@@ -36,7 +36,7 @@ function Services() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                track("Book Now", {
+                track("Book Now Services", {
                   location: "Services Hero",
                 })
               }
@@ -47,7 +47,7 @@ function Services() {
               href="#pricing"
               className="secondary-service-btn"
               onClick={() =>
-                track("View Pricing", {
+                track("View Pricing Services", {
                   location: "Services Hero",
                 })
               }
