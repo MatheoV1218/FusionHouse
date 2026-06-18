@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "./Services.css";
 
+import { track } from "@vercel/analytics";
+
 export const mindbodyLink =
   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
@@ -23,15 +25,33 @@ function Services() {
           <p className="services-eyebrow">Services & Rates</p>
           <h1>Training options built around your goals.</h1>
           <p>
-            Whether you want one-on-one coaching, group classes, or space rental,
-            Fusion House keeps everything simple, structured, and easy to book.
+            Whether you want one-on-one coaching, group classes, or space
+            rental, Fusion House keeps everything simple, structured, and easy
+            to book.
           </p>
 
           <div className="services-hero-actions">
-            <a href={mindbodyLink} target="_blank" rel="noopener noreferrer">
+            <a
+              href={mindbodyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                track("Book Now", {
+                  location: "Services Hero",
+                })
+              }
+            >
               Book Now
             </a>
-            <a href="#pricing" className="secondary-service-btn">
+            <a
+              href="#pricing"
+              className="secondary-service-btn"
+              onClick={() =>
+                track("View Pricing", {
+                  location: "Services Hero",
+                })
+              }
+            >
               View Pricing
             </a>
           </div>
@@ -63,8 +83,8 @@ function Services() {
             <span>02</span>
             <h2>Monthly Memberships</h2>
             <p>
-              Group classes and membership options for people who want structure,
-              community, and consistency.
+              Group classes and membership options for people who want
+              structure, community, and consistency.
             </p>
 
             <div className="service-points">
@@ -99,7 +119,8 @@ function Services() {
           <p className="services-eyebrow dark">Pricing</p>
           <h2>Simple options to get started.</h2>
           <p>
-            Prices may vary depending on trainer, availability, and package type.
+            Prices may vary depending on trainer, availability, and package
+            type.
           </p>
         </div>
 
@@ -153,7 +174,9 @@ function Services() {
 
           <div>
             <h3>VIP Membership</h3>
-            <p>Includes classes, coaching perks, nutrition support, and more.</p>
+            <p>
+              Includes classes, coaching perks, nutrition support, and more.
+            </p>
           </div>
 
           <div>
@@ -167,7 +190,16 @@ function Services() {
         <h2>Ready to book?</h2>
         <p>View available classes and appointments through Mindbody.</p>
 
-        <a href={mindbodyLink} target="_blank" rel="noopener noreferrer">
+        <a
+          href={mindbodyLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() =>
+            track("Open Booking Schedule", {
+              location: "Services Bottom CTA",
+            })
+          }
+        >
           Open Booking Schedule
         </a>
       </section>

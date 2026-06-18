@@ -5,10 +5,15 @@ import fusionimg2 from "../assets/fusionimg2.jpg";
 import fusionimg3 from "../assets/fusionimg3.jpg";
 import fusionimg4 from "../assets/fusionimg4.jpg";
 
+import { track } from "@vercel/analytics";
+
 function Home() {
   return (
     <main className="home">
-      <section className="home-hero" style={{ backgroundImage: `url(${fusionimg3})` }}>
+      <section
+        className="home-hero"
+        style={{ backgroundImage: `url(${fusionimg3})` }}
+      >
         <div className="hero-inner">
           <p className="eyebrow">
             White Plains, NY • Personal & Group Training
@@ -28,11 +33,24 @@ function Home() {
               target="_blank"
               rel="noreferrer"
               className="btn primary"
+              onClick={() =>
+                track("Book Free Trial", {
+                  location: "Hero",
+                })
+              }
             >
               Book a Free Trial
             </a>
 
-            <Link to="/services" className="btn secondary">
+            <Link
+              to="/services"
+              className="btn secondary"
+              onClick={() =>
+                track("View Programs", {
+                  location: "Hero",
+                })
+              }
+            >
               View Programs
             </Link>
           </div>
@@ -42,19 +60,38 @@ function Home() {
               href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
               target="_blank"
               rel="noreferrer"
+              onClick={() =>
+                track("Book Now", {
+                  location: "Action Card",
+                })
+              }
             >
               <span>01</span>
               <h3>Book Now</h3>
               <p>Reserve a class or appointment through Mindbody.</p>
             </a>
 
-            <Link to="/faq">
+            <Link
+              to="/faq"
+              onClick={() =>
+                track("FAQ Opened", {
+                  location: "Action Card",
+                })
+              }
+            >
               <span>02</span>
               <h3>Common Questions</h3>
               <p>Get quick answers before reaching out.</p>
             </Link>
 
-            <a href="tel:9145529619">
+            <a
+              href="tel:9145529619"
+              onClick={() =>
+                track("Call Gym", {
+                  location: "Action Card",
+                })
+              }
+            >
               <span>03</span>
               <h3>Call the Gym</h3>
               <p>Speak directly with the team if you need help.</p>
@@ -88,7 +125,16 @@ function Home() {
           <p>
             One-on-one coaching built around your goals, ability, and schedule.
           </p>
-          <Link to="/services">Learn More</Link>
+          <Link
+            to="/services"
+            onClick={() =>
+              track("Personal Training Learn More", {
+                section: "Programs",
+              })
+            }
+          >
+            Learn More
+          </Link>
         </div>
 
         <div className="program-card">
@@ -102,7 +148,16 @@ function Home() {
             Structured strength classes with energy, accountability, and
             community.
           </p>
-          <Link to="/services">View Classes</Link>
+          <Link
+            to="/services"
+            onClick={() =>
+              track("Group Training View Classes", {
+                section: "Programs",
+              })
+            }
+          >
+            View Classes
+          </Link>
         </div>
 
         <div className="program-card">
@@ -116,7 +171,16 @@ function Home() {
             Flexible options for people ready to commit to long-term
             consistency.
           </p>
-          <Link to="/services">See Options</Link>
+          <Link
+            to="/services"
+            onClick={() =>
+              track("Memberships See Options", {
+                section: "Programs",
+              })
+            }
+          >
+            See Options
+          </Link>
         </div>
       </section>
 
@@ -166,6 +230,11 @@ function Home() {
           target="_blank"
           rel="noreferrer"
           className="btn primary"
+          onClick={() =>
+            track("Book Free Trial", {
+              location: "Final CTA",
+            })
+          }
         >
           Book a Free Trial
         </a>

@@ -7,7 +7,7 @@ import {
   FaYelp,
 } from "react-icons/fa";
 import "./Footer.css";
-
+import { track } from "@vercel/analytics";
 
 function Footer() {
   return (
@@ -77,6 +77,11 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
             className="footer-btn"
+            onClick={() =>
+              track("Book Now", {
+                location: "Footer CTA",
+              })
+            }
           >
             Book Now
           </a>

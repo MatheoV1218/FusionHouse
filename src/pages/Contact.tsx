@@ -1,6 +1,8 @@
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import "./Contact.css";
 
+import { track } from "@vercel/analytics";
+
 const ownerEmail = "mateovillada1@outlook.com";
 
 function Contact() {
@@ -18,7 +20,15 @@ function Contact() {
       </section>
 
       <section className="contact-quick">
-        <a href="tel:9145529619" className="contact-card">
+        <a
+          href="tel:9145529619"
+          className="contact-card"
+          onClick={() =>
+            track("Call Gym", {
+              location: "Contact Page",
+            })
+          }
+        >
           <FaPhoneAlt />
           <h3>Call Us</h3>
           <p>914-552-9619</p>
@@ -29,6 +39,11 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           className="contact-card"
+          onClick={() =>
+            track("WhatsApp Click", {
+              location: "Contact Page",
+            })
+          }
         >
           <FaWhatsapp />
           <h3>WhatsApp</h3>
@@ -40,6 +55,11 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           className="contact-card"
+          onClick={() =>
+            track("Directions Click", {
+              location: "Contact Page",
+            })
+          }
         >
           <FaMapMarkerAlt />
           <h3>Visit Us</h3>
@@ -52,8 +72,17 @@ function Contact() {
           className="contact-form"
           action={`https://formsubmit.co/${ownerEmail}`}
           method="POST"
+          onSubmit={() =>
+            track("Contact Form Submitted", {
+              location: "Contact Page",
+            })
+          }
         >
-          <input type="hidden" name="_subject" value="New Fusion House Website Message" />
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Fusion House Website Message"
+          />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
 
