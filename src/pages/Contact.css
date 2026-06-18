@@ -1,13 +1,13 @@
 .contact-page {
-  background: #f7f4ef;
+  background: #fff3ee;
   color: #111;
 }
 
 .contact-hero {
   padding: 5rem 6%;
   background:
-    radial-gradient(circle at 85% 25%, rgba(215, 185, 143, 0.4), transparent 28%),
-    linear-gradient(135deg, #171411 0%, #3d352d 55%, #a89273 100%);
+    radial-gradient(circle at 85% 25%, rgba(255, 90, 61, 0.4), transparent 28%),
+    linear-gradient(135deg, #130908 0%, #34120f 52%, #ff3131 100%);
   color: #fff;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .contact-eyebrow {
-  color: #e5c28f;
+  color: #ff6a3d;
   text-transform: uppercase;
   font-size: 0.82rem;
   font-weight: 900;
@@ -66,7 +66,7 @@
 }
 
 .contact-card svg {
-  color: #d7b98f;
+  color: #ff5a3d;
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
@@ -110,7 +110,7 @@
   width: 100%;
   border: none;
   outline: none;
-  background: #f1eee8;
+  background: #fff0ea;
   border-radius: 18px;
   padding: 1rem;
   margin-bottom: 0.9rem;

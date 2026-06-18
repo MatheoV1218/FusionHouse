@@ -5,6 +5,8 @@ import "./Navbar.css";
 
 import { track } from "@vercel/analytics";
 
+import FusionLogo from "../assets/FusionLogo.png";
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const closeMenu = () => setOpen(false);
@@ -12,7 +14,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="nav-logo" onClick={closeMenu}>
-        <span>Fusion</span> House
+        <img src={FusionLogo} alt="Fusion House Fitness" />
       </Link>
 
       <nav className={`nav-menu ${open ? "show" : ""}`}>

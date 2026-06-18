@@ -1,13 +1,13 @@
 .about-page {
-  background: #f7f4ef;
+  background: #fff3ee;
   color: #111;
 }
 
 .about-hero {
   padding: 6rem 6%;
   background:
-    radial-gradient(circle at 85% 20%, rgba(215, 185, 143, 0.35), transparent 28%),
-    linear-gradient(135deg, #171411 0%, #3d352d 55%, #a89273 100%);
+    radial-gradient(circle at 85% 20%, rgba(255, 90, 61, 0.35), transparent 28%),
+    linear-gradient(135deg, #130908 0%, #34120f 52%, #ff3131 100%);
   color: #fff;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .about-eyebrow {
-  color: #e5c28f;
+  color: #ff6a3d;
   text-transform: uppercase;
   font-size: 0.82rem;
   font-weight: 900;
@@ -30,7 +30,7 @@
 }
 
 .about-eyebrow.dark {
-  color: #9c7a52;
+  color: #e63b2e;
 }
 
 .about-hero h1,
@@ -54,9 +54,9 @@
   min-height: 430px;
   border-radius: 34px;
   background:
-    linear-gradient(135deg, rgba(215, 185, 143, 0.45), rgba(0, 0, 0, 0.25)),
-    #2d2a26;
-  color: #f1ddbf;
+    linear-gradient(135deg, rgba(255, 90, 61, 0.45), rgba(0, 0, 0, 0.25)),
+    #24100d;
+  color: #ffd0bf;
   display: grid;
   place-items: center;
   font-weight: 900;
@@ -92,7 +92,7 @@
   top: 58px;
   left: 10%;
   right: 10%;
-  border-top: 4px dotted #c7ad86;
+  border-top: 4px dotted #ff6a3d;
   z-index: 0;
 }
 
@@ -121,18 +121,18 @@
   height: 78px;
   border-radius: 50%;
   background: #111;
-  color: #d7b98f;
+  color: #ff5a3d;
   display: grid;
   place-items: center;
   font-weight: 900;
   margin-bottom: 1.4rem;
-  border: 7px solid #f7f4ef;
-  box-shadow: 0 0 0 6px rgba(215, 185, 143, 0.16);
+  border: 7px solid #fff3ee;
+  box-shadow: 0 0 0 6px rgba(255, 90, 61, 0.16);
   transition: 0.25s ease;
 }
 
 .timeline-item:hover .timeline-bubble {
-  background: #d7b98f;
+  background: #ff5a3d;
   color: #111;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .owner-highlights span {
-  background: #ebe4d8;
+  background: #ffe0d6;
   color: #111;
   padding: 0.75rem 1rem;
   border-radius: 999px;
@@ -282,7 +282,7 @@ details p {
     width: 64px;
     height: 64px;
     border-width: 4px;
-    box-shadow: 0 0 0 4px rgba(215, 185, 143, 0.14);
+    box-shadow: 0 0 0 4px rgba(255, 90, 61, 0.14);
     margin-bottom: 0;
     font-size: 0.75rem;
   }

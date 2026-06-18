@@ -1,6 +1,6 @@
 .footer {
   background:
-    radial-gradient(circle at 15% 10%, rgba(215, 185, 143, 0.12), transparent 28%),
+    radial-gradient(circle at 15% 10%, rgba(255, 90, 61, 0.12), transparent 28%),
     #0b0b0b;
   color: #fff;
   padding: 4.5rem 6% 1.5rem;
@@ -31,7 +31,7 @@
 }
 
 .footer-brand h2 span {
-  color: #d7b98f;
+  color: #ff5a3d;
 }
 
 .footer p,
@@ -47,7 +47,7 @@
 }
 
 .footer a:hover {
-  color: #d7b98f;
+  color: #ff5a3d;
 }
 
 .footer-socials {
@@ -69,14 +69,14 @@
 }
 
 .footer-socials a:hover {
-  background: #d7b98f;
+  background: #ff5a3d;
   color: #111;
   transform: translateY(-3px);
 }
 
 .footer-card {
   background:
-    linear-gradient(135deg, rgba(215, 185, 143, 0.22), rgba(255, 255, 255, 0.04));
+    linear-gradient(135deg, rgba(255, 90, 61, 0.22), rgba(255, 255, 255, 0.04));
 }
 
 .footer-card h3 {
@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: #d7b98f;
+  background: #ff5a3d;
   color: #111 !important;
   font-weight: 900;
 }

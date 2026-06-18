@@ -1,18 +1,32 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import fusionimg1 from "../assets/fusionimg1.jpg";
-import fusionimg2 from "../assets/fusionimg2.jpg";
-import fusionimg3 from "../assets/fusionimg3.jpg";
+import gympic2 from "../assets/FHgympic2.webp";
+import gympic5 from "../assets/FHgympic5.webp";
+import gympic11 from "../assets/FHgympic11.jpg";
 import fusionimg4 from "../assets/fusionimg4.jpg";
 
 import { track } from "@vercel/analytics";
+
+const carouselImages = Object.entries(
+  import.meta.glob("../assets/carousel/*.{jpg,JPG,jpeg,JPEG,png,PNG}", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }),
+)
+  .sort(([a], [b]) => {
+    const numA = Number(a.match(/FH(\d+)/i)?.[1] ?? 0);
+    const numB = Number(b.match(/FH(\d+)/i)?.[1] ?? 0);
+    return numA - numB;
+  })
+  .map(([, src]) => src as string);
 
 function Home() {
   return (
     <main className="home">
       <section
         className="home-hero"
-        style={{ backgroundImage: `url(${fusionimg3})` }}
+        style={{ backgroundImage: `url(${gympic5})` }}
       >
         <div className="hero-inner">
           <p className="eyebrow">
@@ -100,18 +114,41 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-section split">
-        <div>
-          <p className="eyebrow dark">Why Fusion House</p>
-          <h2>Built for people who want guidance, not guesswork.</h2>
-        </div>
+      <section className="audience-section">
+        <div className="audience-inner">
+          <div>
+            <p className="eyebrow dark">Built For Adults</p>
+            <h2>Training for adults 30, 40, 50 and beyond.</h2>
+            <p>
+              Fusion House is made for people who want to get stronger without
+              feeling rushed, judged, or thrown into workouts that do not match
+              their body, goals, or experience level.
+            </p>
+          </div>
 
-        <p>
-          Fusion House gives members a clear path to getting stronger with
-          personal coaching, group training, and programs that feel supportive
-          instead of overwhelming. The goal is simple: help people show up, stay
-          consistent, and feel better.
-        </p>
+          <div className="audience-cards">
+            <article>
+              <h3>Getting back into fitness</h3>
+              <p>Perfect for adults returning after time away from the gym.</p>
+            </article>
+
+            <article>
+              <h3>Strength without intimidation</h3>
+              <p>
+                Coached training in a supportive environment, not a crowded gym
+                floor.
+              </p>
+            </article>
+
+            <article>
+              <h3>Smart training for real life</h3>
+              <p>
+                Build strength, balance, mobility, and confidence at a
+                sustainable pace.
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section className="programs">
@@ -139,7 +176,7 @@ function Home() {
 
         <div className="program-card">
           <img
-            src={fusionimg1}
+            src={gympic2}
             alt="Group training at Fusion House Fitness"
             className="program-image"
           />
@@ -162,7 +199,7 @@ function Home() {
 
         <div className="program-card">
           <img
-            src={fusionimg2}
+            src={gympic11}
             alt="Fusion House Fitness memberships"
             className="program-image"
           />
@@ -181,6 +218,28 @@ function Home() {
           >
             See Options
           </Link>
+        </div>
+      </section>
+
+      <section className="community-carousel-section">
+        <div className="community-carousel-heading">
+          <p className="eyebrow dark">Real Members. Real Progress.</p>
+          <h2>A gym built around people, not pressure.</h2>
+          <p>
+            From first workouts to stronger routines, Fusion House is designed
+            for adults who want coaching, confidence, and a community that meets
+            them where they are.
+          </p>
+        </div>
+
+        <div className="community-carousel">
+          <div className="carousel-track">
+            {[...carouselImages, ...carouselImages].map((image, index) => (
+              <div className="carousel-photo-card" key={`${image}-${index}`}>
+                <img src={image} alt="Fusion House member training" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

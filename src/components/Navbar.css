@@ -13,15 +13,15 @@
 }
 
 .nav-logo {
-  color: #fff;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  font-size: 1.45rem;
-  font-weight: 900;
-  letter-spacing: -0.05em;
 }
 
-.nav-logo span {
-  color: #d7b98f;
+.nav-logo img {
+  height: 54px;
+  width: auto;
+  display: block;
 }
 
 .nav-menu {
@@ -42,7 +42,7 @@
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  color: #d7b98f;
+  color: #ff5a3d;
 }
 
 .nav-right {
@@ -61,7 +61,7 @@
   align-items: center;
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.08);
-  color: #d7b98f;
+  color: #ff5a3d;
 }
 
 .nav-search {
@@ -89,7 +89,7 @@
 
 .nav-book,
 .mobile-book {
-  background: #d7b98f;
+  background: #ff5a3d;
   color: #111 !important;
   text-decoration: none;
   padding: 0.85rem 1.25rem;
@@ -174,7 +174,7 @@
 
   .nav-menu a:hover,
   .nav-menu a.active {
-    background: rgba(215, 185, 143, 0.12);
+    background: rgba(255, 90, 61, 0.12);
   }
 
   .mobile-search {
