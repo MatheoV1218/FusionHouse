@@ -573,3 +573,42 @@ img {
     animation-duration: 0.55s;
   }
 }
+
+.owner-title {
+  font-weight: 900;
+  font-size: 1.08rem;
+  color: #111 !important;
+  margin-bottom: 1rem;
+}
+
+.owner-title em {
+  color: #e63b2e;
+  font-style: normal;
+}
+
+.owner-book-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.75rem;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5a3d, #ff914d);
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+  transition: 0.25s ease;
+  box-shadow: 0 14px 40px rgba(255, 90, 61, 0.25);
+}
+
+.owner-book-cta:hover {
+  transform: translateY(-3px);
+  color: #fff;
+  background: linear-gradient(135deg, #ff3131, #ff7a45);
+}
+
+@media (max-width: 650px) {
+  .owner-book-cta {
+    width: 100%;
+  }
+}

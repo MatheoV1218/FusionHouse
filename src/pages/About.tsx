@@ -15,10 +15,10 @@ function About() {
             <p className="about-eyebrow">About The Fusion House</p>
             <h1>More than a gym. A community built on accountability.</h1>
             <p>
-              The Fusion House was created to help people build stronger, healthier,
-              and more connected lives through personal coaching, group
-              training, and a fitness environment that feels supportive from day
-              one.
+              The Fusion House was created to help people build stronger,
+              healthier, and more connected lives through personal coaching,
+              group training, and a fitness environment that feels supportive
+              from day one.
             </p>
           </div>
 
@@ -48,8 +48,8 @@ function About() {
             <div className="timeline-bubble">Growth</div>
             <h3>The Team Expanded</h3>
             <p>
-              As the business grew, The Fusion House added new trainers and built a
-              loyal client base focused on health and consistency.
+              As the business grew, The Fusion House added new trainers and
+              built a loyal client base focused on health and consistency.
             </p>
           </div>
 
@@ -66,8 +66,8 @@ function About() {
             <div className="timeline-bubble">Today</div>
             <h3>A Community Hub</h3>
             <p>
-              The Fusion House is now a vibrant fitness community focused on growth,
-              accountability, and expert guidance.
+              The Fusion House is now a vibrant fitness community focused on
+              growth, accountability, and expert guidance.
             </p>
           </div>
         </div>
@@ -113,42 +113,88 @@ function About() {
 
         <div className="owner-content">
           <p className="about-eyebrow dark">Meet The Owner</p>
+
           <h2>Anthony Moreno</h2>
 
-          <p>
-            Anthony Moreno is the CEO and owner of The Fusion House by Boutique.
-            He is originally from Gibraltar, moved to the United States in 2013,
-            and has spent his life learning about physical, mental, and
-            spiritual health.
+          <p className="owner-title">
+            Founder, Coach, Educator, and Author of <em>Fitness Sucks!</em>
           </p>
 
-          <div className="owner-highlights"></div>
+          <p>
+            Anthony Moreno is the founder of The Fusion House and a fitness
+            industry leader with more than fifteen years of experience helping
+            adults build strength, confidence, and long-term success through
+            coaching, education, and mentorship.
+          </p>
+
+
+          <a
+            href="https://publishizer.com/fitness-sucks/preview/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="owner-book-cta"
+          >
+            Pre-Order Fitness Sucks →
+          </a>
 
           <details>
-            <summary>Read Anthony’s full story</summary>
+            <summary>Read Anthony's full story</summary>
 
             <p>
-              Anthony came from a small place called Gibraltar, known as “The
-              Rock of Gibraltar.” It is a British overseas territory located on
-              the southern tip of the Iberian Peninsula. He has a British father
-              and a Spanish mother, and he spent his childhood and most of his
-              adult life living and working between Gibraltar, England, and
-              Spain before coming to the U.S. in 2013.
+              Anthony was born and raised in Gibraltar, known as “The Rock of
+              Gibraltar,” a British territory located at the southern tip of
+              Spain. With a British father and Spanish mother, he grew up moving
+              between Gibraltar, England, and Spain before relocating to the
+              United States in 2013.
             </p>
 
             <p>
-              In terms of his work history, he has held many titles, including
-              cleaner, pizza delivery boy, lifeguard, soldier, fireman, shipment
-              container packer, security guard, personal trainer, group fitness
-              instructor, and business owner.
+              Anthony is the founder of The Fusion House and a leader in the
+              coaching industry with more than fifteen years of experience
+              developing people — not just clients, but coaches and business
+              owners as well. His career spans military service, firefighting,
+              lifeguarding, and high-intensity coaching, giving him a rare,
+              real-world understanding of human performance, discipline, and
+              resilience.
             </p>
 
             <p>
-              His main focus is to empower others to be the best version of
-              themselves in all aspects of life through his business. He is
-              excited to help clients reach their best selves and wishes
-              everyone success in their endeavors.
+              As a coach, Anthony is known for helping everyday adults build
+              strength, confidence, and capability without intimidation or ego.
+              As a mentor, he trains and develops other fitness professionals,
+              teaching them how to coach with clarity, communicate with impact,
+              and build sustainable businesses rooted in service and integrity.
             </p>
+
+            <p>
+              His work extends beyond the gym floor into education, leadership,
+              and professional development for trainers and entrepreneurs.
+              Anthony's work is centered around helping people improve not only
+              physically, but also professionally and personally.
+            </p>
+
+            <p>
+              Anthony is also the author of <em>Fitness Sucks!</em>, a book that
+              challenges the fitness industry's noise, gimmicks, and
+              misinformation by teaching people how to build a healthier
+              identity — not just a better workout routine.
+            </p>
+
+            <p>
+              Today, Anthony leads The Fusion House with a mission to help,
+              develop, and empower individuals through fitness. His work blends
+              technical expertise, mentorship, and a deep commitment to helping
+              people grow physically, mentally, and professionally.
+            </p>
+
+            <a
+              href="https://publishizer.com/fitness-sucks/preview/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="owner-book-cta"
+            >
+              Pre-Order Fitness Sucks →
+            </a>
           </details>
         </div>
       </section>

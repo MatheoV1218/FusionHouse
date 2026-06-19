@@ -4,6 +4,10 @@ import gympic5 from "../assets/FHgympic5.webp";
 import grainyBackground from "../assets/grainyBackground.png";
 import { googleReviews, googleReviewsLink } from "../data";
 
+import BCW from "../assets/BCW.png";
+import NASM from "../assets/NASM.png";
+import NYSBDC from "../assets/nysbc.png";
+
 import { track } from "@vercel/analytics";
 
 const carouselImages = Object.entries(
@@ -249,6 +253,43 @@ function Home() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="partners-section">
+        <div className="partners-heading">
+          <p className="eyebrow dark">Community Partners</p>
+
+          <h2>Trusted by organizations across Westchester.</h2>
+
+          <p>
+            The Fusion House works alongside respected organizations,
+            educational programs, and business development groups that support
+            fitness education, professional development, and community growth
+            throughout White Plains and Westchester County.
+          </p>
+        </div>
+
+        <div className="partners-grid">
+          <div className="partner-card">
+            <img
+              src={BCW}
+              alt="Business Council of Westchester Partner"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="partner-card">
+            <img src={NASM} alt="NASM Approved Provider" loading="lazy" />
+          </div>
+
+          <div className="partner-card">
+            <img
+              src={NYSBDC}
+              alt="New York Small Business Development Center"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
