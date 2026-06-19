@@ -82,6 +82,7 @@ function Services() {
             <div className="service-points">
               <p>Complimentary assessment</p>
               <p>Individualized training program</p>
+              <p>Individualized nutrition</p>
               <p>Accountability and progress coaching</p>
             </div>
           </div>
@@ -168,7 +169,7 @@ function Services() {
                   <h3>VIP Membership</h3>
                   <p>
                     The premium option with classes, coaching perks, nutrition
-                    support, and extra accountability.
+                    support, and extra accountability. Weekly weigh ins and complimentary personal training.
                   </p>
                 </div>
                 <strong>$225</strong>

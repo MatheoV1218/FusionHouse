@@ -122,11 +122,7 @@ function About() {
             spiritual health.
           </p>
 
-          <div className="owner-highlights">
-            <span>From Gibraltar</span>
-            <span>U.S. since 2013</span>
-            <span>Trainer & business owner</span>
-          </div>
+          <div className="owner-highlights"></div>
 
           <details>
             <summary>Read Anthony’s full story</summary>

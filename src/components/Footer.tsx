@@ -15,7 +15,7 @@ function Footer() {
       <div className="footer-inner">
         <div className="footer-brand">
           <h2>
-            <span>Fusion</span> House
+            <span>The Fusion</span> House
           </h2>
           <p>
             Personal training, group classes, and coaching in White Plains, NY.
