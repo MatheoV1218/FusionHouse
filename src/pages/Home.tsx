@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import gympic2 from "../assets/FHgympic2.webp";
 import gympic5 from "../assets/FHgympic5.webp";
-import gympic11 from "../assets/FHgympic11.jpg";
-import fusionimg4 from "../assets/fusionimg4.jpg";
 import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
 
 const carouselImages = Object.entries(
-  import.meta.glob("../assets/carousel/*.{jpg,JPG,jpeg,JPEG,png,PNG}", {
+  import.meta.glob("../assets/carousel/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}", {
     eager: true,
     query: "?url",
     import: "default",
@@ -120,108 +117,109 @@ function Home() {
 
       <section className="audience-section">
         <div className="audience-inner">
-          <div>
+          <div className="audience-copy">
             <p className="eyebrow dark">Built For Adults</p>
-            <h2>Training for adults 30, 40, 50 and beyond.</h2>
+            <h2>
+              Smart, safe, personalized coaching for adults in their 40s, 50s,
+              60s and beyond.
+            </h2>
             <p>
-              Fusion House is made for people who want to get stronger without
-              feeling rushed, judged, or thrown into workouts that do not match
-              their body, goals, or experience level.
+              The Fusion House is built for people who want expert guidance
+              without ego, intimidation, or pressure. Whether you are returning
+              to fitness, building strength later in life, or simply looking for
+              a supportive community, our coaching meets you where you are and
+              helps you progress at a pace that fits your body, goals, and
+              lifestyle.
             </p>
           </div>
 
           <div className="audience-cards">
             <article>
-              <h3>Getting back into fitness</h3>
-              <p>Perfect for adults returning after time away from the gym.</p>
-            </article>
-
-            <article>
-              <h3>Strength without intimidation</h3>
+              <span>01</span>
+              <h3>Guidance Without Ego</h3>
               <p>
-                Coached training in a supportive environment, not a crowded gym
-                floor.
+                Coaching focused on support, encouragement, and long-term
+                success instead of intimidation.
               </p>
             </article>
 
             <article>
-              <h3>Smart training for real life</h3>
+              <span>02</span>
+              <h3>Safe & Personalized Training</h3>
               <p>
-                Build strength, balance, mobility, and confidence at a
-                sustainable pace.
+                Programs are adapted to your goals, experience level, mobility,
+                and fitness background.
+              </p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <h3>Confidence For Life</h3>
+              <p>
+                Build strength, balance, energy, and resilience that carry over
+                into everyday living.
               </p>
             </article>
           </div>
-        </div>
-      </section>
 
-      <section className="programs">
-        <div className="program-card">
-          <img
-            src={fusionimg4}
-            alt="Personal training at Fusion House Fitness"
-            className="program-image"
-          />
-          <h3>Personal Training</h3>
-          <p>
-            One-on-one coaching built around your goals, ability, and schedule.
-          </p>
-          <Link
-            to="/services"
-            onClick={() =>
-              track("Personal Training Learn More Home", {
-                section: "Programs",
-              })
-            }
-          >
-            Learn More
-          </Link>
-        </div>
+          <div className="programs-overview">
+            <div className="program-card">
+              <span>Personal Training</span>
+              <h3>One-on-one coaching built around you.</h3>
+              <p>
+                Personalized sessions designed around your goals, ability,
+                schedule, and comfort level.
+              </p>
+              <Link
+                to="/services#personal"
+                onClick={() =>
+                  track("Personal Training Learn More Home", {
+                    section: "Programs",
+                  })
+                }
+              >
+                Learn More
+              </Link>
+            </div>
 
-        <div className="program-card">
-          <img
-            src={gympic2}
-            alt="Group training at Fusion House Fitness"
-            className="program-image"
-          />
-          <h3>Group Training</h3>
-          <p>
-            Structured strength classes with energy, accountability, and
-            community.
-          </p>
-          <Link
-            to="/services"
-            onClick={() =>
-              track("Group Training View Classes Home", {
-                section: "Programs",
-              })
-            }
-          >
-            View Classes
-          </Link>
-        </div>
+            <div className="program-card">
+              <span>Group Training</span>
+              <h3>Structured classes with real coaching.</h3>
+              <p>
+                Supportive group training with guidance, accountability, and a
+                community that feels welcoming.
+              </p>
+              <Link
+                to="/services#memberships"
+                onClick={() =>
+                  track("Group Training View Classes Home", {
+                    section: "Programs",
+                  })
+                }
+              >
+                View Classes
+              </Link>
+            </div>
 
-        <div className="program-card">
-          <img
-            src={gympic11}
-            alt="Fusion House Fitness memberships"
-            className="program-image"
-          />
-          <h3>Memberships</h3>
-          <p>
-            Flexible options for people ready to commit to long-term
-            consistency.
-          </p>
-          <Link
-            to="/services"
-            onClick={() =>
-              track("Memberships See Options Home", {
-                section: "Programs",
-              })
-            }
-          >
-            See Options
-          </Link>
+            <div className="program-card">
+              <span>Memberships</span>
+              <h3>Flexible options for consistency.</h3>
+              <p>
+                Membership choices made for adults who want long-term progress
+                without confusion.
+              </p>
+              <Link
+                to="/services#membership-options"
+                onClick={() =>
+                  track("Memberships See Options Home", {
+                    section: "Programs",
+                  })
+                }
+              >
+                See Options
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -230,9 +228,9 @@ function Home() {
           <p className="eyebrow dark">Real Members. Real Progress.</p>
           <h2>A gym built around people, not pressure.</h2>
           <p>
-            From first workouts to stronger routines, Fusion House is designed
-            for adults who want coaching, confidence, and a community that meets
-            them where they are.
+            From first workouts to stronger routines, The Fusion House is
+            designed for adults who want coaching, confidence, and a community
+            that meets them where they are.
           </p>
         </div>
 
@@ -240,7 +238,11 @@ function Home() {
           <div className="carousel-track">
             {[...carouselImages, ...carouselImages].map((image, index) => (
               <div className="carousel-photo-card" key={`${image}-${index}`}>
-                <img src={image} alt="Fusion House member training" />
+                <img
+                  src={image}
+                  alt="The Fusion House member training"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
@@ -248,7 +250,6 @@ function Home() {
       </section>
 
       <section className="reviews-preview">
-        <p className="eyebrow dark">Social Proof</p>
         <h2>Trusted by local members.</h2>
 
         <div className="review-grid">
@@ -282,7 +283,7 @@ function Home() {
       </section>
 
       <section className="final-home-cta">
-        <h2>Ready to try Fusion House?</h2>
+        <h2>Ready to try The Fusion House?</h2>
         <p>
           Book a free trial class and take the first step toward a stronger
           routine.

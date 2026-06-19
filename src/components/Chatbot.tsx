@@ -40,48 +40,48 @@ const knowledgeBase = [
   {
     keywords: ["membership", "memberships", "monthly", "vip", "unlimited", "10 class"],
     answer:
-      "Fusion House offers monthly membership options, including two times a week, three times a week, VIP membership, and a 10-class package.",
+      "The Fusion House offers monthly membership options, including two times a week, three times a week, VIP membership, and a 10-class package.",
     linkText: "View Membership Options",
     linkUrl: "/services#membership-options",
   },
   {
     keywords: ["personal", "personal training", "trainer", "one on one", "1 on 1", "private"],
     answer:
-      "Yes, Fusion House offers personal training with customized coaching, accountability, and guidance based on your goals.",
+      "Yes, The Fusion House offers personal training with customized coaching, accountability, and guidance based on your goals.",
     linkText: "View Personal Training",
     linkUrl: "/services#personal",
   },
   {
     keywords: ["group", "group classes", "classes", "strength training", "conditioning"],
     answer:
-      "Fusion House offers group training for adults who want structure, coaching, and accountability in a supportive setting.",
+      "The Fusion House offers group training for adults who want structure, coaching, and accountability in a supportive setting.",
     linkText: "View Memberships",
     linkUrl: "/services#memberships",
   },
   {
     keywords: ["rent", "rental", "space", "therapist", "event", "massage", "physical therapist"],
     answer:
-      "Yes, Fusion House offers space rental for trainers, physical therapists, massage therapists, wellness professionals, and events.",
+      "Yes, The Fusion House offers space rental for trainers, physical therapists, massage therapists, wellness professionals, and events.",
     linkText: "View Space Rental",
     linkUrl: "/services#rental",
   },
   {
     keywords: ["location", "address", "where", "directions", "map"],
     answer:
-      "Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
+      "The Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
     linkText: "View Contact Page",
     linkUrl: "/contact",
   },
   {
     keywords: ["phone", "call", "contact", "number"],
-    answer: "You can call Fusion House at 914-552-9619.",
+    answer: "You can call The Fusion House at 914-552-9619.",
     linkText: "Call Now",
     linkUrl: "tel:9145529619",
     external: true,
   },
   {
     keywords: ["whatsapp", "message", "text"],
-    answer: "You can message Fusion House directly through WhatsApp.",
+    answer: "You can message The Fusion House directly through WhatsApp.",
     linkText: "Open WhatsApp",
     linkUrl:
       "https://api.whatsapp.com/send/?phone=19145529619&text&type=phone_number&app_absent=0",
@@ -104,8 +104,8 @@ const knowledgeBase = [
   {
     keywords: ["owner", "anthony", "about", "story"],
     answer:
-      "Fusion House is owned by Anthony Moreno. You can learn more about his story and the gym’s journey on the About page.",
-    linkText: "Read About Fusion House",
+      "The Fusion House is owned by Anthony Moreno. You can learn more about his story and the gym’s journey on the About page.",
+    linkText: "Read About The Fusion House",
     linkUrl: "/about",
   },
 ];
@@ -204,7 +204,7 @@ function Chatbot() {
       : {
           sender: "bot",
           text:
-            "I do not want to guess on that. You can send this question directly to Fusion House and the owner can reply by email.",
+            "I do not want to guess on that. You can send this question directly to TheFusion House and the owner can reply by email.",
         };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
@@ -221,7 +221,7 @@ function Chatbot() {
       <button
         className={`chatbot-button ${open ? "hidden" : ""}`}
         onClick={() => setOpen(true)}
-        aria-label="Open Fusion House assistant"
+        aria-label="Open The Fusion House assistant"
       >
         <FaCommentDots />
       </button>
@@ -230,7 +230,7 @@ function Chatbot() {
         <div className="chatbot-widget">
           <div className="chatbot-header">
             <div>
-              <h3>Fusion House Assistant</h3>
+              <h3>The Fusion House Assistant</h3>
               <p>Ask a question or contact the owner.</p>
             </div>
 
@@ -349,7 +349,7 @@ function Chatbot() {
               <button type="submit">Send Message</button>
 
               <p>
-                This sends the message to Fusion House by email. The owner can
+                This sends the message to The Fusion House by email. The owner can
                 reply directly like a normal email.
               </p>
             </form>

@@ -18,14 +18,14 @@ const faqs = [
     category: "Getting Started",
     question: "Do you offer a free trial class?",
     answer:
-      "Yes. New visitors can start with a free trial class so they can experience the gym, meet the trainers, and see if Fusion House is a good fit.",
+      "Yes. New visitors can start with a free trial class so they can experience the gym, meet the trainers, and see if The Fusion House is a good fit.",
     link: { label: "Book a free trial", url: mindbodyLink, external: true },
   },
   {
     category: "Getting Started",
     question: "I am new to fitness. Can I still join?",
     answer:
-      "Yes. Fusion House works with people at different fitness levels. The goal is to help you start safely, build confidence, and stay consistent.",
+      "Yes. The Fusion House works with people at different fitness levels. The goal is to help you start safely, build confidence, and stay consistent.",
   },
   {
     category: "Getting Started",
@@ -148,7 +148,7 @@ const faqs = [
     category: "Group Classes",
     question: "What types of classes do you offer?",
     answer:
-      "Fusion House offers structured strength and conditioning classes focused on accountability and long-term progress.",
+      "The Fusion House offers structured strength and conditioning classes focused on accountability and long-term progress.",
     link: { label: "View class options", url: "/services#memberships" },
   },
   {
@@ -211,8 +211,8 @@ const faqs = [
     category: "Memberships",
     question: "Can I cancel my membership?",
     answer:
-      "Membership policies can vary depending on the plan selected. Contact Fusion House directly for the most current cancellation information.",
-    link: { label: "Contact Fusion House", url: "/contact" },
+      "Membership policies can vary depending on the plan selected. Contact The Fusion House directly for the most current cancellation information.",
+    link: { label: "Contact The Fusion House", url: "/contact" },
   },
   {
     category: "Memberships",
@@ -237,9 +237,9 @@ const faqs = [
 
   {
     category: "Facility",
-    question: "Where is Fusion House located?",
+    question: "Where is The Fusion House located?",
     answer:
-      "Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
+      "The Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
     link: { label: "View contact page", url: "/contact" },
   },
   {
@@ -253,7 +253,7 @@ const faqs = [
     category: "Facility",
     question: "What equipment do you have?",
     answer:
-      "Fusion House offers equipment for strength training, conditioning, and functional fitness.",
+      "The Fusion House offers equipment for strength training, conditioning, and functional fitness.",
     link: { label: "View services", url: "/services#personal" },
   },
 
@@ -269,7 +269,7 @@ const faqs = [
     question: "How can I contact the gym?",
     answer:
       "You can call the gym, send a message through the contact form, use WhatsApp, or reach out through social media.",
-    link: { label: "Contact Fusion House", url: "/contact" },
+    link: { label: "Contact The Fusion House", url: "/contact" },
   },
 
   {
@@ -284,14 +284,14 @@ const faqs = [
     question: "Do you create meal plans?",
     answer:
       "Certain programs may include meal planning guidance or nutrition support. Contact the gym for current options.",
-    link: { label: "Contact Fusion House", url: "/contact" },
+    link: { label: "Contact The Fusion House", url: "/contact" },
   },
 
   {
     category: "Space Rental",
     question: "Do you rent out the space?",
     answer:
-      "Yes. Fusion House offers space rental for trainers, physical therapists, massage therapists, wellness professionals, and events.",
+      "Yes. The Fusion House offers space rental for trainers, physical therapists, massage therapists, wellness professionals, and events.",
     link: { label: "View space rental", url: "/services#rental" },
   },
   {
@@ -305,8 +305,8 @@ const faqs = [
     category: "Space Rental",
     question: "Can I host a workshop or event?",
     answer:
-      "Workshop or event availability depends on scheduling and space needs. Contact Fusion House for details.",
-    link: { label: "Contact Fusion House", url: "/contact" },
+      "Workshop or event availability depends on scheduling and space needs. Contact The Fusion House for details.",
+    link: { label: "Contact The Fusion House", url: "/contact" },
   },
 ];
 

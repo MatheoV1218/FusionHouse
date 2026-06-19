@@ -17,11 +17,9 @@
   padding: 6rem 6%;
   display: flex;
   align-items: center;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   position: relative;
 }
 
@@ -29,17 +27,15 @@
   content: "";
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.65) 45%,
-      rgba(0, 0, 0, 0.45) 100%
-    );
-
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.65) 45%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
   z-index: 1;
 }
+
 .hero-inner {
   width: min(100%, 1180px);
   margin: 0 auto;
@@ -151,101 +147,252 @@
   font-size: 0.9rem;
 }
 
-.proof-strip {
-  padding: 1.2rem 6%;
-  background: #111;
-  color: #fff;
+.audience-section {
+  padding: 5.5rem 6% 5rem;
+  background: transparent;
+}
+
+.audience-inner {
+  width: min(100%, 1240px);
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 90, 61, 0.22), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 240, 234, 0.96) 100%);
+  border: 1px solid rgba(255, 90, 61, 0.18);
+  border-radius: 38px;
+  padding: clamp(1.4rem, 4vw, 4rem);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: center;
+  box-shadow: 0 28px 90px rgba(255, 90, 61, 0.11);
+  overflow: hidden;
+  position: relative;
+}
+
+.audience-inner::before {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -150px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255, 90, 61, 0.09);
+  pointer-events: none;
+}
+
+.audience-copy,
+.audience-cards,
+.programs-overview {
+  position: relative;
+  z-index: 1;
+}
+
+.audience-copy h2 {
+  font-size: clamp(2.35rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.08em;
+  margin-bottom: 1.1rem;
+  max-width: 740px;
+}
+
+.audience-copy p {
+  color: #555;
+  line-height: 1.78;
+  font-size: 1.05rem;
+  max-width: 690px;
+}
+
+.audience-cards {
+  display: grid;
   gap: 1rem;
 }
 
-.proof-strip div {
-  text-align: center;
+.audience-cards article {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  padding: 1.35rem;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid #ff5a3d;
 }
 
-.proof-strip strong {
-  display: block;
-  font-size: 1.35rem;
+.audience-cards span {
+  color: #e63b2e;
+  font-weight: 900;
+  font-size: 0.75rem;
 }
 
-.proof-strip span {
-  color: #bdbdbd;
-  font-size: 0.85rem;
+.audience-cards h3 {
+  margin: 0.4rem 0 0.45rem;
+  font-size: 1.22rem;
 }
 
-.home-section {
-  width: min(100%, 1500px);
-  margin: 0 auto;
-  padding: 6rem 6%;
-}
-
-.split {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-.home-section h2,
-.reviews-preview h2,
-.final-home-cta h2 {
-  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
-  line-height: 1;
-  letter-spacing: -0.07em;
-}
-
-.home-section p {
+.audience-cards p {
   color: #555;
-  line-height: 1.8;
-  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
-.programs {
-  width: min(100%, 1240px);
-  margin: 0 auto;
-  padding: 0 6% 6rem;
+.programs-overview {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .program-card {
   background: #fff;
-  padding: 1rem;
-  border-radius: 30px;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.07);
+  padding: 1.45rem;
+  border-radius: 28px;
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 90, 61, 0.1);
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.program-image {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
-  margin-bottom: 1rem;
+.program-card span {
+  color: #e63b2e;
+  font-weight: 900;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .program-card h3 {
-  font-size: 1.55rem;
-  margin: 1.2rem 0 0.6rem;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 1rem 0 0.7rem;
 }
 
 .program-card p {
   color: #666;
-  line-height: 1.7;
+  line-height: 1.65;
   margin-bottom: 1rem;
 }
 
 .program-card a {
   color: #111;
   font-weight: 900;
+  width: fit-content;
+}
+
+.community-carousel-section {
+  padding: 1rem 0 6rem;
+  background: transparent;
+  overflow: hidden;
+}
+
+.community-carousel-heading {
+  width: min(100%, 980px);
+  margin: 0 auto 2.5rem;
+  padding: 0 6%;
+  text-align: center;
+}
+
+.community-carousel-heading h2,
+.reviews-preview h2,
+.final-home-cta h2 {
+  font-size: clamp(2.4rem, 4.5vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.07em;
+  margin-bottom: 1rem;
+}
+
+.community-carousel-heading p {
+  color: #555;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.community-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.community-carousel::before,
+.community-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 12%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.community-carousel::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 243, 238, 0.95),
+    rgba(255, 243, 238, 0)
+  );
+}
+
+.community-carousel::after {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 243, 238, 0.95),
+    rgba(255, 243, 238, 0)
+  );
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: carouselScroll 75s linear infinite;
+}
+
+.carousel-photo-card {
+  width: 230px;
+  height: 310px;
+  flex: 0 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+}
+
+.carousel-photo-card:nth-child(even) {
+  transform: rotate(1deg) translateY(18px);
+}
+
+.carousel-photo-card:nth-child(3n) {
+  transform: rotate(0deg) translateY(-10px);
+}
+
+.carousel-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* right to left movement */
+@keyframes carouselScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .reviews-preview {
   padding: 6rem 6%;
   text-align: center;
-  background: #fff3ee;
+  background: transparent;
 }
 
 .review-grid {
@@ -289,307 +436,6 @@
   line-height: 1.7;
 }
 
-@media (max-width: 1000px) {
-  .home-hero {
-    min-height: auto;
-    padding: 5rem 5%;
-  }
-
-  .split,
-  .programs,
-  .review-grid,
-  .proof-strip,
-  .action-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 650px) {
-  .home-hero {
-    padding: 4rem 5% 3rem;
-  }
-
-  .home-hero h1 {
-    font-size: clamp(3.1rem, 15vw, 4.7rem);
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .action-cards a {
-    min-height: auto;
-  }
-
-  .home-section,
-  .reviews-preview,
-  .final-home-cta {
-    padding: 4rem 5%;
-  }
-
-  .programs {
-    padding: 0 5% 4rem;
-  }
-
-  .home-section h2,
-  .reviews-preview h2,
-  .final-home-cta h2 {
-    font-size: 2.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .services-grid-section {
-    padding: 2rem 4%;
-    gap: 1rem;
-  }
-
-  .service-card-large {
-    padding: 0.75rem;
-    border-radius: 22px;
-    gap: 0.75rem;
-  }
-
-  .service-image-placeholder {
-    height: 140px;
-    border-radius: 18px;
-  }
-
-  .service-card-large h2 {
-    font-size: 2rem;
-    margin: 0.25rem 0 0.5rem;
-  }
-
-  .service-card-large p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .service-points {
-    margin-top: 0.75rem;
-    gap: 0.5rem;
-  }
-
-  .service-points p {
-    padding: 0.55rem 0.8rem;
-    font-size: 0.8rem;
-    line-height: 1.3;
-    border-radius: 14px;
-  }
-}
-
-.audience-section {
-  padding: 0 6% 6rem;
-  margin-top: 4rem;
-  background: #fff3ee;
-}
-
-.audience-inner {
-  width: min(100%, 1240px);
-  margin: 0 auto;
-  background:
-    radial-gradient(circle at 90% 10%, rgba(255, 90, 61, 0.18), transparent 28%),
-    linear-gradient(135deg, #fff 0%, #fff0ea 100%);
-  border: 1px solid rgba(255, 90, 61, 0.16);
-  border-radius: 34px;
-  padding: 4rem;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 3rem;
-  align-items: center;
-  box-shadow: 0 24px 80px rgba(255, 90, 61, 0.1);
-}
-
-.audience-inner h2 {
-  font-size: clamp(2.4rem, 4.5vw, 4.6rem);
-  line-height: 1;
-  letter-spacing: -0.07em;
-  margin-bottom: 1rem;
-}
-
-.audience-inner > div > p {
-  color: #555;
-  line-height: 1.75;
-  font-size: 1.05rem;
-}
-
-.audience-cards {
-  display: grid;
-  gap: 1rem;
-}
-
-.audience-cards article {
-  background: #fff;
-  border-radius: 24px;
-  padding: 1.4rem;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
-  border-left: 5px solid #ff5a3d;
-}
-
-.audience-cards h3 {
-  margin-bottom: 0.45rem;
-  font-size: 1.2rem;
-}
-
-.audience-cards p {
-  color: #555;
-  line-height: 1.6;
-}
-
-@media (max-width: 900px) {
-  .audience-inner {
-    grid-template-columns: 1fr;
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 650px) {
-  .audience-section {
-    padding: 0 5% 4rem;
-  }
-
-  .audience-inner {
-    border-radius: 26px;
-    padding: 1.5rem;
-  }
-}
-
-.community-carousel-section {
-  padding: 0 0 6rem;
-  background: #fff3ee;
-  overflow: hidden;
-}
-
-.community-carousel-heading {
-  width: min(100%, 980px);
-  margin: 0 auto 2.5rem;
-  padding: 0 6%;
-  text-align: center;
-}
-
-.community-carousel-heading h2 {
-  font-size: clamp(2.4rem, 4.5vw, 4.6rem);
-  line-height: 1;
-  letter-spacing: -0.07em;
-  margin-bottom: 1rem;
-}
-
-.community-carousel-heading p {
-  color: #555;
-  line-height: 1.7;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.community-carousel {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 1rem 0;
-}
-
-.community-carousel::before,
-.community-carousel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 12%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.community-carousel::before {
-  left: 0;
-  background: linear-gradient(90deg, #fff3ee, transparent);
-}
-
-.community-carousel::after {
-  right: 0;
-  background: linear-gradient(270deg, #fff3ee, transparent);
-}
-
-.carousel-track {
-  display: flex;
-  width: max-content;
-  gap: 1rem;
-  animation: carouselScroll 75s linear infinite;
-}
-
-
-
-.carousel-photo-card {
-  width: 230px;
-  height: 310px;
-  flex: 0 0 auto;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.1);
-  transform: rotate(-1deg);
-}
-
-.carousel-photo-card:nth-child(even) {
-  transform: rotate(1deg) translateY(18px);
-}
-
-.carousel-photo-card:nth-child(3n) {
-  transform: rotate(0deg) translateY(-10px);
-}
-
-.carousel-photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* right to left movement */
-@keyframes carouselScroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 650px) {
-  .community-carousel-section {
-    padding-bottom: 4rem;
-  }
-
-  .community-carousel-heading {
-    margin-bottom: 1.5rem;
-    padding: 0 5%;
-  }
-
-  .carousel-photo-card {
-    width: 170px;
-    height: 230px;
-    border-radius: 22px;
-  }
-
-  .carousel-track {
-    gap: 0.75rem;
-    animation: carouselScroll 55s linear infinite;
-    will-change: transform;
-  }
-}
-
-.audience-section,
-.community-carousel-section,
-.reviews-preview {
-  background: transparent;
-}
 /* =========================
    Global Page Animations
    ========================= */
@@ -618,94 +464,31 @@
   }
 }
 
-@keyframes softScale {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.home-hero h1,
-.services-hero h1,
-.about-hero h1,
-.faq-hero h1,
-.contact-hero h1 {
+.home-hero h1 {
   animation: fadeInLeft 0.8s ease both;
 }
 
 .hero-subtitle,
-.services-hero p,
-.about-hero p,
-.faq-hero p,
-.contact-hero p {
-  animation: fadeUp 0.8s ease both;
-  animation-delay: 0.12s;
-}
-
 .hero-buttons,
-.services-hero-actions,
-.faq-search {
-  animation: fadeUp 0.8s ease both;
-  animation-delay: 0.22s;
-}
-
 .action-cards,
 .audience-inner,
 .program-card,
-.review-grid article,
-.service-card-large,
-.timeline-item,
-.values-grid article,
-.owner-section,
-.faq-item,
-.contact-card,
-.contact-form,
-.contact-info,
-.map-card {
+.review-grid article {
   animation: fadeUp 0.75s ease both;
 }
 
 .program-card:nth-child(2),
-.review-grid article:nth-child(2),
-.values-grid article:nth-child(2),
-.contact-card:nth-child(2),
-.timeline-item:nth-child(2) {
+.review-grid article:nth-child(2) {
   animation-delay: 0.08s;
 }
 
 .program-card:nth-child(3),
-.review-grid article:nth-child(3),
-.values-grid article:nth-child(3),
-.contact-card:nth-child(3),
-.timeline-item:nth-child(3) {
+.review-grid article:nth-child(3) {
   animation-delay: 0.16s;
-}
-
-.timeline-item:nth-child(4) {
-  animation-delay: 0.24s;
-}
-
-.about-image-placeholder,
-.owner-image-placeholder,
-.service-image-placeholder {
-  animation: softScale 0.85s ease both;
 }
 
 .program-card,
 .review-grid article,
-.service-card-large,
-.timeline-item,
-.values-grid article,
-.faq-item,
-.contact-card,
-.contact-form,
-.contact-info,
-.map-card,
 .audience-cards article {
   transition:
     transform 0.25s ease,
@@ -716,28 +499,12 @@
 
 .program-card:hover,
 .review-grid article:hover,
-.values-grid article:hover,
-.contact-card:hover,
 .audience-cards article:hover {
   transform: translateY(-6px);
   box-shadow: 0 26px 80px rgba(0, 0, 0, 0.1);
 }
 
-.service-card-large:hover,
-.contact-form:hover,
-.contact-info:hover,
-.map-card:hover {
-  box-shadow: 0 28px 85px rgba(0, 0, 0, 0.1);
-}
-
 .btn,
-.nav-book,
-.mobile-book,
-.footer-btn,
-.services-hero-actions a,
-.services-booking a,
-.faq-link,
-.contact-form button,
 .program-card a {
   transition:
     transform 0.25s ease,
@@ -747,19 +514,142 @@
 }
 
 .btn:hover,
-.nav-book:hover,
-.mobile-book:hover,
-.footer-btn:hover,
-.services-hero-actions a:hover,
-.services-booking a:hover,
-.faq-link:hover,
-.contact-form button:hover,
 .program-card a:hover {
   transform: translateY(-3px);
 }
 
 img {
   backface-visibility: hidden;
+}
+
+@media (max-width: 1000px) {
+  .home-hero {
+    min-height: auto;
+    padding: 5rem 5%;
+  }
+
+  .action-cards,
+  .programs-overview,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .home {
+    background-attachment: scroll;
+  }
+
+  .home-hero {
+    padding: 4rem 5% 3rem;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(3.1rem, 15vw, 4.7rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .action-cards a {
+    min-height: auto;
+  }
+
+  .audience-section {
+    padding: 3.5rem 5% 3.5rem;
+  }
+
+  .audience-inner {
+    border-radius: 28px;
+    padding: 1.25rem;
+  }
+
+  .audience-copy h2 {
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+    letter-spacing: -0.075em;
+  }
+
+  .audience-copy p,
+  .community-carousel-heading p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .audience-cards article,
+  .program-card {
+    border-radius: 22px;
+    padding: 1.15rem;
+  }
+
+  .community-carousel-section {
+    padding-bottom: 4rem;
+  }
+
+  .community-carousel-heading {
+    margin-bottom: 1.5rem;
+    padding: 0 5%;
+  }
+
+  .community-carousel-heading h2,
+  .reviews-preview h2,
+  .final-home-cta h2 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-photo-card {
+    width: 170px;
+    height: 230px;
+    border-radius: 22px;
+  }
+
+  .carousel-track {
+    gap: 0.75rem;
+    animation: carouselScroll 55s linear infinite;
+    will-change: transform;
+  }
+
+  .reviews-preview,
+  .final-home-cta {
+    padding: 4rem 5%;
+  }
+}
+
+@media (max-width: 420px) {
+  .audience-inner {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .audience-copy h2 {
+    font-size: 2.45rem;
+  }
+
+  .audience-cards article,
+  .program-card,
+  .review-grid article {
+    padding: 1rem;
+  }
+
+  .program-card h3 {
+    font-size: 1.45rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -773,36 +663,5 @@ img {
 
   .carousel-track {
     animation: carouselScroll 55s linear infinite !important;
-  }
-}
-
-@media (max-width: 650px) {
-  .home-hero h1,
-  .services-hero h1,
-  .about-hero h1,
-  .faq-hero h1,
-  .contact-hero h1,
-  .hero-subtitle,
-  .services-hero p,
-  .about-hero p,
-  .faq-hero p,
-  .contact-hero p,
-  .hero-buttons,
-  .services-hero-actions,
-  .faq-search,
-  .action-cards,
-  .audience-inner,
-  .program-card,
-  .review-grid article,
-  .service-card-large,
-  .timeline-item,
-  .values-grid article,
-  .owner-section,
-  .faq-item,
-  .contact-card,
-  .contact-form,
-  .contact-info,
-  .map-card {
-    animation-duration: 0.55s;
   }
 }

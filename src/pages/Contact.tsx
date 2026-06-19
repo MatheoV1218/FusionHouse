@@ -16,7 +16,7 @@ function Contact() {
       <section className="contact-hero">
         <div className="contact-hero-inner">
           <p className="contact-eyebrow">Contact Us</p>
-          <h1>Ready to visit Fusion House?</h1>
+          <h1>Ready to visit The Fusion House?</h1>
           <p>
             Have a question, want to book, or need help choosing the right
             training option? Reach out and the team will help you get started.
@@ -86,7 +86,7 @@ function Contact() {
           <input
             type="hidden"
             name="_subject"
-            value="New Fusion House Website Message"
+            value="New The Fusion House Website Message"
           />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
@@ -135,7 +135,7 @@ function Contact() {
       <section className="map-section">
         <div className="map-card">
           <iframe
-            title="Fusion House Location"
+            title="The Fusion House Location"
             src="https://www.google.com/maps?q=126%20South%20Lexington%20Avenue%20White%20Plains%20NY%2010606&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

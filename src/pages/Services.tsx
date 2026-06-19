@@ -33,8 +33,8 @@ function Services() {
           <h1>Training options built around your goals.</h1>
           <p>
             Whether you want one-on-one coaching, group classes, or space
-            rental, Fusion House keeps everything simple, structured, and easy
-            to book.
+            rental, The Fusion House keeps everything simple, structured, and
+            easy to book.
           </p>
 
           <div className="services-hero-actions">
@@ -90,22 +90,6 @@ function Services() {
             <summary>View personal training pricing</summary>
 
             <div className="dropdown-grid">
-              <div className="option-card">
-                <div>
-                  <h3>Individual Session</h3>
-                  <p>One-hour personal training session.</p>
-                </div>
-                <strong>$150</strong>
-              </div>
-
-              <div className="option-card">
-                <div>
-                  <h3>12 Sessions</h3>
-                  <p>Three times a week training package.</p>
-                </div>
-                <strong>$720</strong>
-              </div>
-
               <div className="option-card featured">
                 <div className="tag">Most Popular</div>
                 <div>
@@ -129,6 +113,22 @@ function Services() {
                 </div>
                 <strong>$400</strong>
               </div>
+
+              <div className="option-card">
+                <div>
+                  <h3>12 Sessions</h3>
+                  <p>Three times a week training package.</p>
+                </div>
+                <strong>$720</strong>
+              </div>
+
+              <div className="option-card">
+                <div>
+                  <h3>Individual Session</h3>
+                  <p>One-hour personal training session.</p>
+                </div>
+                <strong>$150</strong>
+              </div>
             </div>
           </details>
         </article>
@@ -137,7 +137,7 @@ function Services() {
           <div className="service-image-placeholder">
             <img
               src={gympic9}
-              alt="Group training and memberships at Fusion House Fitness"
+              alt="Group training and memberships at The Fusion House Fitness"
             />
           </div>
 
@@ -162,6 +162,18 @@ function Services() {
             <summary>View membership options</summary>
 
             <div className="dropdown-grid">
+              <div className="option-card vip">
+                <div className="tag">Most Popular</div>
+                <div>
+                  <h3>VIP Membership</h3>
+                  <p>
+                    The premium option with classes, coaching perks, nutrition
+                    support, and extra accountability.
+                  </p>
+                </div>
+                <strong>$225</strong>
+              </div>
+
               <div className="option-card">
                 <div>
                   <h3>Two Times a Week</h3>
@@ -184,18 +196,6 @@ function Services() {
                 <strong>$196</strong>
               </div>
 
-              <div className="option-card vip">
-                <div className="tag">Most Popular</div>
-                <div>
-                  <h3>VIP Membership</h3>
-                  <p>
-                    The premium option with classes, coaching perks, nutrition
-                    support, and extra accountability.
-                  </p>
-                </div>
-                <strong>$225</strong>
-              </div>
-
               <div className="option-card">
                 <div>
                   <h3>10 Class Package</h3>
@@ -214,7 +214,7 @@ function Services() {
           <div className="service-image-placeholder">
             <img
               src={gympic8}
-              alt="Personal training at Fusion House Fitness"
+              alt="Personal training at The Fusion House Fitness"
             />
           </div>
 

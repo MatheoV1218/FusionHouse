@@ -1,6 +1,6 @@
 import "./About.css";
 import gympic1 from "../assets/FHgympic1.webp";
-import ownerpic from "../assets/owner.png";
+import ownerpic from "../assets/owner.jpg";
 import grainyBackground from "../assets/grainyBackground.png";
 
 function About() {
@@ -12,10 +12,10 @@ function About() {
       <section className="about-hero">
         <div className="about-container">
           <div className="about-hero-text">
-            <p className="about-eyebrow">About Fusion House</p>
+            <p className="about-eyebrow">About The Fusion House</p>
             <h1>More than a gym. A community built on accountability.</h1>
             <p>
-              Fusion House was created to help people build stronger, healthier,
+              The Fusion House was created to help people build stronger, healthier,
               and more connected lives through personal coaching, group
               training, and a fitness environment that feels supportive from day
               one.
@@ -23,7 +23,7 @@ function About() {
           </div>
 
           <div className="about-image-placeholder">
-            <img src={gympic1} alt="Fusion House Gym" />
+            <img src={gympic1} alt="The Fusion House Gym" />
           </div>
         </div>
       </section>
@@ -48,7 +48,7 @@ function About() {
             <div className="timeline-bubble">Growth</div>
             <h3>The Team Expanded</h3>
             <p>
-              As the business grew, Fusion House added new trainers and built a
+              As the business grew, The Fusion House added new trainers and built a
               loyal client base focused on health and consistency.
             </p>
           </div>
@@ -66,7 +66,7 @@ function About() {
             <div className="timeline-bubble">Today</div>
             <h3>A Community Hub</h3>
             <p>
-              Fusion House is now a vibrant fitness community focused on growth,
+              The Fusion House is now a vibrant fitness community focused on growth,
               accountability, and expert guidance.
             </p>
           </div>
@@ -108,7 +108,7 @@ function About() {
 
       <section className="owner-section">
         <div className="owner-image-placeholder">
-          <img src={ownerpic} alt="Anthony Moreno, owner of Fusion House" />
+          <img src={ownerpic} alt="Anthony Moreno, owner of The Fusion House" />
         </div>
 
         <div className="owner-content">
