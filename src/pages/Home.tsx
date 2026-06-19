@@ -4,6 +4,7 @@ import gympic2 from "../assets/FHgympic2.webp";
 import gympic5 from "../assets/FHgympic5.webp";
 import gympic11 from "../assets/FHgympic11.jpg";
 import fusionimg4 from "../assets/fusionimg4.jpg";
+import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
 
@@ -23,7 +24,10 @@ const carouselImages = Object.entries(
 
 function Home() {
   return (
-    <main className="home">
+    <main
+      className="home"
+      style={{ backgroundImage: `url(${grainyBackground})` }}
+    >
       <section
         className="home-hero"
         style={{ backgroundImage: `url(${gympic5})` }}

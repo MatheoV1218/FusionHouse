@@ -1,8 +1,14 @@
 import "./About.css";
+import gympic1 from "../assets/FHgympic1.webp";
+import ownerpic from "../assets/owner.png";
+import grainyBackground from "../assets/grainyBackground.png";
 
 function About() {
   return (
-    <main className="about-page">
+    <main
+      className="about-page"
+      style={{ backgroundImage: `url(${grainyBackground})` }}
+    >
       <section className="about-hero">
         <div className="about-container">
           <div className="about-hero-text">
@@ -10,12 +16,15 @@ function About() {
             <h1>More than a gym. A community built on accountability.</h1>
             <p>
               Fusion House was created to help people build stronger, healthier,
-              and more connected lives through personal coaching, group training,
-              and a fitness environment that feels supportive from day one.
+              and more connected lives through personal coaching, group
+              training, and a fitness environment that feels supportive from day
+              one.
             </p>
           </div>
 
-          <div className="about-image-placeholder">GYM IMAGE</div>
+          <div className="about-image-placeholder">
+            <img src={gympic1} alt="Fusion House Gym" />
+          </div>
         </div>
       </section>
 
@@ -98,7 +107,9 @@ function About() {
       </section>
 
       <section className="owner-section">
-        <div className="owner-image-placeholder">OWNER IMAGE</div>
+        <div className="owner-image-placeholder">
+          <img src={ownerpic} alt="Anthony Moreno, owner of Fusion House" />
+        </div>
 
         <div className="owner-content">
           <p className="about-eyebrow dark">Meet The Owner</p>
@@ -107,8 +118,8 @@ function About() {
           <p>
             Anthony Moreno is the CEO and owner of The Fusion House by Boutique.
             He is originally from Gibraltar, moved to the United States in 2013,
-            and has spent his life learning about physical, mental, and spiritual
-            health.
+            and has spent his life learning about physical, mental, and
+            spiritual health.
           </p>
 
           <div className="owner-highlights">
@@ -125,8 +136,8 @@ function About() {
               Rock of Gibraltar.” It is a British overseas territory located on
               the southern tip of the Iberian Peninsula. He has a British father
               and a Spanish mother, and he spent his childhood and most of his
-              adult life living and working between Gibraltar, England, and Spain
-              before coming to the U.S. in 2013.
+              adult life living and working between Gibraltar, England, and
+              Spain before coming to the U.S. in 2013.
             </p>
 
             <p>
@@ -139,8 +150,8 @@ function About() {
             <p>
               His main focus is to empower others to be the best version of
               themselves in all aspects of life through his business. He is
-              excited to help clients reach their best selves and wishes everyone
-              success in their endeavors.
+              excited to help clients reach their best selves and wishes
+              everyone success in their endeavors.
             </p>
           </details>
         </div>

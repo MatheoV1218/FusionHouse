@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import "./Services.css";
 // import gympic8 from "../assets/FHgympic8.webp";
+import gympic8 from "../assets/FHgympic8.webp";
+import gympic9 from "../assets/FHgympic9.webp";
+import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
 
@@ -20,7 +23,10 @@ function Services() {
   }, []);
 
   return (
-    <main className="services-page">
+    <main
+      className="services-page"
+      style={{ backgroundImage: `url(${grainyBackground})` }}
+    >
       <section className="services-hero">
         <div className="services-hero-inner">
           <p className="services-eyebrow">Services & Rates</p>
@@ -128,7 +134,12 @@ function Services() {
         </article>
 
         <article className="service-card-large" id="memberships">
-          <div className="service-image-placeholder">Image</div>
+          <div className="service-image-placeholder">
+            <img
+              src={gympic9}
+              alt="Group training and memberships at Fusion House Fitness"
+            />
+          </div>
 
           <div className="service-content">
             <span>02</span>
@@ -200,7 +211,12 @@ function Services() {
         </article>
 
         <article className="service-card-large" id="rental">
-          <div className="service-image-placeholder">Image</div>
+          <div className="service-image-placeholder">
+            <img
+              src={gympic8}
+              alt="Personal training at Fusion House Fitness"
+            />
+          </div>
 
           <div className="service-content">
             <span>03</span>

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import "./FAQ.css";
+import grainyBackground from "../assets/grainyBackground.png";
 
 const mindbodyLink =
   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
@@ -183,14 +184,20 @@ const faqs = [
     question: "Do you offer monthly memberships?",
     answer:
       "Yes. Membership options include unlimited sessions, three times a week, VIP membership, and a 10-class package.",
-    link: { label: "View membership options", url: "/services#membership-options" },
+    link: {
+      label: "View membership options",
+      url: "/services#membership-options",
+    },
   },
   {
     category: "Pricing",
     question: "Can I pay monthly?",
     answer:
       "Monthly membership options are available. Exact terms depend on the membership you choose.",
-    link: { label: "View membership options", url: "/services#membership-options" },
+    link: {
+      label: "View membership options",
+      url: "/services#membership-options",
+    },
   },
   {
     category: "Pricing",
@@ -212,14 +219,20 @@ const faqs = [
     question: "Can I upgrade my membership later?",
     answer:
       "Yes. Members can discuss upgrading to a different membership or training package with the staff.",
-    link: { label: "View membership options", url: "/services#membership-options" },
+    link: {
+      label: "View membership options",
+      url: "/services#membership-options",
+    },
   },
   {
     category: "Memberships",
     question: "Are memberships automatically renewed?",
     answer:
       "Some memberships may renew automatically. Review membership terms before enrolling.",
-    link: { label: "View membership options", url: "/services#membership-options" },
+    link: {
+      label: "View membership options",
+      url: "/services#membership-options",
+    },
   },
 
   {
@@ -328,7 +341,10 @@ function FAQ() {
   const categories = [...new Set(filteredFaqs.map((faq) => faq.category))];
 
   return (
-    <main className="faq-page">
+    <main
+      className="faq-page"
+      style={{ backgroundImage: `url(${grainyBackground})` }}
+    >
       <section className="faq-hero">
         <div className="faq-hero-inner">
           <p className="faq-eyebrow">FAQ</p>

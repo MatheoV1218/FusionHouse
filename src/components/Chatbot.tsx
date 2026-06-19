@@ -1,11 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { FaCommentDots, FaTimes, FaPaperPlane, FaChevronDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import {
+  FaCommentDots,
+  FaTimes,
+  FaPaperPlane,
+  FaChevronDown,
+} from "react-icons/fa";
 import "./Chatbot.css";
 
 const ownerEmail = "mateovillada1@outlook.com";
 
 const mindbodyLink =
   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
+
+type Message = {
+  sender: "bot" | "user";
+  text: string;
+  linkText?: string;
+  linkUrl?: string;
+  external?: boolean;
+};
 
 const knowledgeBase = [
   {
@@ -19,29 +33,29 @@ const knowledgeBase = [
   {
     keywords: ["price", "pricing", "cost", "rates", "session", "package", "how much"],
     answer:
-      "Current listed personal training pricing includes $150 for an individual session, $720 for 12 sessions, $640 for 8 sessions, and $400 for 4 sessions. Prices may change, so confirm with Fusion House for the latest details.",
-    linkText: "View Pricing",
+      "Personal training pricing is listed on the Services page. You can view the current options and packages there.",
+    linkText: "View Personal Training Pricing",
     linkUrl: "/services#pricing",
   },
   {
     keywords: ["membership", "memberships", "monthly", "vip", "unlimited", "10 class"],
     answer:
-      "Fusion House offers membership options including unlimited sessions, three times a week, VIP membership, and a 10-class package.",
-    linkText: "View Memberships",
+      "Fusion House offers monthly membership options, including two times a week, three times a week, VIP membership, and a 10-class package.",
+    linkText: "View Membership Options",
     linkUrl: "/services#membership-options",
   },
   {
     keywords: ["personal", "personal training", "trainer", "one on one", "1 on 1", "private"],
     answer:
-      "Yes, Fusion House offers personal training with a customized plan, accountability, and guidance based on your goals.",
+      "Yes, Fusion House offers personal training with customized coaching, accountability, and guidance based on your goals.",
     linkText: "View Personal Training",
     linkUrl: "/services#personal",
   },
   {
     keywords: ["group", "group classes", "classes", "strength training", "conditioning"],
     answer:
-      "Fusion House offers group training for people who want structure, coaching, and accountability in a community setting.",
-    linkText: "View Group Options",
+      "Fusion House offers group training for adults who want structure, coaching, and accountability in a supportive setting.",
+    linkText: "View Memberships",
     linkUrl: "/services#memberships",
   },
   {
@@ -81,32 +95,11 @@ const knowledgeBase = [
     linkUrl: "/contact",
   },
   {
-    keywords: ["nutrition", "meal", "diet", "food", "meal plan"],
+    keywords: ["beginner", "new", "out of shape", "never worked out", "start", "older", "adult"],
     answer:
-      "Some programs may include nutrition guidance, accountability, and support. For exact nutrition options, contact Fusion House directly.",
-    linkText: "Contact Fusion House",
-    linkUrl: "/contact",
-  },
-  {
-    keywords: ["beginner", "new", "out of shape", "never worked out", "start"],
-    answer:
-      "Beginners are welcome. Fusion House helps people start safely, build confidence, and stay consistent.",
+      "Beginners and adults getting back into fitness are welcome. Fusion House is built around coaching, confidence, and sustainable progress.",
     linkText: "View Services",
     linkUrl: "/services#personal",
-  },
-  {
-    keywords: ["injury", "hurt", "pain", "shoulder", "knee", "back"],
-    answer:
-      "If you have an injury, it is best to check with a healthcare professional first. Trainers may be able to modify exercises depending on your situation.",
-    linkText: "Contact the Gym",
-    linkUrl: "/contact",
-  },
-  {
-    keywords: ["reviews", "google reviews", "rating"],
-    answer:
-      "Fusion House has strong Google reviews from local members. You can view reviews on the homepage or visit Google for the full review list.",
-    linkText: "Go to Home Reviews",
-    linkUrl: "/",
   },
   {
     keywords: ["owner", "anthony", "about", "story"],
@@ -128,23 +121,21 @@ const quickOptions = [
   "Location",
   "Contact the owner",
   "Space rental",
-  "Nutrition coaching",
   "I am a beginner",
 ];
 
 function Chatbot() {
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<"chat" | "contact">("chat");
   const [question, setQuestion] = useState("");
   const [showOptions, setShowOptions] = useState(false);
 
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot",
       text: "Hi! I can help with pricing, memberships, booking, classes, hours, location, personal training, and more.",
-      linkText: "",
-      linkUrl: "",
-      external: false,
     },
   ]);
 
@@ -155,11 +146,7 @@ function Chatbot() {
   }, [messages]);
 
   useEffect(() => {
-    if (open && window.innerWidth <= 768) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = open && window.innerWidth <= 768 ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -174,11 +161,25 @@ function Chatbot() {
     );
   }
 
+  function handleInternalLink(url: string) {
+    const [path, hash] = url.split("#");
+
+    setOpen(false);
+    navigate(path || "/");
+
+    if (hash) {
+      setTimeout(() => {
+        const section = document.getElementById(hash);
+        section?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
+    }
+  }
+
   function handleAsk(customQuestion?: string) {
     const userQuestion = customQuestion || question;
     if (!userQuestion.trim()) return;
 
-    if (userQuestion.toLowerCase().includes("contact")) {
+    if (userQuestion.toLowerCase().includes("contact owner")) {
       setMode("contact");
       setQuestion("");
       setShowOptions(false);
@@ -187,15 +188,12 @@ function Chatbot() {
 
     const match = findAnswer(userQuestion);
 
-    const userMessage = {
+    const userMessage: Message = {
       sender: "user",
       text: userQuestion,
-      linkText: "",
-      linkUrl: "",
-      external: false,
     };
 
-    const botMessage = match
+    const botMessage: Message = match
       ? {
           sender: "bot",
           text: match.answer,
@@ -207,9 +205,6 @@ function Chatbot() {
           sender: "bot",
           text:
             "I do not want to guess on that. You can send this question directly to Fusion House and the owner can reply by email.",
-          linkText: "",
-          linkUrl: "",
-          external: false,
         };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
@@ -226,6 +221,7 @@ function Chatbot() {
       <button
         className={`chatbot-button ${open ? "hidden" : ""}`}
         onClick={() => setOpen(true)}
+        aria-label="Open Fusion House assistant"
       >
         <FaCommentDots />
       </button>
@@ -238,7 +234,7 @@ function Chatbot() {
               <p>Ask a question or contact the owner.</p>
             </div>
 
-            <button onClick={() => setOpen(false)}>
+            <button onClick={() => setOpen(false)} aria-label="Close chatbot">
               <FaTimes />
             </button>
           </div>
@@ -250,6 +246,7 @@ function Chatbot() {
             >
               Ask
             </button>
+
             <button
               className={mode === "contact" ? "active" : ""}
               onClick={() => setMode("contact")}
@@ -275,7 +272,12 @@ function Chatbot() {
                           {message.linkText}
                         </a>
                       ) : (
-                        <a href={message.linkUrl}>{message.linkText}</a>
+                        <button
+                          className="chat-link-button"
+                          onClick={() => handleInternalLink(message.linkUrl!)}
+                        >
+                          {message.linkText}
+                        </button>
                       ))}
                   </div>
                 ))}
@@ -313,7 +315,8 @@ function Chatbot() {
                   }}
                   placeholder="Ask about pricing, classes, booking..."
                 />
-                <button onClick={() => handleAsk()}>
+
+                <button onClick={() => handleAsk()} aria-label="Send message">
                   <FaPaperPlane />
                 </button>
               </div>

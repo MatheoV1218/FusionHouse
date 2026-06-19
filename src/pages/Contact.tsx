@@ -1,13 +1,18 @@
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import "./Contact.css";
 
+import grainyBackground from "../assets/grainyBackground.png";
+
 import { track } from "@vercel/analytics";
 
 const ownerEmail = "mateovillada1@outlook.com";
 
 function Contact() {
   return (
-    <main className="contact-page">
+    <main
+      className="contact-page"
+      style={{ backgroundImage: `url(${grainyBackground})` }}
+    >
       <section className="contact-hero">
         <div className="contact-hero-inner">
           <p className="contact-eyebrow">Contact Us</p>
