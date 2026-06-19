@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import "./Chatbot.css";
 
-const ownerEmail = "mateovillada1@outlook.com";
+const ownerEmail = "Infofusionhouse@gmail.com";
 
 const mindbodyLink =
   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";

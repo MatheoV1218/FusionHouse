@@ -5,7 +5,7 @@ import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
 
-const ownerEmail = "mateovillada1@outlook.com";
+const ownerEmail = "Infofusionhouse@gmail.com";
 
 function Contact() {
   return (
