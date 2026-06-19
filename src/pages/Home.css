@@ -665,3 +665,277 @@ img {
     animation: carouselScroll 55s linear infinite !important;
   }
 }
+
+.google-review-summary {
+  width: min(100% - 2rem, 900px);
+  margin: 2rem auto 3rem;
+  padding: 1.3rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(255, 90, 61, 0.16), transparent 30%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.google-review-summary > div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.google-badge {
+  background: #fff;
+  color: #111;
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  font-weight: 900;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.google-review-summary strong {
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.google-review-summary p {
+  color: #555;
+  font-weight: 800;
+}
+
+.google-review-summary a {
+  min-height: 48px;
+  padding: 0 1.3rem;
+  border-radius: 999px;
+  background: #ff5a3d;
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.google-review-summary a:hover {
+  transform: translateY(-3px);
+  background: #ff3131;
+  color: #fff;
+}
+
+.reviews-scroll {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  position: relative;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: reviewsScroll 95s linear infinite;
+  will-change: transform;
+}
+
+.google-review-card {
+  flex: 0 0 390px;
+  min-height: 360px;
+  background: #fff;
+  padding: 1.6rem;
+  border-radius: 30px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 90, 61, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.google-review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.12);
+}
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.review-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff3131, #ff914d);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.review-top h3 {
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.review-top p {
+  color: #777;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.google-review-card .stars {
+  color: #f5bd22;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  color: #444;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.google-review-card a {
+  margin-top: 1.2rem;
+  color: #111;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@keyframes reviewsScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 700px) {
+  .reviews-preview {
+    padding: 4rem 0;
+    overflow: hidden;
+  }
+
+  .reviews-preview h2 {
+    width: min(100% - 2rem, 340px);
+    margin: 0 auto 1.5rem;
+    font-size: clamp(2.6rem, 15vw, 4rem);
+    line-height: 0.92;
+  }
+
+  .google-review-summary {
+    width: min(100% - 2rem, 340px);
+    margin: 1.5rem auto 2.5rem;
+    padding: 1.2rem;
+    border-radius: 26px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .google-review-summary > div {
+    justify-content: center;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .google-badge {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .google-review-summary strong {
+    font-size: 2.25rem;
+  }
+
+  .google-review-summary .stars {
+    margin: 0;
+  }
+
+  .google-review-summary p {
+    max-width: 230px;
+    margin: 0 auto;
+    line-height: 1.35;
+  }
+
+  .google-review-summary a {
+    width: 100%;
+  }
+
+  .reviews-scroll {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0.25rem 0 1rem;
+  }
+
+  .reviews-track {
+    gap: 0.85rem;
+    animation-duration: 120s;
+  }
+
+  .google-review-card {
+    flex: 0 0 76vw;
+    min-height: 330px;
+    max-height: 370px;
+    padding: 1.15rem;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .review-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .review-top {
+    gap: 0.7rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .review-top h3 {
+    font-size: 0.92rem;
+    line-height: 1.1;
+  }
+
+  .review-top p {
+    font-size: 0.78rem;
+  }
+
+  .google-review-card .stars {
+    font-size: 0.88rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .review-text {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .google-review-card a {
+    margin-top: 0.85rem;
+    font-size: 0.9rem;
+  }
+}

@@ -2,15 +2,19 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import gympic5 from "../assets/FHgympic5.webp";
 import grainyBackground from "../assets/grainyBackground.png";
+import { googleReviews, googleReviewsLink } from "../data";
 
 import { track } from "@vercel/analytics";
 
 const carouselImages = Object.entries(
-  import.meta.glob("../assets/carousel/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}", {
-    eager: true,
-    query: "?url",
-    import: "default",
-  }),
+  import.meta.glob(
+    "../assets/carousel/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}",
+    {
+      eager: true,
+      query: "?url",
+      import: "default",
+    },
+  ),
 )
   .sort(([a], [b]) => {
     const numA = Number(a.match(/FH(\d+)/i)?.[1] ?? 0);
@@ -250,35 +254,66 @@ function Home() {
       </section>
 
       <section className="reviews-preview">
+        <p className="eyebrow dark">Google Reviews</p>
         <h2>Trusted by local members.</h2>
 
-        <div className="review-grid">
-          <article>
+        <div className="google-review-summary">
+          <div>
+            <span className="google-badge">Google</span>
+            <strong>4.9</strong>
             <div className="stars">★★★★★</div>
-            <p>
-              “Amazing experience. The staff is motivating, welcoming, and the
-              workouts are challenging in the best way.”
-            </p>
-            <strong>Google Review</strong>
-          </article>
+            <p>Based on 86 Google reviews</p>
+          </div>
 
-          <article>
-            <div className="stars">★★★★★</div>
-            <p>
-              “Great trainers and a strong community feel. Perfect if you need
-              structure and accountability.”
-            </p>
-            <strong>Google Review</strong>
-          </article>
+          <a
+            href={googleReviewsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() =>
+              track("View All Google Reviews", {
+                location: "Home Reviews",
+              })
+            }
+          >
+            Read All Reviews
+          </a>
+        </div>
 
-          <article>
-            <div className="stars">★★★★★</div>
-            <p>
-              “Professional, clean, and supportive. The team actually cares
-              about your progress.”
-            </p>
-            <strong>Google Review</strong>
-          </article>
+        <div className="reviews-scroll">
+          <div className="reviews-track">
+            {[...googleReviews, ...googleReviews].map((review, index) => (
+              <article
+                className="google-review-card"
+                key={`${review.name}-${index}`}
+              >
+                <div className="review-top">
+                  <div className="review-avatar">{review.name.charAt(0)}</div>
+
+                  <div>
+                    <h3>{review.name}</h3>
+                    <p>{review.date}</p>
+                  </div>
+                </div>
+
+                <div className="stars">{"★".repeat(review.rating)}</div>
+
+                <p className="review-text">“{review.text}”</p>
+
+                <a
+                  href={googleReviewsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    track("Read Google Review", {
+                      reviewer: review.name,
+                    })
+                  }
+                >
+                  View on Google
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
