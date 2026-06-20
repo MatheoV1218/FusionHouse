@@ -9,63 +9,62 @@ const mindbodyLink =
 const faqs = [
   {
     category: "Getting Started",
-    question: "How do I book a class or appointment?",
+    question: "How do I reserve a class or private coaching session?",
     answer:
-      "You can book through Mindbody using any Book Now button on the website. The booking page opens in a new tab so you do not lose your spot on the site.",
+      "You can reserve any class or appointment through Mindbody using the Reserve Your Session buttons on the website. The booking page opens in a new tab for convenience.",
     link: { label: "Open booking schedule", url: mindbodyLink, external: true },
   },
   {
     category: "Getting Started",
-    question: "Do you offer a free trial class?",
+    question: "Do you offer a complimentary trial class?",
     answer:
-      "Yes. New visitors can start with a free trial class so they can experience the gym, meet the trainers, and see if The Fusion House is a good fit.",
-    link: { label: "Book a free trial", url: mindbodyLink, external: true },
+      "Yes. New visitors can begin with a complimentary trial class to experience the facility, meet the coaches, and see if The Fusion House is the right fit.",
+    link: { label: "Reserve your trial session", url: mindbodyLink, external: true },
   },
   {
     category: "Getting Started",
-    question: "I am new to fitness. Can I still join?",
+    question: "Can beginners join?",
     answer:
-      "Yes. The Fusion House works with people at different fitness levels. The goal is to help you start safely, build confidence, and stay consistent.",
+      "Yes. We work with adults at all experience levels. Our coaching is designed to help you start safely, build confidence, and progress at a pace that fits your body and goals.",
   },
   {
     category: "Getting Started",
     question: "What should I bring to my first visit?",
     answer:
-      "Bring comfortable workout clothes, athletic shoes, water, and anything else you normally need to feel ready for a workout.",
+      "Wear comfortable workout clothing, athletic shoes, and bring water. Bring anything else you typically need to feel prepared.",
   },
   {
     category: "Getting Started",
-    question: "Can I visit before signing up?",
+    question: "Can I visit before enrolling?",
     answer:
-      "Yes. The best first step is to book a free trial or contact the gym so the team can help you choose the right option.",
-    link: { label: "Book a free trial", url: mindbodyLink, external: true },
+      "Yes. You can reserve a complimentary trial class or contact our team for guidance on the best starting point.",
+    link: { label: "Reserve your trial session", url: mindbodyLink, external: true },
   },
   {
     category: "Getting Started",
     question: "Do I need to be in shape before joining?",
     answer:
-      "No. You do not need to be in shape before starting. The point of training is to help you build strength, confidence, and consistency over time.",
+      "No. Our coaching is designed to help you build strength, confidence, and consistency from wherever you are right now.",
   },
-
   {
     category: "Booking",
-    question: "Do I need a Mindbody account?",
+    question: "Do I need a Mindbody account to book?",
     answer:
-      "For online booking, Mindbody may ask you to sign in or create an account. This helps manage class reservations, appointments, and schedule details.",
+      "Mindbody may ask you to sign in or create an account to manage reservations and appointments.",
     link: { label: "Open Mindbody", url: mindbodyLink, external: true },
   },
   {
     category: "Booking",
-    question: "Can I book directly from this website?",
+    question: "Can I book directly from the website?",
     answer:
-      "The website sends you to the official Mindbody booking page. This is the safest way to make sure appointments and classes are properly reserved.",
-    link: { label: "Book through Mindbody", url: mindbodyLink, external: true },
+      "Yes. All booking buttons lead to our official Mindbody schedule to ensure your reservation is secure.",
+    link: { label: "Reserve through Mindbody", url: mindbodyLink, external: true },
   },
   {
     category: "Booking",
-    question: "Can I book same-day appointments?",
+    question: "Do you allow same‑day bookings?",
     answer:
-      "Same-day booking depends on trainer availability, class schedule, and open spots in Mindbody.",
+      "Same‑day availability depends on the schedule, coach availability, and open class spots.",
     link: { label: "Check availability", url: mindbodyLink, external: true },
   },
   {
@@ -77,235 +76,238 @@ const faqs = [
   },
   {
     category: "Booking",
-    question: "What happens if I am late?",
+    question: "What if I arrive late?",
     answer:
-      "Arriving on time is recommended so you can get the most out of your session or class. If you are running late, contact the gym as soon as possible.",
+      "Arriving on time is recommended. If you’re running late, contact the gym as soon as possible.",
   },
   {
     category: "Booking",
-    question: "How far in advance can I book?",
+    question: "How far in advance can I reserve sessions?",
     answer:
-      "Booking availability is handled through Mindbody and may vary depending on class schedules, trainer availability, and service type.",
+      "Availability varies based on class schedules and coach openings. Check the Mindbody schedule for current options.",
     link: { label: "View schedule", url: mindbodyLink, external: true },
   },
-
   {
     category: "Personal Training",
-    question: "Do you offer personal training?",
+    question: "What personal training options do you offer?",
     answer:
-      "Yes. Personal training includes a focused approach based on your goals, current fitness level, schedule, and needs. It can include assessment, individualized programming, and accountability coaching.",
+      "We offer private one‑on‑one coaching tailored to your goals, experience level, and lifestyle. Sessions may include assessment, personalized programming, and accountability coaching.",
     link: { label: "View personal training", url: "/services#personal" },
   },
   {
     category: "Personal Training",
     question: "How long is a personal training session?",
-    answer: "Most personal training sessions are approximately one hour.",
+    answer: "Most private coaching sessions are approximately 60 minutes.",
     link: { label: "View personal training", url: "/services#personal" },
   },
   {
     category: "Personal Training",
-    question: "Will I receive a customized workout plan?",
+    question: "Will I receive a personalized training plan?",
     answer:
-      "Yes. Personal training is designed around your goals, experience level, schedule, and individual needs.",
+      "Yes. Your program is designed specifically for your goals, mobility, and training experience.",
     link: { label: "View personal training", url: "/services#personal" },
   },
   {
     category: "Personal Training",
-    question: "Can personal training help me lose weight?",
+    question: "Can personal training support fat‑loss goals?",
     answer:
-      "Yes. Personal training can provide structure, accountability, and guidance for fat loss goals.",
+      "Yes. Coaching provides structure, accountability, and guidance to support fat‑loss and body‑composition goals.",
     link: { label: "View personal training", url: "/services#personal" },
   },
   {
     category: "Personal Training",
     question: "Can personal training help me build muscle?",
     answer:
-      "Yes. Strength and muscle-building programs can be customized based on your goals and current fitness level.",
+      "Yes. Strength and muscle‑building programs are tailored to your goals and current ability.",
     link: { label: "View personal training", url: "/services#personal" },
   },
   {
     category: "Personal Training",
-    question: "Can trainers help with sports performance?",
+    question: "Do you offer training for sports performance?",
     answer:
-      "Training can be adjusted for athletic goals, strength, conditioning, and performance needs.",
+      "Yes. Programs can be adapted for athletic performance, strength, and conditioning needs.",
     link: { label: "View personal training", url: "/services#personal" },
   },
   {
     category: "Personal Training",
-    question: "Can I train if I have an injury?",
+    question: "Can I train if I have an injury or limitation?",
     answer:
-      "Always check with a healthcare professional first. Depending on your situation, trainers may be able to modify exercises and work around limitations.",
+      "Consult your healthcare provider first. Depending on your situation, your coach may be able to modify movements and work around limitations safely.",
   },
-
   {
     category: "Group Classes",
-    question: "Do you offer group classes?",
+    question: "Do you offer small‑group training classes?",
     answer:
-      "Yes. Group training classes focus on strength, structure, accountability, and community. They are designed for people who want guided workouts without having to plan everything themselves.",
+      "Yes. Our small‑group classes focus on strength, structure, accountability, and community.",
     link: { label: "View memberships", url: "/services#memberships" },
   },
   {
     category: "Group Classes",
     question: "What types of classes do you offer?",
     answer:
-      "The Fusion House offers structured strength and conditioning classes focused on accountability and long-term progress.",
+      "We offer structured strength and conditioning classes designed for long‑term progress and consistency.",
     link: { label: "View class options", url: "/services#memberships" },
   },
   {
     category: "Group Classes",
-    question: "Do I need experience before joining a class?",
+    question: "Do I need prior experience to join a class?",
     answer:
-      "No. Classes can accommodate different fitness levels, and trainers can help guide you through the workout.",
+      "No. Classes accommodate different fitness levels, and coaches will guide you through the session.",
   },
   {
     category: "Group Classes",
-    question: "Can I switch classes?",
+    question: "Can I switch class reservations?",
     answer:
-      "If availability allows, you may be able to change reservations through Mindbody.",
+      "If space allows, you may be able to adjust your reservation through Mindbody.",
     link: { label: "Manage classes", url: mindbodyLink, external: true },
   },
-
   {
     category: "Pricing",
-    question: "How much is an individual personal training session?",
+    question: "What is the price of an individual personal training session?",
     answer:
-      "The current listed price for an individual one-hour personal training session is $150. Prices may change and may vary depending on trainer, package, and availability.",
-    link: { label: "View pricing", url: "/services#pricing" },
+      "The current rate for a single 60‑minute private session is $150. Rates may vary based on package selection and availability.",
+    link: { label: "View personal training options", url: "/services#pricing" },
   },
   {
     category: "Pricing",
     question: "What personal training packages are available?",
     answer:
-      "Current listed options include an individual session, 12-session package, 8-session package, and 4-session package.",
-    link: { label: "View pricing", url: "/services#pricing" },
+      "Options include 4‑session, 8‑session, and 12‑session packages, as well as individual sessions.",
+    link: { label: "View personal training options", url: "/services#pricing" },
   },
   {
     category: "Pricing",
     question: "Do you offer monthly memberships?",
     answer:
-      "Yes. Membership options include unlimited sessions, three times a week, VIP membership, and a 10-class package.",
-    link: {
-      label: "View membership options",
-      url: "/services#membership-options",
-    },
+      "Yes. Memberships include 2‑day, 3‑day, unlimited training, and class‑pack options.",
+    link: { label: "Explore membership options", url: "/services#membership-options" },
   },
   {
     category: "Pricing",
     question: "Can I pay monthly?",
-    answer:
-      "Monthly membership options are available. Exact terms depend on the membership you choose.",
-    link: {
-      label: "View membership options",
-      url: "/services#membership-options",
-    },
+    answer: "Yes. Monthly billing is available for membership options.",
+    link: { label: "Explore membership options", url: "/services#membership-options" },
   },
   {
     category: "Pricing",
-    question: "Are personal training and memberships the same thing?",
+    question: "Are personal training and memberships separate?",
     answer:
-      "Not always. Personal training and group memberships may be separate unless a specific package includes both.",
+      "Yes. Personal training and group memberships are separate unless a specific offering includes both.",
     link: { label: "Compare services", url: "/services#personal" },
   },
-
   {
     category: "Memberships",
     question: "Can I cancel my membership?",
     answer:
-      "Membership policies can vary depending on the plan selected. Contact The Fusion House directly for the most current cancellation information.",
+      "Policies vary by membership type. Contact our team for current cancellation details.",
     link: { label: "Contact The Fusion House", url: "/contact" },
   },
   {
     category: "Memberships",
-    question: "Can I upgrade my membership later?",
+    question: "Can I upgrade my membership?",
     answer:
-      "Yes. Members can discuss upgrading to a different membership or training package with the staff.",
-    link: {
-      label: "View membership options",
-      url: "/services#membership-options",
-    },
+      "Yes. You can upgrade your membership or training package at any time.",
+    link: { label: "Explore membership options", url: "/services#membership-options" },
   },
   {
     category: "Memberships",
-    question: "Are memberships automatically renewed?",
+    question: "Do memberships renew automatically?",
     answer:
-      "Some memberships may renew automatically. Review membership terms before enrolling.",
-    link: {
-      label: "View membership options",
-      url: "/services#membership-options",
-    },
+      "Some memberships may renew automatically. Review the terms before enrolling.",
+    link: { label: "Explore membership options", url: "/services#membership-options" },
   },
-
   {
     category: "Facility",
     question: "Where is The Fusion House located?",
-    answer:
-      "The Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
+    answer: "126 South Lexington Avenue, White Plains, NY 10606.",
     link: { label: "View contact page", url: "/contact" },
   },
   {
     category: "Facility",
-    question: "How large is the gym?",
+    question: "How large is the facility?",
     answer:
-      "The current website states that the facility has about 4,000 square feet of dynamic, well-stocked fitness space.",
+      "The Fusion House offers approximately 4,000 square feet of open, well‑equipped training space.",
     link: { label: "View space rental", url: "/services#rental" },
   },
   {
     category: "Facility",
-    question: "What equipment do you have?",
+    question: "What equipment is available?",
     answer:
-      "The Fusion House offers equipment for strength training, conditioning, and functional fitness.",
+      "We offer a full range of strength, conditioning, and functional training equipment.",
     link: { label: "View services", url: "/services#personal" },
   },
-
   {
     category: "Hours & Contact",
-    question: "What are the gym hours?",
+    question: "What are your hours?",
     answer:
-      "Hours may vary by day and schedule. Visitors should check the contact page or call the gym to confirm current hours.",
+      "Hours vary by day. Visit the contact page or call the gym for the most current schedule.",
     link: { label: "View contact info", url: "/contact" },
   },
   {
     category: "Hours & Contact",
-    question: "How can I contact the gym?",
+    question: "How can I contact the team?",
     answer:
-      "You can call the gym, send a message through the contact form, use WhatsApp, or reach out through social media.",
+      "You can call, send a message through the website, use WhatsApp, or reach out through social platforms.",
     link: { label: "Contact The Fusion House", url: "/contact" },
   },
-
   {
     category: "Nutrition",
-    question: "Do you offer nutrition coaching?",
-    answer:
-      "Some programs include nutrition guidance, accountability, and support.",
-    link: { label: "View memberships", url: "/services#membership-options" },
+    question: "Do you offer nutrition guidance?",
+    answer: "Some programs include nutrition support, accountability, and guidance.",
+    link: { label: "Explore memberships", url: "/services#membership-options" },
   },
   {
     category: "Nutrition",
     question: "Do you create meal plans?",
     answer:
-      "Certain programs may include meal planning guidance or nutrition support. Contact the gym for current options.",
+      "Certain programs may include meal‑planning guidance. Contact the team for current options.",
     link: { label: "Contact The Fusion House", url: "/contact" },
   },
-
   {
     category: "Space Rental",
-    question: "Do you rent out the space?",
+    question: "Do you offer professional space rental?",
     answer:
-      "Yes. The Fusion House offers space rental for trainers, physical therapists, massage therapists, wellness professionals, and events.",
+      "Yes. The Fusion House rents space to certified trainers, therapists, wellness professionals, and event organizers.",
     link: { label: "View space rental", url: "/services#rental" },
   },
   {
     category: "Space Rental",
     question: "Who can rent the space?",
     answer:
-      "Trainers, therapists, wellness professionals, and event organizers may inquire about rental opportunities.",
+      "Credentialed professionals such as trainers, physical therapists, massage therapists, and wellness practitioners may inquire about rental opportunities.",
     link: { label: "View space rental", url: "/services#rental" },
   },
   {
     category: "Space Rental",
     question: "Can I host a workshop or event?",
     answer:
-      "Workshop or event availability depends on scheduling and space needs. Contact The Fusion House for details.",
+      "Yes. Workshop and event availability depends on scheduling and space needs.",
+    link: { label: "Contact The Fusion House", url: "/contact" },
+  },
+  {
+    category: "Additional Questions",
+    question: "Is parking available?",
+    answer:
+      "Street and nearby parking options are available. Contact the team for guidance if needed.",
+  },
+  {
+    category: "Additional Questions",
+    question: "Do you offer open gym access?",
+    answer:
+      "Open gym access may be available depending on membership type and class schedule.",
+  },
+  {
+    category: "Additional Questions",
+    question: "Do you offer training for older adults?",
+    answer:
+      "Yes. We specialize in coaching adults in their 40s, 50s, 60s, and beyond with joint‑friendly, personalized programming.",
+    link: { label: "View personal training", url: "/services#personal" },
+  },
+  {
+    category: "Additional Questions",
+    question: "Do you offer corporate or group partnerships?",
+    answer:
+      "Yes. The Fusion House partners with local organizations for wellness programs and training initiatives.",
     link: { label: "Contact The Fusion House", url: "/contact" },
   },
 ];
@@ -350,14 +352,13 @@ function FAQ() {
           <p className="faq-eyebrow">FAQ</p>
           <h1>Quick answers before you reach out.</h1>
           <p>
-            Search common questions about training, memberships, pricing,
-            booking, contact information, nutrition, results, and space rental.
+            Search common questions about training, memberships, pricing, booking, nutrition, results, and space rental.
           </p>
 
           <div className="faq-search">
             <input
               type="text"
-              placeholder="Search questions, pricing, booking, classes..."
+              placeholder="Search training, memberships, pricing, booking..."
               value={search}
               onChange={(event) => setSearch(event.target.value)}
             />

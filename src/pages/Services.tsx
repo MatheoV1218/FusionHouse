@@ -29,12 +29,14 @@ function Services() {
     >
       <section className="services-hero">
         <div className="services-hero-inner">
-          <p className="services-eyebrow">Services & Rates</p>
-          <h1>Training options built around your goals.</h1>
+          <p className="services-eyebrow">
+            Training Experiences & Membership Options
+          </p>
+          <h1>Coaching and training pathways designed for your goals.</h1>
           <p>
-            Whether you want one-on-one coaching, group classes, or space
-            rental, The Fusion House keeps everything simple, structured, and
-            easy to book.
+            Whether you prefer private coaching, small‑group training, or
+            professional space rental, The Fusion House offers clear, structured
+            options that make it easy to begin and stay consistent.
           </p>
 
           <div className="services-hero-actions">
@@ -43,12 +45,12 @@ function Services() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                track("Book Now Services", {
+                track("Reserve Your Session Services", {
                   location: "Services Hero",
                 })
               }
             >
-              Book Now
+              Reserve Your Session
             </a>
 
             <a
@@ -60,7 +62,7 @@ function Services() {
                 })
               }
             >
-              View Options
+              Explore Memberships
             </a>
           </div>
         </div>
@@ -75,20 +77,19 @@ function Services() {
             <h2>Personal Training</h2>
 
             <p>
-              One-on-one coaching for people who want a customized plan,
-              accountability, and clear guidance.
+              Private one‑on‑one coaching for adults who want clarity, accountability, and a program designed specifically for their body, goals, and lifestyle.
             </p>
 
             <div className="service-points">
-              <p>Complimentary assessment</p>
-              <p>Individualized training program</p>
-              <p>Individualized nutrition</p>
-              <p>Accountability and progress coaching</p>
+              <p>Complimentary movement + strategy assessment</p>
+              <p>Personalized training blueprint</p>
+              <p>Nutrition guidance tailored to your needs</p>
+              <p>Ongoing accountability and progress reviews</p>
             </div>
           </div>
 
           <details className="service-dropdown" id="pricing">
-            <summary>View personal training pricing</summary>
+            <summary>View Personal Training Options</summary>
 
             <div className="dropdown-grid">
               <div className="option-card featured">
@@ -96,20 +97,18 @@ function Services() {
                 <div>
                   <h3>8 Sessions</h3>
                   <p>
-                    A strong balance of consistency, coaching, and schedule
-                    flexibility.
+                    A balanced structure that supports consistency, accountability, and steady progress.
                   </p>
                 </div>
                 <strong>$640</strong>
               </div>
 
               <div className="option-card economy">
-                <div className="tag">Economic Option</div>
+                
                 <div>
-                  <h3>4 Sessions</h3>
+                  <h3>4‑Session Package</h3>
                   <p>
-                    A simple starter package for focused training without a
-                    larger commitment.
+                    A focused entry option for clients beginning their training journey.
                   </p>
                 </div>
                 <strong>$400</strong>
@@ -117,8 +116,8 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>12 Sessions</h3>
-                  <p>Three times a week training package.</p>
+                  <h3>12‑Session Package</h3>
+                  <p>Ideal for clients training three times per week and committed to accelerated progress.</p>
                 </div>
                 <strong>$720</strong>
               </div>
@@ -126,7 +125,7 @@ function Services() {
               <div className="option-card">
                 <div>
                   <h3>Individual Session</h3>
-                  <p>One-hour personal training session.</p>
+                  <p>A single 60‑minute private coaching session.</p>
                 </div>
                 <strong>$150</strong>
               </div>
@@ -148,28 +147,26 @@ function Services() {
             <h2>Monthly Memberships</h2>
 
             <p>
-              Group classes and membership options for people who want
-              structure, community, and consistency.
+              Structured small‑group training and community‑driven classes designed for adults who want consistency, accountability, and a supportive environment.
             </p>
 
             <div className="service-points">
-              <p>Two times a week options</p>
+              <p>2‑day‑per‑week memberships</p>
               <p>Unlimited training available</p>
-              <p>VIP membership perks</p>
+              <p>Member‑only benefits and priority access</p>
             </div>
           </div>
 
           <details className="service-dropdown" id="membership-options">
-            <summary>View membership options</summary>
+            <summary>Explore Membership Options</summary>
 
             <div className="dropdown-grid">
               <div className="option-card vip">
                 <div className="tag">Most Popular</div>
                 <div>
-                  <h3>VIP Membership</h3>
+                  <h3>Premier Membership</h3>
                   <p>
-                    The premium option with classes, coaching perks, nutrition
-                    support, and extra accountability. Weekly weigh ins and complimentary personal training.
+                    Our most comprehensive membership, including unlimited classes, enhanced coaching support, nutrition guidance, weekly accountability check‑ins, and complimentary personal training sessions.
                   </p>
                 </div>
                 <strong>$225</strong>
@@ -177,10 +174,9 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>Two Times a Week</h3>
+                  <h3>2‑Day Membership</h3>
                   <p>
-                    A steady plan for building consistency with eight classes
-                    per month.
+                    Eight classes per month — a consistent, sustainable training rhythm.
                   </p>
                 </div>
                 <strong>$175</strong>
@@ -188,10 +184,9 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>Three Times a Week</h3>
+                  <h3>3‑Day Membership</h3>
                   <p>
-                    A stronger weekly rhythm for members who want more
-                    structure.
+                    Twelve classes per month for members who want additional structure and momentum.
                   </p>
                 </div>
                 <strong>$196</strong>
@@ -199,10 +194,9 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>10 Class Package</h3>
+                  <h3>10‑Class Pack</h3>
                   <p>
-                    Flexible class access with three months to use your
-                    sessions.
+                    Flexible access to any group class with three months to use your sessions.
                   </p>
                 </div>
                 <strong>$200</strong>
@@ -223,22 +217,21 @@ function Services() {
             <span>03</span>
             <h2>Space Rental</h2>
             <p>
-              Available for trainers, physical therapists, massage therapists,
-              and wellness professionals.
+              A 2,000 sq ft private training facility available for certified trainers, physical therapists, massage therapists, and wellness professionals.
             </p>
 
             <div className="service-points">
-              <p>2,000 sq ft fitness space</p>
-              <p>Great for professionals and events</p>
-              <p>Contact the team for details</p>
+              <p>Fully equipped, open‑format training space</p>
+              <p>Ideal for private sessions, workshops, and small events</p>
+              <p>Flexible rental options for credentialed professionals</p>
             </div>
           </div>
         </article>
       </section>
 
       <section className="services-booking" id="booking">
-        <h2>Ready to book?</h2>
-        <p>View available classes and appointments through Mindbody.</p>
+        <h2>Ready to Begin?</h2>
+        <p>Browse available classes and private coaching appointments through our Mindbody schedule.</p>
 
         <a
           href={mindbodyLink}

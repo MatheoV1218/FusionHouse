@@ -16,10 +16,9 @@ function Contact() {
       <section className="contact-hero">
         <div className="contact-hero-inner">
           <p className="contact-eyebrow">Contact Us</p>
-          <h1>Ready to visit The Fusion House?</h1>
+          <h1>Ready to connect with The Fusion House?</h1>
           <p>
-            Have a question, want to book, or need help choosing the right
-            training option? Reach out and the team will help you get started.
+            Whether you’re exploring training options, have a question, or want guidance on where to begin, our team is here to support you with clarity and professionalism.
           </p>
         </div>
       </section>
@@ -52,7 +51,7 @@ function Contact() {
         >
           <FaWhatsapp />
           <h3>WhatsApp</h3>
-          <p>Message the team directly.</p>
+          <p>Message our team directly for quick support.</p>
         </a>
 
         <a
@@ -91,7 +90,7 @@ function Contact() {
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
 
-          <h2>Send a message</h2>
+          <h2>Send a Message</h2>
 
           <input type="text" name="name" placeholder="Name" required />
           <input type="email" name="email" placeholder="Email" required />
@@ -100,13 +99,12 @@ function Contact() {
           <button type="submit">Send Message</button>
 
           <p className="form-note">
-            Your message will be sent by email. The team can reply directly to
-            the email address you provide.
+            Your message will be sent to our team, and you’ll receive a direct reply at the email address you provide.
           </p>
         </form>
 
         <div className="contact-info">
-          <h2>Gym Info</h2>
+          <h2>Gym Information</h2>
 
           <div>
             <h3>Address</h3>

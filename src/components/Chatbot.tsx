@@ -25,7 +25,7 @@ const knowledgeBase = [
   {
     keywords: ["book", "schedule", "appointment", "class", "reserve", "sign up", "trial", "free trial"],
     answer:
-      "You can book classes, appointments, and trial sessions through Mindbody. It opens in a new tab so you do not lose your place on this website.",
+      "You can reserve classes, private coaching appointments, and trial sessions through Mindbody. It opens in a new tab for convenience.",
     linkText: "Open Booking Schedule",
     linkUrl: mindbodyLink,
     external: true,
@@ -33,35 +33,35 @@ const knowledgeBase = [
   {
     keywords: ["price", "pricing", "cost", "rates", "session", "package", "how much"],
     answer:
-      "Personal training pricing is listed on the Services page. You can view the current options and packages there.",
-    linkText: "View Personal Training Pricing",
+      "Personal training options are listed on the Services page, including individual sessions and training packages.",
+    linkText: "View Personal Training Options",
     linkUrl: "/services#pricing",
   },
   {
     keywords: ["membership", "memberships", "monthly", "vip", "unlimited", "10 class"],
     answer:
-      "The Fusion House offers monthly membership options, including two times a week, three times a week, VIP membership, and a 10-class package.",
-    linkText: "View Membership Options",
+      "The Fusion House offers membership options including 2‑day, 3‑day, Premier Membership, and 10‑class pack options.",
+    linkText: "Explore Membership Options",
     linkUrl: "/services#membership-options",
   },
   {
     keywords: ["personal", "personal training", "trainer", "one on one", "1 on 1", "private"],
     answer:
-      "Yes, The Fusion House offers personal training with customized coaching, accountability, and guidance based on your goals.",
+      "Yes. The Fusion House offers private coaching tailored to your body, goals, lifestyle, and experience level.",
     linkText: "View Personal Training",
     linkUrl: "/services#personal",
   },
   {
     keywords: ["group", "group classes", "classes", "strength training", "conditioning"],
     answer:
-      "The Fusion House offers group training for adults who want structure, coaching, and accountability in a supportive setting.",
-    linkText: "View Memberships",
+      "The Fusion House offers small‑group training for adults who want structure, coaching, accountability, and a supportive environment.",
+    linkText: "Explore Memberships",
     linkUrl: "/services#memberships",
   },
   {
     keywords: ["rent", "rental", "space", "therapist", "event", "massage", "physical therapist"],
     answer:
-      "Yes, The Fusion House offers space rental for trainers, physical therapists, massage therapists, wellness professionals, and events.",
+      "Yes. The Fusion House offers professional space rental for certified trainers, physical therapists, massage therapists, wellness professionals, workshops, and small events.",
     linkText: "View Space Rental",
     linkUrl: "/services#rental",
   },
@@ -90,21 +90,21 @@ const knowledgeBase = [
   {
     keywords: ["hours", "open", "closed", "time"],
     answer:
-      "Hours can vary by day and schedule. For the most accurate hours, check the contact page or call the gym directly.",
+      "Hours vary by day and schedule. For the most accurate information, check the contact page or call the gym directly.",
     linkText: "View Contact Info",
     linkUrl: "/contact",
   },
   {
     keywords: ["beginner", "new", "out of shape", "never worked out", "start", "older", "adult"],
     answer:
-      "Beginners and adults getting back into fitness are welcome. Fusion House is built around coaching, confidence, and sustainable progress.",
+      "Beginners and adults returning to fitness are welcome. The Fusion House is built around professional coaching, confidence, joint‑friendly training, and sustainable progress.",
     linkText: "View Services",
     linkUrl: "/services#personal",
   },
   {
     keywords: ["owner", "anthony", "about", "story"],
     answer:
-      "The Fusion House is owned by Anthony Moreno. You can learn more about his story and the gym’s journey on the About page.",
+      "The Fusion House was founded by Anthony Moreno. You can learn more about his story, coaching philosophy, and the gym’s journey on the About page.",
     linkText: "Read About The Fusion House",
     linkUrl: "/about",
   },
@@ -112,14 +112,14 @@ const knowledgeBase = [
 
 const quickOptions = [
   "How do I book?",
-  "What are your prices?",
+  "What are your training options?",
   "Membership options",
   "Personal training",
-  "Group classes",
-  "Free trial",
+  "Small-group training",
+  "Complimentary trial",
   "Hours",
   "Location",
-  "Contact the owner",
+  "Contact the team",
   "Space rental",
   "I am a beginner",
 ];
@@ -135,7 +135,7 @@ function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot",
-      text: "Hi! I can help with pricing, memberships, booking, classes, hours, location, personal training, and more.",
+      text: "Hi! I can help with training options, memberships, pricing, booking, hours, location, personal coaching, and more.",
     },
   ]);
 
@@ -204,7 +204,7 @@ function Chatbot() {
       : {
           sender: "bot",
           text:
-            "I do not want to guess on that. You can send this question directly to TheFusion House and the owner can reply by email.",
+            "I do not want to guess on that. You can send this question directly to The Fusion House team and they can reply by email.",
         };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
@@ -231,7 +231,7 @@ function Chatbot() {
           <div className="chatbot-header">
             <div>
               <h3>The Fusion House Assistant</h3>
-              <p>Ask a question or contact the owner.</p>
+              <p>Ask a question or connect with our team.</p>
             </div>
 
             <button onClick={() => setOpen(false)} aria-label="Close chatbot">
@@ -251,7 +251,7 @@ function Chatbot() {
               className={mode === "contact" ? "active" : ""}
               onClick={() => setMode("contact")}
             >
-              Contact Owner
+              Contact Team
             </button>
           </div>
 
@@ -349,8 +349,7 @@ function Chatbot() {
               <button type="submit">Send Message</button>
 
               <p>
-                This sends the message to The Fusion House by email. The owner can
-                reply directly like a normal email.
+                This sends your message to The Fusion House by email. The team can reply directly to the address you provide.
               </p>
             </form>
           )}

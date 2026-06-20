@@ -18,7 +18,7 @@ function Footer() {
             <span>The Fusion</span> House
           </h2>
           <p>
-            Personal training, group classes, and coaching in White Plains, NY.
+            Personal training, small‑group coaching, and structured programs in White Plains, NY.
           </p>
 
           <div className="footer-socials">
@@ -70,20 +70,20 @@ function Footer() {
         </div>
 
         <div className="footer-card">
-          <h3>Ready to train?</h3>
-          <p>Book a free trial class and take the first step.</p>
+          <h3>Experience The Fusion House.</h3>
+          <p>Book a complimentary trial class and see how personalized coaching feels.</p>
           <a
             href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
             target="_blank"
             rel="noreferrer"
             className="footer-btn"
             onClick={() =>
-              track("Book Now", {
+              track("Reserve Your Trial Session", {
                 location: "Footer CTA",
               })
             }
           >
-            Book Now
+            Reserve Your Trial Session
           </a>
         </div>
 
