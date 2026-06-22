@@ -3,6 +3,7 @@ import "./Services.css";
 // import gympic8 from "../assets/FHgympic8.webp";
 import gympic8 from "../assets/FHgympic8.webp";
 import gympic9 from "../assets/FHgympic9.webp";
+import personalPic from "../assets/fusionimg4.jpg";
 import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
@@ -70,14 +71,22 @@ function Services() {
 
       <section className="services-grid-section">
         <article className="service-card-large" id="personal">
-          <div className="service-image-placeholder">Image</div>
+          <div className="service-image-placeholder">
+            <img
+              src={personalPic}
+              alt="Personal training at The Fusion House Fitness"
+              className="personal-service-image"
+            />
+          </div>
 
           <div className="service-content">
             <span>01</span>
             <h2>Personal Training</h2>
 
             <p>
-              Private one‑on‑one coaching for adults who want clarity, accountability, and a program designed specifically for their body, goals, and lifestyle.
+              Private one‑on‑one coaching for adults who want clarity,
+              accountability, and a program designed specifically for their
+              body, goals, and lifestyle.
             </p>
 
             <div className="service-points">
@@ -85,6 +94,7 @@ function Services() {
               <p>Personalized training blueprint</p>
               <p>Nutrition guidance tailored to your needs</p>
               <p>Ongoing accountability and progress reviews</p>
+              <p>Individualized exercise plan</p>
             </div>
           </div>
 
@@ -97,18 +107,19 @@ function Services() {
                 <div>
                   <h3>8 Sessions</h3>
                   <p>
-                    A balanced structure that supports consistency, accountability, and steady progress.
+                    A balanced structure that supports consistency,
+                    accountability, and steady progress.
                   </p>
                 </div>
                 <strong>$640</strong>
               </div>
 
               <div className="option-card economy">
-                
                 <div>
-                  <h3>4‑Session Package</h3>
+                  <h3>4 Sessions</h3>
                   <p>
-                    A focused entry option for clients beginning their training journey.
+                    A focused entry option for clients beginning their training
+                    journey.
                   </p>
                 </div>
                 <strong>$400</strong>
@@ -116,8 +127,11 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>12‑Session Package</h3>
-                  <p>Ideal for clients training three times per week and committed to accelerated progress.</p>
+                  <h3>12 Sessions</h3>
+                  <p>
+                    Ideal for clients training three times per week and
+                    committed to accelerated progress.
+                  </p>
                 </div>
                 <strong>$720</strong>
               </div>
@@ -147,13 +161,17 @@ function Services() {
             <h2>Monthly Memberships</h2>
 
             <p>
-              Structured small‑group training and community‑driven classes designed for adults who want consistency, accountability, and a supportive environment.
+              Structured small‑group training and community‑driven classes
+              designed for adults who want consistency, accountability, and a
+              supportive environment.
             </p>
 
             <div className="service-points">
-              <p>2‑day‑per‑week memberships</p>
+              <p>8 sessions</p>
               <p>Unlimited training available</p>
               <p>Member‑only benefits and priority access</p>
+              <p>All memberships include open gym access</p>
+              <p>Monthly recurring payments</p>
             </div>
           </div>
 
@@ -166,7 +184,10 @@ function Services() {
                 <div>
                   <h3>Premier Membership</h3>
                   <p>
-                    Our most comprehensive membership, including unlimited classes, enhanced coaching support, nutrition guidance, weekly accountability check‑ins, and complimentary personal training sessions.
+                    Our most comprehensive membership, including unlimited
+                    classes, enhanced coaching support, nutrition guidance,
+                    weekly accountability check‑ins, and complimentary personal
+                    training sessions.
                   </p>
                 </div>
                 <strong>$225</strong>
@@ -174,9 +195,10 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>2‑Day Membership</h3>
+                  <h3>8 Classes</h3>
                   <p>
-                    Eight classes per month — a consistent, sustainable training rhythm.
+                    2 classes per week — a consistent, sustainable training
+                    rhythm.
                   </p>
                 </div>
                 <strong>$175</strong>
@@ -184,9 +206,10 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>3‑Day Membership</h3>
+                  <h3>12 Classes</h3>
                   <p>
-                    Twelve classes per month for members who want additional structure and momentum.
+                    3 classes per week - for members who want additional
+                    structure and momentum.
                   </p>
                 </div>
                 <strong>$196</strong>
@@ -194,9 +217,10 @@ function Services() {
 
               <div className="option-card">
                 <div>
-                  <h3>10‑Class Pack</h3>
+                  <h3>10 Class Pack</h3>
                   <p>
-                    Flexible access to any group class with three months to use your sessions.
+                    Flexible access to any group class with three months to use
+                    your sessions.
                   </p>
                 </div>
                 <strong>$200</strong>
@@ -217,7 +241,9 @@ function Services() {
             <span>03</span>
             <h2>Space Rental</h2>
             <p>
-              A 2,000 sq ft private training facility available for certified trainers, physical therapists, massage therapists, and wellness professionals.
+              A 2,000 sq ft private training facility available for certified
+              trainers, physical therapists, massage therapists, and wellness
+              professionals.
             </p>
 
             <div className="service-points">
@@ -231,7 +257,10 @@ function Services() {
 
       <section className="services-booking" id="booking">
         <h2>Ready to Begin?</h2>
-        <p>Browse available classes and private coaching appointments through our Mindbody schedule.</p>
+        <p>
+          Browse available classes and private coaching appointments through our
+          Mindbody schedule.
+        </p>
 
         <a
           href={mindbodyLink}

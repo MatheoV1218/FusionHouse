@@ -1,0 +1,246 @@
+.guide-page {
+  background-color: #fff3ee;
+  background-size: 720px;
+  color: #111;
+}
+
+.guide-hero {
+  padding: 6rem 6%;
+  background:
+    radial-gradient(circle at 85% 25%, rgba(255, 90, 61, 0.4), transparent 28%),
+    linear-gradient(135deg, #130908 0%, #34120f 52%, #ff3131 100%);
+  color: #fff;
+}
+
+.guide-hero-inner {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.guide-eyebrow,
+.guide-intro span,
+.guide-step-copy span {
+  color: #ff6a3d;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.guide-hero h1 {
+  max-width: 900px;
+  margin: 1rem 0 1.3rem;
+  font-size: clamp(3rem, 6vw, 6.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+}
+
+.guide-hero p {
+  max-width: 680px;
+  color: #eee;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.guide-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.guide-actions a,
+.guide-final a {
+  min-height: 52px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 900;
+  transition: 0.25s ease;
+}
+
+.guide-actions a:first-child,
+.guide-final a {
+  background: #ff5a3d;
+  color: #111;
+  box-shadow: 0 18px 40px rgba(255, 90, 61, 0.28);
+}
+
+.guide-actions a:last-child {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.guide-actions a:hover,
+.guide-final a:hover {
+  transform: translateY(-3px);
+}
+
+.guide-intro {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 5rem 6% 2rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: end;
+}
+
+.guide-intro h2,
+.guide-final h2 {
+  margin-top: 0.8rem;
+  font-size: clamp(2.4rem, 4.5vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.guide-intro p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.guide-steps {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 2rem 6% 6rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.guide-step {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 90, 61, 0.12), transparent 30%),
+    rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 90, 61, 0.14);
+  border-radius: 34px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+}
+
+.guide-step:nth-child(even) {
+  grid-template-columns: 1.22fr 0.78fr;
+}
+
+.guide-step:nth-child(even) .guide-step-copy {
+  order: 2;
+}
+
+.guide-step-copy {
+  padding: 2rem;
+}
+
+.guide-step-copy h2 {
+  margin: 0.75rem 0 0.9rem;
+  font-size: clamp(2rem, 3vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.guide-step-copy p {
+  color: #555;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.guide-step-image {
+  border-radius: 26px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+}
+
+.guide-step-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+  background: #f7f7f7;
+}
+
+.guide-final {
+  padding: 6rem 6%;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 90, 61, 0.28), transparent 30%),
+    #111;
+  color: #fff;
+}
+
+.guide-final p {
+  max-width: 620px;
+  margin: 1rem auto 2rem;
+  color: #ddd;
+  line-height: 1.7;
+}
+
+@media (max-width: 950px) {
+  .guide-intro,
+  .guide-step,
+  .guide-step:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-step:nth-child(even) .guide-step-copy {
+    order: initial;
+  }
+
+  .guide-step-copy {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .guide-hero {
+    padding: 4rem 5%;
+  }
+
+  .guide-hero h1 {
+    font-size: clamp(3rem, 14vw, 4.4rem);
+  }
+
+  .guide-actions {
+    flex-direction: column;
+  }
+
+  .guide-actions a,
+  .guide-final a {
+    width: 100%;
+  }
+
+  .guide-intro {
+    padding: 4rem 5% 1.5rem;
+    gap: 1rem;
+  }
+
+  .guide-steps {
+    padding: 1.5rem 5% 4rem;
+    gap: 1.2rem;
+  }
+
+  .guide-step {
+    border-radius: 26px;
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .guide-step-copy h2 {
+    font-size: 2rem;
+  }
+
+  .guide-step-image {
+    border-radius: 20px;
+  }
+
+  .guide-final {
+    padding: 4rem 5%;
+  }
+}

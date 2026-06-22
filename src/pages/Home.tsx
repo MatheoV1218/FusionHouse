@@ -119,6 +119,21 @@ function Home() {
               <h3>Speak With Our Team</h3>
               <p>Connect directly with a coach for guidance.</p>
             </a>
+
+            <Link
+              to="/guide"
+              onClick={() =>
+                track("Reservation Guide Opened Home", {
+                  location: "Action Card",
+                })
+              }
+            >
+              <span>04</span>
+              <h3>Reservation Walkthrough</h3>
+              <p>
+                Step-by-step guidance for booking your session through Mindbody.
+              </p>
+            </Link>
           </div>
         </div>
       </section>
@@ -361,7 +376,8 @@ function Home() {
       <section className="final-home-cta">
         <h2>Ready to Begin?</h2>
         <p>
-          Book a complimentary trial class and see how personalized coaching feels.
+          Book a complimentary trial class and see how personalized coaching
+          feels.
         </p>
 
         <a
