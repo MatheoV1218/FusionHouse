@@ -11,8 +11,8 @@ import "./Chatbot.css";
 
 const ownerEmail = "Infofusionhouse@gmail.com";
 
-const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
+// const mindbodyLink =
+//   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
 type Message = {
   sender: "bot" | "user";
@@ -91,12 +91,29 @@ function Chatbot() {
     return hash ? `${localizedPath}#${hash}` : localizedPath;
   }
 
-  function findAnswer(input: string) {
-    const cleanInput = input.toLowerCase();
+  function normalizeText(text: string) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[¿?¡!.,]/g, "")
+      .trim();
+  }
 
-    return knowledgeBase.find((item) =>
-      item.keywords.some((keyword) => cleanInput.includes(keyword))
-    );
+  function findAnswer(input: string) {
+    const cleanInput = normalizeText(input);
+
+    return knowledgeBase.find((item) => {
+      const keywordMatch = item.keywords.some((keyword) =>
+        cleanInput.includes(normalizeText(keyword)),
+      );
+
+      const quickOptionMatch = item.keywords.some((keyword) =>
+        normalizeText(keyword).includes(cleanInput),
+      );
+
+      return keywordMatch || quickOptionMatch;
+    });
   }
 
   function handleInternalLink(url: string) {
@@ -176,7 +193,10 @@ function Chatbot() {
               <p>{t("chatbot.headerText")}</p>
             </div>
 
-            <button onClick={() => setOpen(false)} aria-label={t("chatbot.closeLabel")}>
+            <button
+              onClick={() => setOpen(false)}
+              aria-label={t("chatbot.closeLabel")}
+            >
               <FaTimes />
             </button>
           </div>
@@ -258,7 +278,10 @@ function Chatbot() {
                   placeholder={t("chatbot.inputPlaceholder")}
                 />
 
-                <button onClick={() => handleAsk()} aria-label={t("chatbot.sendLabel")}>
+                <button
+                  onClick={() => handleAsk()}
+                  aria-label={t("chatbot.sendLabel")}
+                >
                   <FaPaperPlane />
                 </button>
               </div>
@@ -269,7 +292,11 @@ function Chatbot() {
               action={`https://formsubmit.co/${ownerEmail}`}
               method="POST"
             >
-              <input type="hidden" name="_subject" value="New Website Message" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Website Message"
+              />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
 

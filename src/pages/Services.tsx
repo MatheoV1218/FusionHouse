@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "./Services.css";
 import gympic8 from "../assets/FHgympic8.webp";
-import gympic9 from "../assets/FHgympic9.webp";
+// import gympic9 from "../assets/FHgympic9.webp";
 import membership from "../assets/FHmembership.jpg";
 import personalPic from "../assets/fusionimg4.jpg";
 import grainyBackground from "../assets/grainyBackground.png";

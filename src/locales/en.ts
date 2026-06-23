@@ -756,182 +756,242 @@ const en = {
   },
 
   chatbot: {
-    openLabel: "Open The Fusion House assistant",
-    closeLabel: "Close chatbot",
-    headerTitle: "The Fusion House Assistant",
-    headerText: "Ask a question or connect with our team.",
-    askTab: "Ask",
-    contactTab: "Contact Team",
-    introMessage:
-      "Hi! I can help with training options, memberships, pricing, booking, hours, location, personal coaching, and more.",
-    quickQuestions: "Quick questions",
-    inputPlaceholder: "Ask about pricing, classes, booking...",
-    sendLabel: "Send message",
-    fallback:
-      "I do not want to guess on that. You can send this question directly to The Fusion House team and they can reply by email.",
-    quickOptions: [
-      "How do I book?",
-      "What are your training options?",
-      "Membership options",
-      "Personal training",
-      "Small-group training",
-      "Complimentary trial",
-      "Hours",
-      "Location",
-      "Contact the team",
-      "Space rental",
-      "I am a beginner",
-    ],
-    knowledgeBase: [
-      {
-        keywords: [
-          "book",
-          "schedule",
-          "appointment",
-          "class",
-          "reserve",
-          "sign up",
-          "trial",
-          "free trial",
-        ],
-        answer:
-          "You can reserve classes, private coaching appointments, and trial sessions through Mindbody. It opens in a new tab for convenience.",
-        linkText: "Open Booking Schedule",
-        linkUrl:
-          "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-        external: true,
-      },
-      {
-        keywords: [
-          "price",
-          "pricing",
-          "cost",
-          "rates",
-          "session",
-          "package",
-          "how much",
-        ],
-        answer:
-          "Personal training options are listed on the Services page, including individual sessions and training packages.",
-        linkText: "View Personal Training Options",
-        linkUrl: "/services#pricing",
-      },
-      {
-        keywords: [
-          "membership",
-          "memberships",
-          "monthly",
-          "vip",
-          "unlimited",
-          "10 class",
-        ],
-        answer:
-          "The Fusion House offers membership options including 2-day, 3-day, Premier Membership, and 10-class pack options.",
-        linkText: "Explore Membership Options",
-        linkUrl: "/services#membership-options",
-      },
-      {
-        keywords: [
-          "personal",
-          "personal training",
-          "trainer",
-          "one on one",
-          "1 on 1",
-          "private",
-        ],
-        answer:
-          "Yes. The Fusion House offers private coaching tailored to your body, goals, lifestyle, and experience level.",
-        linkText: "View Personal Training",
-        linkUrl: "/services#personal",
-      },
-      {
-        keywords: [
-          "group",
-          "group classes",
-          "classes",
-          "strength training",
-          "conditioning",
-        ],
-        answer:
-          "The Fusion House offers small-group training for adults who want structure, coaching, accountability, and a supportive environment.",
-        linkText: "Explore Memberships",
-        linkUrl: "/services#memberships",
-      },
-      {
-        keywords: [
-          "rent",
-          "rental",
-          "space",
-          "therapist",
-          "event",
-          "massage",
-          "physical therapist",
-        ],
-        answer:
-          "Yes. The Fusion House offers professional space rental for certified trainers, physical therapists, massage therapists, wellness professionals, workshops, and small events.",
-        linkText: "View Space Rental",
-        linkUrl: "/services#rental",
-      },
-      {
-        keywords: ["location", "address", "where", "directions", "map"],
-        answer:
-          "The Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
-        linkText: "View Contact Page",
-        linkUrl: "/contact",
-      },
-      {
-        keywords: ["phone", "call", "contact", "number"],
-        answer: "You can call The Fusion House at 914-552-9619.",
-        linkText: "Call Now",
-        linkUrl: "tel:9145529619",
-        external: true,
-      },
-      {
-        keywords: ["whatsapp", "message", "text"],
-        answer: "You can message The Fusion House directly through WhatsApp.",
-        linkText: "Open WhatsApp",
-        linkUrl:
-          "https://api.whatsapp.com/send/?phone=19145529619&text&type=phone_number&app_absent=0",
-        external: true,
-      },
-      {
-        keywords: ["hours", "open", "closed", "time"],
-        answer:
-          "Hours vary by day and schedule. For the most accurate information, check the contact page or call the gym directly.",
-        linkText: "View Contact Info",
-        linkUrl: "/contact",
-      },
-      {
-        keywords: [
-          "beginner",
-          "new",
-          "out of shape",
-          "never worked out",
-          "start",
-          "older",
-          "adult",
-        ],
-        answer:
-          "Beginners and adults returning to fitness are welcome. The Fusion House is built around professional coaching, confidence, joint-friendly training, and sustainable progress.",
-        linkText: "View Services",
-        linkUrl: "/services#personal",
-      },
-      {
-        keywords: ["owner", "anthony", "about", "story"],
-        answer:
-          "The Fusion House was founded by Anthony Moreno. You can learn more about his story, coaching philosophy, and the gym’s journey on the About page.",
-        linkText: "Read About The Fusion House",
-        linkUrl: "/about",
-      },
-    ],
-    form: {
-      name: "Name",
-      email: "Email",
-      message: "Message",
-      button: "Send Message",
-      note: "This sends your message to The Fusion House by email. The team can reply directly to the address you provide.",
+  openLabel: "Open The Fusion House assistant",
+  closeLabel: "Close chatbot",
+  headerTitle: "The Fusion House Assistant",
+  headerText: "Ask a question or connect with our team.",
+  askTab: "Ask",
+  contactTab: "Contact Team",
+  introMessage:
+    "Hi! I can help with training options, memberships, pricing, booking, hours, location, personal coaching, and more.",
+  quickQuestions: "Quick questions",
+  inputPlaceholder: "Ask about pricing, classes, booking...",
+  sendLabel: "Send message",
+  fallback:
+    "I do not want to guess on that. You can send this question directly to The Fusion House team and they can reply by email.",
+  quickOptions: [
+    "How do I book?",
+    "What are your training options?",
+    "Membership options",
+    "Personal training",
+    "Small-group training",
+    "Complimentary trial",
+    "Hours",
+    "Location",
+    "Contact the team",
+    "Space rental",
+    "I am a beginner",
+  ],
+  knowledgeBase: [
+    {
+      keywords: [
+        "how do i book",
+        "how to book",
+        "book",
+        "booking",
+        "schedule",
+        "appointment",
+        "class",
+        "reserve",
+        "reservation",
+        "sign up",
+      ],
+      answer:
+        "You can reserve classes, private coaching appointments, and trial sessions through Mindbody. It opens in a new tab for convenience.",
+      linkText: "Open Booking Schedule",
+      linkUrl:
+        "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+      external: true,
     },
+    {
+      keywords: [
+        "what are your training options",
+        "training options",
+        "options",
+        "training",
+        "services",
+        "programs",
+      ],
+      answer:
+        "The Fusion House offers private coaching, small-group training, monthly memberships, and professional space rental.",
+      linkText: "View Services",
+      linkUrl: "/services",
+    },
+    {
+      keywords: [
+        "price",
+        "prices",
+        "pricing",
+        "cost",
+        "costs",
+        "rates",
+        "session",
+        "sessions",
+        "package",
+        "packages",
+        "how much",
+      ],
+      answer:
+        "Personal training options are listed on the Services page, including individual sessions and training packages.",
+      linkText: "View Personal Training Options",
+      linkUrl: "/services#pricing",
+    },
+    {
+      keywords: [
+        "membership options",
+        "membership",
+        "memberships",
+        "monthly",
+        "vip",
+        "premier",
+        "unlimited",
+        "10 class",
+      ],
+      answer:
+        "The Fusion House offers membership options including weekly classes, Premier Membership, and class pack options.",
+      linkText: "Explore Membership Options",
+      linkUrl: "/services#membership-options",
+    },
+    {
+      keywords: [
+        "personal training",
+        "personal",
+        "coach",
+        "private coaching",
+        "trainer",
+        "one on one",
+        "1 on 1",
+        "private",
+      ],
+      answer:
+        "Yes. The Fusion House offers private coaching tailored to your body, goals, lifestyle, and experience level.",
+      linkText: "View Personal Training",
+      linkUrl: "/services#personal",
+    },
+    {
+      keywords: [
+        "small-group training",
+        "small group",
+        "group",
+        "group classes",
+        "classes",
+        "strength training",
+        "conditioning",
+      ],
+      answer:
+        "The Fusion House offers small-group training for adults who want structure, coaching, accountability, and a supportive environment.",
+      linkText: "Explore Memberships",
+      linkUrl: "/services#memberships",
+    },
+    {
+      keywords: [
+        "complimentary trial",
+        "free trial",
+        "trial",
+        "trial class",
+        "first class",
+        "try",
+      ],
+      answer:
+        "Yes. New visitors can begin with a complimentary trial class to experience the space, meet the coaches, and try the training style.",
+      linkText: "Reserve Trial Class",
+      linkUrl:
+        "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+      external: true,
+    },
+    {
+      keywords: ["hours", "open", "closed", "time", "schedule hours"],
+      answer:
+        "Hours vary by day and schedule. For the most accurate information, check the contact page or call the gym directly.",
+      linkText: "View Contact Info",
+      linkUrl: "/contact",
+    },
+    {
+      keywords: ["location", "address", "where", "directions", "map"],
+      answer:
+        "The Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
+      linkText: "View Contact Page",
+      linkUrl: "/contact",
+    },
+    {
+      keywords: [
+        "contact the team",
+        "contact",
+        "help",
+        "question",
+        "speak",
+        "talk",
+        "team",
+      ],
+      answer:
+        "You can contact The Fusion House by phone, WhatsApp, or the website contact form.",
+      linkText: "Contact The Team",
+      linkUrl: "/contact",
+    },
+    {
+      keywords: ["phone", "call", "number"],
+      answer: "You can call The Fusion House at 914-552-9619.",
+      linkText: "Call Now",
+      linkUrl: "tel:9145529619",
+      external: true,
+    },
+    {
+      keywords: ["whatsapp", "message", "text"],
+      answer: "You can message The Fusion House directly through WhatsApp.",
+      linkText: "Open WhatsApp",
+      linkUrl:
+        "https://api.whatsapp.com/send/?phone=19145529619&text&type=phone_number&app_absent=0",
+      external: true,
+    },
+    {
+      keywords: [
+        "space rental",
+        "rent",
+        "rental",
+        "space",
+        "therapist",
+        "event",
+        "massage",
+        "physical therapist",
+      ],
+      answer:
+        "Yes. The Fusion House offers professional space rental for certified trainers, physical therapists, massage therapists, wellness professionals, workshops, and small events.",
+      linkText: "View Space Rental",
+      linkUrl: "/services#rental",
+    },
+    {
+      keywords: [
+        "i am a beginner",
+        "beginner",
+        "new",
+        "out of shape",
+        "never worked out",
+        "start",
+        "older",
+        "adult",
+      ],
+      answer:
+        "Beginners and adults returning to fitness are welcome. The Fusion House is built around professional coaching, confidence, joint-friendly training, and sustainable progress.",
+      linkText: "View Services",
+      linkUrl: "/services#personal",
+    },
+    {
+      keywords: ["owner", "anthony", "about", "story"],
+      answer:
+        "The Fusion House was founded by Anthony Moreno. You can learn more about his story, coaching philosophy, and the gym’s journey on the About page.",
+      linkText: "Read About The Fusion House",
+      linkUrl: "/about",
+    },
+  ],
+  form: {
+    name: "Name",
+    email: "Email",
+    message: "Message",
+    button: "Send Message",
+    note:
+      "This sends your message to The Fusion House by email. The team can reply directly to the address you provide.",
   },
+},
 
   footer: {
     brandA: "The Fusion",
