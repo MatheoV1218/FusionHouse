@@ -1,41 +1,79 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 import "./Navbar.css";
 
 import { track } from "@vercel/analytics";
 
 import FusionLogo from "../assets/FusionLogo.png";
 
+const mindbodyLink =
+  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
+
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isSpanish = i18n.language === "es";
   const closeMenu = () => setOpen(false);
+
+  const localizedPath = (path: string) => {
+    if (!isSpanish) return path;
+    return path === "/" ? "/es" : `/es${path}`;
+  };
+
+  const switchLanguage = () => {
+    const currentPath = location.pathname + location.search + location.hash;
+
+    if (isSpanish) {
+      const englishPath = currentPath.replace(/^\/es/, "") || "/";
+      i18n.changeLanguage("en");
+      navigate(englishPath);
+    } else {
+      const spanishPath = currentPath === "/" ? "/es" : `/es${currentPath}`;
+      i18n.changeLanguage("es");
+      navigate(spanishPath);
+    }
+
+    closeMenu();
+  };
 
   return (
     <header className="navbar">
-      <Link to="/" className="nav-logo" onClick={closeMenu}>
+      <Link to={localizedPath("/")} className="nav-logo" onClick={closeMenu}>
         <img src={FusionLogo} alt="Fusion House Fitness" />
       </Link>
 
       <nav className={`nav-menu ${open ? "show" : ""}`}>
-        <NavLink to="/" onClick={closeMenu}>
-          Home
-        </NavLink>
-        <NavLink to="/services" onClick={closeMenu}>
-          Services
-        </NavLink>
-        <NavLink to="/about" onClick={closeMenu}>
-          About
-        </NavLink>
-        <NavLink to="/faq" onClick={closeMenu}>
-          FAQ
-        </NavLink>
-        <NavLink to="/contact" onClick={closeMenu}>
-          Contact
+        <NavLink to={localizedPath("/")} end onClick={closeMenu}>
+          {t("nav.home")}
         </NavLink>
 
+        <NavLink to={localizedPath("/services")} onClick={closeMenu}>
+          {t("nav.services")}
+        </NavLink>
+
+        <NavLink to={localizedPath("/about")} onClick={closeMenu}>
+          {t("nav.about")}
+        </NavLink>
+
+        <NavLink to={localizedPath("/faq")} onClick={closeMenu}>
+          {t("nav.faq")}
+        </NavLink>
+
+        <NavLink to={localizedPath("/contact")} onClick={closeMenu}>
+          {t("nav.contact")}
+        </NavLink>
+
+        <button type="button" className="mobile-book" onClick={switchLanguage}>
+          {t("nav.language")}
+        </button>
+
         <a
-          href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
+          href={mindbodyLink}
           target="_blank"
           rel="noreferrer"
           className="mobile-book"
@@ -46,13 +84,17 @@ function Navbar() {
             closeMenu();
           }}
         >
-          Book Now
+          {t("nav.bookNow")}
         </a>
       </nav>
 
       <div className="nav-right">
+        <button type="button" className="nav-book" onClick={switchLanguage}>
+          {t("nav.language")}
+        </button>
+
         <a
-          href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
+          href={mindbodyLink}
           target="_blank"
           rel="noreferrer"
           className="nav-book"
@@ -62,10 +104,14 @@ function Navbar() {
             })
           }
         >
-          Book Now
+          {t("nav.bookNow")}
         </a>
 
-        <button className="hamburger" onClick={() => setOpen(!open)}>
+        <button
+          className="hamburger"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle navigation menu"
+        >
           {open ? <FiX /> : <FiMenu />}
         </button>
       </div>

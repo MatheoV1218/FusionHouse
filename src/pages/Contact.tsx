@@ -1,4 +1,5 @@
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "./Contact.css";
 
 import grainyBackground from "../assets/grainyBackground.png";
@@ -8,6 +9,12 @@ import { track } from "@vercel/analytics";
 const ownerEmail = "Infofusionhouse@gmail.com";
 
 function Contact() {
+  const { t } = useTranslation();
+
+  const hours = t("contact.info.hoursList", {
+    returnObjects: true,
+  }) as string[];
+
   return (
     <main
       className="contact-page"
@@ -15,11 +22,9 @@ function Contact() {
     >
       <section className="contact-hero">
         <div className="contact-hero-inner">
-          <p className="contact-eyebrow">Contact Us</p>
-          <h1>Ready to connect with The Fusion House?</h1>
-          <p>
-            Whether you’re exploring training options, have a question, or want guidance on where to begin, our team is here to support you with clarity and professionalism.
-          </p>
+          <p className="contact-eyebrow">{t("contact.hero.eyebrow")}</p>
+          <h1>{t("contact.hero.title")}</h1>
+          <p>{t("contact.hero.text")}</p>
         </div>
       </section>
 
@@ -34,7 +39,7 @@ function Contact() {
           }
         >
           <FaPhoneAlt />
-          <h3>Call Us</h3>
+          <h3>{t("contact.cards.call.title")}</h3>
           <p>914-552-9619</p>
         </a>
 
@@ -50,8 +55,8 @@ function Contact() {
           }
         >
           <FaWhatsapp />
-          <h3>WhatsApp</h3>
-          <p>Message our team directly for quick support.</p>
+          <h3>{t("contact.cards.whatsapp.title")}</h3>
+          <p>{t("contact.cards.whatsapp.text")}</p>
         </a>
 
         <a
@@ -66,8 +71,8 @@ function Contact() {
           }
         >
           <FaMapMarkerAlt />
-          <h3>Visit Us</h3>
-          <p>126 South Lexington Ave</p>
+          <h3>{t("contact.cards.visit.title")}</h3>
+          <p>{t("contact.cards.visit.text")}</p>
         </a>
       </section>
 
@@ -90,42 +95,50 @@ function Contact() {
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
 
-          <h2>Send a Message</h2>
+          <h2>{t("contact.form.title")}</h2>
 
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="message" placeholder="Message" required></textarea>
+          <input
+            type="text"
+            name="name"
+            placeholder={t("contact.form.name")}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder={t("contact.form.email")}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder={t("contact.form.message")}
+            required
+          ></textarea>
 
-          <button type="submit">Send Message</button>
+          <button type="submit">{t("contact.form.button")}</button>
 
-          <p className="form-note">
-            Your message will be sent to our team, and you’ll receive a direct reply at the email address you provide.
-          </p>
+          <p className="form-note">{t("contact.form.note")}</p>
         </form>
 
         <div className="contact-info">
-          <h2>Gym Information</h2>
+          <h2>{t("contact.info.title")}</h2>
 
           <div>
-            <h3>Address</h3>
+            <h3>{t("contact.info.addressTitle")}</h3>
             <p>126 South Lexington Avenue</p>
             <p>White Plains, NY 10606</p>
           </div>
 
           <div>
-            <h3>Phone</h3>
+            <h3>{t("contact.info.phoneTitle")}</h3>
             <p>914-552-9619</p>
           </div>
 
           <div>
-            <h3>Hours</h3>
-            <p>Mon: 5:30 AM – 8:00 PM</p>
-            <p>Tue: 8:00 AM – 8:00 PM</p>
-            <p>Wed: 5:30 AM – 8:00 PM</p>
-            <p>Thu: 5:00 AM – 8:00 PM</p>
-            <p>Fri: 5:30 AM – 8:00 PM</p>
-            <p>Sat: 9:00 AM – 10:00 AM</p>
-            <p>Sun: 8:00 AM – 2:00 PM</p>
+            <h3>{t("contact.info.hoursTitle")}</h3>
+            {hours.map((hour) => (
+              <p key={hour}>{hour}</p>
+            ))}
           </div>
         </div>
       </section>

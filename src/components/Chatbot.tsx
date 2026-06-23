@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaCommentDots,
   FaTimes,
@@ -21,111 +22,27 @@ type Message = {
   external?: boolean;
 };
 
-const knowledgeBase = [
-  {
-    keywords: ["book", "schedule", "appointment", "class", "reserve", "sign up", "trial", "free trial"],
-    answer:
-      "You can reserve classes, private coaching appointments, and trial sessions through Mindbody. It opens in a new tab for convenience.",
-    linkText: "Open Booking Schedule",
-    linkUrl: mindbodyLink,
-    external: true,
-  },
-  {
-    keywords: ["price", "pricing", "cost", "rates", "session", "package", "how much"],
-    answer:
-      "Personal training options are listed on the Services page, including individual sessions and training packages.",
-    linkText: "View Personal Training Options",
-    linkUrl: "/services#pricing",
-  },
-  {
-    keywords: ["membership", "memberships", "monthly", "vip", "unlimited", "10 class"],
-    answer:
-      "The Fusion House offers membership options including 2‑day, 3‑day, Premier Membership, and 10‑class pack options.",
-    linkText: "Explore Membership Options",
-    linkUrl: "/services#membership-options",
-  },
-  {
-    keywords: ["personal", "personal training", "trainer", "one on one", "1 on 1", "private"],
-    answer:
-      "Yes. The Fusion House offers private coaching tailored to your body, goals, lifestyle, and experience level.",
-    linkText: "View Personal Training",
-    linkUrl: "/services#personal",
-  },
-  {
-    keywords: ["group", "group classes", "classes", "strength training", "conditioning"],
-    answer:
-      "The Fusion House offers small‑group training for adults who want structure, coaching, accountability, and a supportive environment.",
-    linkText: "Explore Memberships",
-    linkUrl: "/services#memberships",
-  },
-  {
-    keywords: ["rent", "rental", "space", "therapist", "event", "massage", "physical therapist"],
-    answer:
-      "Yes. The Fusion House offers professional space rental for certified trainers, physical therapists, massage therapists, wellness professionals, workshops, and small events.",
-    linkText: "View Space Rental",
-    linkUrl: "/services#rental",
-  },
-  {
-    keywords: ["location", "address", "where", "directions", "map"],
-    answer:
-      "The Fusion House is located at 126 South Lexington Avenue, White Plains, NY 10606.",
-    linkText: "View Contact Page",
-    linkUrl: "/contact",
-  },
-  {
-    keywords: ["phone", "call", "contact", "number"],
-    answer: "You can call The Fusion House at 914-552-9619.",
-    linkText: "Call Now",
-    linkUrl: "tel:9145529619",
-    external: true,
-  },
-  {
-    keywords: ["whatsapp", "message", "text"],
-    answer: "You can message The Fusion House directly through WhatsApp.",
-    linkText: "Open WhatsApp",
-    linkUrl:
-      "https://api.whatsapp.com/send/?phone=19145529619&text&type=phone_number&app_absent=0",
-    external: true,
-  },
-  {
-    keywords: ["hours", "open", "closed", "time"],
-    answer:
-      "Hours vary by day and schedule. For the most accurate information, check the contact page or call the gym directly.",
-    linkText: "View Contact Info",
-    linkUrl: "/contact",
-  },
-  {
-    keywords: ["beginner", "new", "out of shape", "never worked out", "start", "older", "adult"],
-    answer:
-      "Beginners and adults returning to fitness are welcome. The Fusion House is built around professional coaching, confidence, joint‑friendly training, and sustainable progress.",
-    linkText: "View Services",
-    linkUrl: "/services#personal",
-  },
-  {
-    keywords: ["owner", "anthony", "about", "story"],
-    answer:
-      "The Fusion House was founded by Anthony Moreno. You can learn more about his story, coaching philosophy, and the gym’s journey on the About page.",
-    linkText: "Read About The Fusion House",
-    linkUrl: "/about",
-  },
-];
-
-const quickOptions = [
-  "How do I book?",
-  "What are your training options?",
-  "Membership options",
-  "Personal training",
-  "Small-group training",
-  "Complimentary trial",
-  "Hours",
-  "Location",
-  "Contact the team",
-  "Space rental",
-  "I am a beginner",
-];
+type KnowledgeItem = {
+  keywords: string[];
+  answer: string;
+  linkText?: string;
+  linkUrl?: string;
+  external?: boolean;
+};
 
 function Chatbot() {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const isSpanish = i18n.language === "es";
+
+  const knowledgeBase = t("chatbot.knowledgeBase", {
+    returnObjects: true,
+  }) as KnowledgeItem[];
+
+  const quickOptions = t("chatbot.quickOptions", {
+    returnObjects: true,
+  }) as string[];
 
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<"chat" | "contact">("chat");
@@ -135,23 +52,44 @@ function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot",
-      text: "Hi! I can help with training options, memberships, pricing, booking, hours, location, personal coaching, and more.",
+      text: t("chatbot.introMessage"),
     },
   ]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setMessages([
+      {
+        sender: "bot",
+        text: t("chatbot.introMessage"),
+      },
+    ]);
+  }, [i18n.language, t]);
+
+  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   useEffect(() => {
-    document.body.style.overflow = open && window.innerWidth <= 768 ? "hidden" : "";
+    document.body.style.overflow =
+      open && window.innerWidth <= 768 ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  function localizedInternalUrl(url: string) {
+    if (!isSpanish || url.startsWith("http") || url.startsWith("tel:")) {
+      return url;
+    }
+
+    const [path, hash] = url.split("#");
+    const localizedPath = path === "/" ? "/es" : `/es${path}`;
+
+    return hash ? `${localizedPath}#${hash}` : localizedPath;
+  }
 
   function findAnswer(input: string) {
     const cleanInput = input.toLowerCase();
@@ -162,10 +100,11 @@ function Chatbot() {
   }
 
   function handleInternalLink(url: string) {
-    const [path, hash] = url.split("#");
+    const finalUrl = localizedInternalUrl(url);
+    const [path, hash] = finalUrl.split("#");
 
     setOpen(false);
-    navigate(path || "/");
+    navigate(path || (isSpanish ? "/es" : "/"));
 
     if (hash) {
       setTimeout(() => {
@@ -179,7 +118,11 @@ function Chatbot() {
     const userQuestion = customQuestion || question;
     if (!userQuestion.trim()) return;
 
-    if (userQuestion.toLowerCase().includes("contact owner")) {
+    if (
+      userQuestion.toLowerCase().includes("contact owner") ||
+      userQuestion.toLowerCase().includes("contact team") ||
+      userQuestion.toLowerCase().includes("contactar")
+    ) {
       setMode("contact");
       setQuestion("");
       setShowOptions(false);
@@ -203,8 +146,7 @@ function Chatbot() {
         }
       : {
           sender: "bot",
-          text:
-            "I do not want to guess on that. You can send this question directly to The Fusion House team and they can reply by email.",
+          text: t("chatbot.fallback"),
         };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
@@ -221,7 +163,7 @@ function Chatbot() {
       <button
         className={`chatbot-button ${open ? "hidden" : ""}`}
         onClick={() => setOpen(true)}
-        aria-label="Open The Fusion House assistant"
+        aria-label={t("chatbot.openLabel")}
       >
         <FaCommentDots />
       </button>
@@ -230,11 +172,11 @@ function Chatbot() {
         <div className="chatbot-widget">
           <div className="chatbot-header">
             <div>
-              <h3>The Fusion House Assistant</h3>
-              <p>Ask a question or connect with our team.</p>
+              <h3>{t("chatbot.headerTitle")}</h3>
+              <p>{t("chatbot.headerText")}</p>
             </div>
 
-            <button onClick={() => setOpen(false)} aria-label="Close chatbot">
+            <button onClick={() => setOpen(false)} aria-label={t("chatbot.closeLabel")}>
               <FaTimes />
             </button>
           </div>
@@ -244,14 +186,14 @@ function Chatbot() {
               className={mode === "chat" ? "active" : ""}
               onClick={() => setMode("chat")}
             >
-              Ask
+              {t("chatbot.askTab")}
             </button>
 
             <button
               className={mode === "contact" ? "active" : ""}
               onClick={() => setMode("contact")}
             >
-              Contact Team
+              {t("chatbot.contactTab")}
             </button>
           </div>
 
@@ -291,7 +233,7 @@ function Chatbot() {
                   className="quick-options-toggle"
                   onClick={() => setShowOptions(!showOptions)}
                 >
-                  <span>Quick questions</span>
+                  <span>{t("chatbot.quickQuestions")}</span>
                   <FaChevronDown />
                 </button>
 
@@ -313,10 +255,10 @@ function Chatbot() {
                   onKeyDown={(event) => {
                     if (event.key === "Enter") handleAsk();
                   }}
-                  placeholder="Ask about pricing, classes, booking..."
+                  placeholder={t("chatbot.inputPlaceholder")}
                 />
 
-                <button onClick={() => handleAsk()} aria-label="Send message">
+                <button onClick={() => handleAsk()} aria-label={t("chatbot.sendLabel")}>
                   <FaPaperPlane />
                 </button>
               </div>
@@ -332,25 +274,23 @@ function Chatbot() {
               <input type="hidden" name="_template" value="table" />
 
               <label>
-                Name
+                {t("chatbot.form.name")}
                 <input type="text" name="name" required />
               </label>
 
               <label>
-                Email
+                {t("chatbot.form.email")}
                 <input type="email" name="email" required />
               </label>
 
               <label>
-                Message
+                {t("chatbot.form.message")}
                 <textarea name="message" required></textarea>
               </label>
 
-              <button type="submit">Send Message</button>
+              <button type="submit">{t("chatbot.form.button")}</button>
 
-              <p>
-                This sends your message to The Fusion House by email. The team can reply directly to the address you provide.
-              </p>
+              <p>{t("chatbot.form.note")}</p>
             </form>
           )}
         </div>

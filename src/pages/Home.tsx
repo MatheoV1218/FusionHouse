@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 import gympic5 from "../assets/FHgympic5.webp";
 import grainyBackground from "../assets/grainyBackground.png";
@@ -27,7 +28,36 @@ const carouselImages = Object.entries(
   })
   .map(([, src]) => src as string);
 
+type CardText = {
+  number: string;
+  title: string;
+  text: string;
+};
+
+type ProgramText = {
+  label: string;
+  title: string;
+  text: string;
+  link: string;
+};
+
 function Home() {
+  const { t, i18n } = useTranslation();
+  const isSpanish = i18n.language === "es";
+
+  const localizedPath = (path: string) => {
+    if (!isSpanish) return path;
+    return path === "/" ? "/es" : `/es${path}`;
+  };
+
+  const actions = t("home.actions", { returnObjects: true }) as CardText[];
+  const audienceCards = t("home.audienceCards", {
+    returnObjects: true,
+  }) as CardText[];
+  const programs = t("home.programs", {
+    returnObjects: true,
+  }) as ProgramText[];
+
   return (
     <main
       className="home"
@@ -38,17 +68,11 @@ function Home() {
         style={{ backgroundImage: `url(${gympic5})` }}
       >
         <div className="hero-inner">
-          <p className="eyebrow">
-            White Plains, NY • Private & small-group coaching
-          </p>
+          <p className="eyebrow">{t("home.heroEyebrow")}</p>
 
-          <h1>Where smart, personalized training becomes your new normal</h1>
+          <h1>{t("home.heroTitle")}</h1>
 
-          <p className="hero-subtitle">
-            Expert coaching and structured training experiences designed for
-            adults who want clarity, accountability, and a facility that treats
-            them like an individual — not a number.
-          </p>
+          <p className="hero-subtitle">{t("home.heroSubtitle")}</p>
 
           <div className="hero-buttons">
             <a
@@ -62,11 +86,11 @@ function Home() {
                 })
               }
             >
-              Reserve Your Session
+              {t("home.reserveYourSession")}
             </a>
 
             <Link
-              to="/services"
+              to={localizedPath("/services")}
               className="btn secondary"
               onClick={() =>
                 track("Explore Memberships Home", {
@@ -74,7 +98,7 @@ function Home() {
                 })
               }
             >
-              Explore Memberships
+              {t("home.exploreMemberships")}
             </Link>
           </div>
 
@@ -89,22 +113,22 @@ function Home() {
                 })
               }
             >
-              <span>01</span>
-              <h3>Reserve Your Session</h3>
-              <p>Secure your class or private coaching appointment.</p>
+              <span>{actions[0].number}</span>
+              <h3>{actions[0].title}</h3>
+              <p>{actions[0].text}</p>
             </a>
 
             <Link
-              to="/faq"
+              to={localizedPath("/faq")}
               onClick={() =>
                 track("FAQ Opened Home", {
                   location: "Action Card",
                 })
               }
             >
-              <span>02</span>
-              <h3>Before You Begin</h3>
-              <p> Clear answers to help you make an informed decision.</p>
+              <span>{actions[1].number}</span>
+              <h3>{actions[1].title}</h3>
+              <p>{actions[1].text}</p>
             </Link>
 
             <a
@@ -115,24 +139,22 @@ function Home() {
                 })
               }
             >
-              <span>03</span>
-              <h3>Speak With Our Team</h3>
-              <p>Connect directly with a coach for guidance.</p>
+              <span>{actions[2].number}</span>
+              <h3>{actions[2].title}</h3>
+              <p>{actions[2].text}</p>
             </a>
 
             <Link
-              to="/guide"
+              to={localizedPath("/guide")}
               onClick={() =>
                 track("Reservation Guide Opened Home", {
                   location: "Action Card",
                 })
               }
             >
-              <span>04</span>
-              <h3>Reservation Walkthrough</h3>
-              <p>
-                Step-by-step guidance for booking your session through Mindbody.
-              </p>
+              <span>{actions[3].number}</span>
+              <h3>{actions[3].title}</h3>
+              <p>{actions[3].text}</p>
             </Link>
           </div>
         </div>
@@ -141,105 +163,67 @@ function Home() {
       <section className="audience-section">
         <div className="audience-inner">
           <div className="audience-copy">
-            <p className="eyebrow dark">Built For Adults</p>
-            <h2>
-              Thoughtful, joint‑friendly coaching for adults in their 40s, 50s,
-              60s and beyond.
-            </h2>
-            <p>
-              The Fusion House is designed for people who want expert guidance
-              delivered with professionalism, clarity, and respect. Whether
-              you’re returning to fitness, building strength later in life, or
-              seeking a community that feels supportive rather than competitive,
-              our coaching adapts to your body, your goals, and your pace.
-            </p>
+            <p className="eyebrow dark">{t("home.builtForAdults")}</p>
+            <h2>{t("home.audienceTitle")}</h2>
+            <p>{t("home.audienceText")}</p>
           </div>
 
           <div className="audience-cards">
-            <article>
-              <span>01</span>
-              <h3>Coaching With Integrity</h3>
-              <p>
-                Supportive, professional guidance focused on long‑term progress.
-              </p>
-            </article>
-
-            <article>
-              <span>02</span>
-              <h3>Training Designed Around You</h3>
-              <p>
-                Every program is adapted to your goals, mobility, and
-                experience.
-              </p>
-            </article>
-
-            <article>
-              <span>03</span>
-              <h3>Strength That Carries Into Life</h3>
-              <p>Build confidence, balance, and resilience that last.</p>
-            </article>
+            {audienceCards.map((card) => (
+              <article key={card.number}>
+                <span>{card.number}</span>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
           </div>
 
           <div className="programs-overview">
             <div className="program-card">
-              <span>Personal Training</span>
-              <h3>
-                Private coaching tailored to your body, goals, and lifestyle.
-              </h3>
-              <p>
-                Every session is intentionally designed to support your
-                progress, protect your joints, and give you the clarity and
-                confidence to train with purpose.
-              </p>
+              <span>{programs[0].label}</span>
+              <h3>{programs[0].title}</h3>
+              <p>{programs[0].text}</p>
               <Link
-                to="/services#personal"
+                to={localizedPath("/services#personal")}
                 onClick={() =>
                   track("Personal Training Explore Private Coaching Home", {
                     section: "Programs",
                   })
                 }
               >
-                Explore Private Coaching
+                {programs[0].link}
               </Link>
             </div>
 
             <div className="program-card">
-              <span>Group Training</span>
-              <h3>Small‑group training with meaningful coaching.</h3>
-              <p>
-                A structured, supportive environment where you receive hands‑on
-                guidance, accountability, and the motivation of a community that
-                trains with intention.
-              </p>
+              <span>{programs[1].label}</span>
+              <h3>{programs[1].title}</h3>
+              <p>{programs[1].text}</p>
               <Link
-                to="/services#memberships"
+                to={localizedPath("/services#memberships")}
                 onClick={() =>
                   track("Group Training Explore Small-Group Training Home", {
                     section: "Programs",
                   })
                 }
               >
-                Explore Small-Group Training
+                {programs[1].link}
               </Link>
             </div>
 
             <div className="program-card">
-              <span>Memberships</span>
-              <h3>Memberships designed for long‑term progress.</h3>
-              <p>
-                Clear, straightforward options created for adults who value
-                consistency, structure, and a coaching relationship that evolves
-                with their goals.
-              </p>
+              <span>{programs[2].label}</span>
+              <h3>{programs[2].title}</h3>
+              <p>{programs[2].text}</p>
               <Link
-                to="/services#membership-options"
+                to={localizedPath("/services#membership-options")}
                 onClick={() =>
                   track("Memberships Explore Memberships Home", {
                     section: "Programs",
                   })
                 }
               >
-                Explore Memberships
+                {programs[2].link}
               </Link>
             </div>
           </div>
@@ -248,13 +232,9 @@ function Home() {
 
       <section className="community-carousel-section">
         <div className="community-carousel-heading">
-          <p className="eyebrow dark">Real Members. Real Progress.</p>
-          <h2>A training environment built around your growth.</h2>
-          <p>
-            From your first session to your strongest seasons, The Fusion House
-            is a place where adults build confidence, capability, and a
-            sustainable relationship with fitness.
-          </p>
+          <p className="eyebrow dark">{t("home.realMembers")}</p>
+          <h2>{t("home.carouselTitle")}</h2>
+          <p>{t("home.carouselText")}</p>
         </div>
 
         <div className="community-carousel">
@@ -263,7 +243,7 @@ function Home() {
               <div className="carousel-photo-card" key={`${image}-${index}`}>
                 <img
                   src={image}
-                  alt="The Fusion House member training"
+                  alt={t("home.memberAlt")}
                   loading="lazy"
                 />
               </div>
@@ -274,16 +254,11 @@ function Home() {
 
       <section className="partners-section">
         <div className="partners-heading">
-          <p className="eyebrow dark">Community Partners</p>
+          <p className="eyebrow dark">{t("home.communityPartners")}</p>
 
-          <h2>Partnered with respected organizations across Westchester.</h2>
+          <h2>{t("home.partnersTitle")}</h2>
 
-          <p>
-            The Fusion House collaborates with educational programs, community
-            groups, and professional organizations that support fitness
-            education, leadership development, and community wellness throughout
-            White Plains and Westchester County.
-          </p>
+          <p>{t("home.partnersText")}</p>
         </div>
 
         <div className="partners-grid">
@@ -310,15 +285,15 @@ function Home() {
       </section>
 
       <section className="reviews-preview">
-        <p className="eyebrow dark">Google Reviews</p>
-        <h2>Trusted by local members.</h2>
+        <p className="eyebrow dark">{t("home.googleReviews")}</p>
+        <h2>{t("home.reviewsTitle")}</h2>
 
         <div className="google-review-summary">
           <div>
             <span className="google-badge">Google</span>
             <strong>4.9</strong>
             <div className="stars">★★★★★</div>
-            <p>Based on 86 Google reviews</p>
+            <p>{t("home.basedReviews")}</p>
           </div>
 
           <a
@@ -331,7 +306,7 @@ function Home() {
               })
             }
           >
-            Read All Reviews
+            {t("home.readAllReviews")}
           </a>
         </div>
 
@@ -365,7 +340,7 @@ function Home() {
                     })
                   }
                 >
-                  View on Google
+                  {t("home.viewOnGoogle")}
                 </a>
               </article>
             ))}
@@ -374,11 +349,8 @@ function Home() {
       </section>
 
       <section className="final-home-cta">
-        <h2>Ready to Begin?</h2>
-        <p>
-          Book a complimentary trial class and see how personalized coaching
-          feels.
-        </p>
+        <h2>{t("home.finalTitle")}</h2>
+        <p>{t("home.finalText")}</p>
 
         <a
           href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
@@ -391,7 +363,7 @@ function Home() {
             })
           }
         >
-          Reserve Your Session
+          {t("home.reserveYourSession")}
         </a>
       </section>
     </main>

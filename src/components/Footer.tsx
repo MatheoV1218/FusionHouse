@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaInstagram,
   FaFacebookF,
@@ -10,16 +11,23 @@ import "./Footer.css";
 import { track } from "@vercel/analytics";
 
 function Footer() {
+  const { t, i18n } = useTranslation();
+  const isSpanish = i18n.language === "es";
+
+  const localizedPath = (path: string) => {
+    if (!isSpanish) return path;
+    return path === "/" ? "/es" : `/es${path}`;
+  };
+
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
           <h2>
-            <span>The Fusion</span> House
+            <span>{t("footer.brandA")}</span> {t("footer.brandB")}
           </h2>
-          <p>
-            Personal training, small‑group coaching, and structured programs in White Plains, NY.
-          </p>
+
+          <p>{t("footer.description")}</p>
 
           <div className="footer-socials">
             <a
@@ -70,8 +78,9 @@ function Footer() {
         </div>
 
         <div className="footer-card">
-          <h3>Experience The Fusion House.</h3>
-          <p>Book a complimentary trial class and see how personalized coaching feels.</p>
+          <h3>{t("footer.cardTitle")}</h3>
+          <p>{t("footer.cardText")}</p>
+
           <a
             href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
             target="_blank"
@@ -83,30 +92,30 @@ function Footer() {
               })
             }
           >
-            Reserve Your Trial Session
+            {t("footer.cardButton")}
           </a>
         </div>
 
         <div className="footer-info">
           <div>
-            <h4>Explore</h4>
-            <Link to="/">Home</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/faq">FAQ</Link>
-            <Link to="/about">About</Link>
+            <h4>{t("footer.explore")}</h4>
+            <Link to={localizedPath("/")}>{t("footer.home")}</Link>
+            <Link to={localizedPath("/services")}>{t("footer.services")}</Link>
+            <Link to={localizedPath("/faq")}>{t("footer.faq")}</Link>
+            <Link to={localizedPath("/about")}>{t("footer.about")}</Link>
           </div>
 
           <div>
-            <h4>Visit</h4>
-            <p>126 South Lexington Ave</p>
-            <p>White Plains, NY</p>
+            <h4>{t("footer.visit")}</h4>
+            <p>{t("footer.address1")}</p>
+            <p>{t("footer.address2")}</p>
             <a href="tel:9145529619">914-552-9619</a>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 The Fusion House by Boutique. All rights reserved.</p>
+        <p>{t("footer.bottom")}</p>
       </div>
     </footer>
   );
