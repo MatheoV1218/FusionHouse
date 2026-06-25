@@ -150,7 +150,6 @@ const en = {
       title: "Monthly Memberships",
       text: "Structured small-group training and community-driven classes designed for adults who want consistency, accountability, and a supportive environment.",
       points: [
-        "8 sessions",
         "Unlimited training available",
         "Member-only benefits and priority access",
         "All memberships include open gym access",
@@ -167,7 +166,7 @@ const en = {
         },
         {
           title: "8 Classes",
-          text: "2 classes per week — a consistent, sustainable training rhythm.",
+          text: "2 classes per week - a consistent, sustainable training rhythm.",
           price: "$175",
         },
         {

@@ -35,13 +35,13 @@ const es = {
       },
       {
         number: "04",
-        title: "Guía Para Reservar",
+        title: "Una Guía Para Reservar",
         text: "Una guía paso a paso para reservar tu sesión por Mindbody.",
       },
     ],
     builtForAdults: "Diseñado Para Adultos",
     audienceTitle:
-      "Coaching inteligente y amable con las articulaciones para adultos en sus 40s, 50s, 60s y más.",
+      "Coaching inteligente y comodo para las articulaciones para adultos en sus 40s, 50s, 60s y más.",
     audienceText:
       "The Fusion House está diseñado para personas que desean guía experta con profesionalismo, claridad y respeto. Ya sea que estés regresando al ejercicio, construyendo fuerza más adelante en la vida o buscando una comunidad que se sienta más apoyadora que competitiva, nuestro coaching se adapta a tu cuerpo, tus metas y tu ritmo.",
     audienceCards: [
@@ -64,9 +64,9 @@ const es = {
     programs: [
       {
         label: "Entrenamiento Personal",
-        title: "Coaching privado adaptado a tu cuerpo, metas y estilo de vida.",
+        title: "Entrenamiento privado adaptado a tu cuerpo, metas y estilo de vida.",
         text: "Cada sesión está diseñada intencionalmente para apoyar tu progreso, proteger tus articulaciones y darte la claridad y confianza para entrenar con propósito.",
-        link: "Explorar Coaching Privado",
+        link: "Explorar Entrenamiento Privado",
       },
       {
         label: "Entrenamiento Grupal",
@@ -152,7 +152,6 @@ const es = {
       title: "Membresías Mensuales",
       text: "Entrenamiento estructurado en grupos pequeños y clases impulsadas por comunidad, diseñadas para adultos que buscan constancia, responsabilidad y un ambiente de apoyo.",
       points: [
-        "8 sesiones",
         "Entrenamiento ilimitado disponible",
         "Beneficios exclusivos para miembros y acceso prioritario",
         "Todas las membresías incluyen acceso a gimnasio abierto",
@@ -169,7 +168,7 @@ const es = {
         },
         {
           title: "8 Clases",
-          text: "2 clases por semana — un ritmo de entrenamiento constante y sostenible.",
+          text: "2 clases por semana - un ritmo de entrenamiento constante y sostenible.",
           price: "$175",
         },
         {
@@ -263,7 +262,7 @@ const es = {
       cta: "Pre-Ordenar Fitness Sucks →",
       summary: "Leer La Historia Completa De Anthony",
       story: [
-        "Nacido y criado en Gibraltar — “The Rock of Gibraltar” — Anthony creció entre Gibraltar, Inglaterra y España antes de mudarse a los Estados Unidos en 2013. Su trayectoria incluye servicio militar, trabajo como bombero, salvavidas y coaching de alta intensidad, dándole una comprensión real y profunda del rendimiento humano, la disciplina y la resiliencia.",
+        "Nacido y criado en Gibraltar — “El Peñon” — Anthony creció entre Gibraltar, Inglaterra y España antes de mudarse a los Estados Unidos en 2013. Su trayectoria incluye servicio militar, trabajo como bombero, salvavidas y coaching de alta intensidad, dándole una comprensión real y profunda del rendimiento humano, la disciplina y la resiliencia.",
         "Como coach, Anthony es conocido por ayudar a adultos comunes a entrenar con claridad, confianza y capacidad — sin intimidación ni ego. Como mentor, desarrolla a otros profesionales del fitness, enseñándoles cómo entrenar efectivamente, comunicarse con impacto y construir negocios sostenibles basados en servicio e integridad.",
         "Anthony también es el autor de Fitness Sucks!, un libro que desafía el ruido y la desinformación de la industria al enseñar a las personas cómo construir una identidad más saludable — no solo una mejor rutina de ejercicio.",
         "Hoy, Anthony lidera The Fusion House con una misión de ayudar, desarrollar y empoderar a las personas a través del fitness. Su trabajo combina experiencia técnica, mentoría y un compromiso profundo de ayudar a las personas a crecer física, mental y profesionalmente.",
