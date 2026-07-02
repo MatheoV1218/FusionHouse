@@ -13,6 +13,8 @@ import Guide from "./pages/Guide";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import ScrollToTop from "./components/ScrollToTop";
+import SEO from "./components/SEO";
+import ClickTracker from "./components/ClickTracker";
 import "./App.css";
 
 function LanguageRouteSync() {
@@ -32,6 +34,8 @@ function App() {
   return (
     <BrowserRouter>
       <LanguageRouteSync />
+      <SEO />
+      <ClickTracker />
       <ScrollToTop />
       <div className="app">
         <Navbar />
