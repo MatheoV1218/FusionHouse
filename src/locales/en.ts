@@ -107,6 +107,7 @@ const en = {
       primaryButton: "Reserve Your Session",
       secondaryButton: "Explore Memberships",
     },
+    freeTrialButton: "Book a Free Trial",
     personal: {
       imageAlt: "Personal training at The Fusion House Fitness",
       title: "Personal Training",
@@ -195,6 +196,65 @@ const en = {
       title: "Ready to Begin?",
       text: "Browse available classes and private coaching appointments through our Mindbody schedule.",
       button: "Open Booking Schedule",
+    },
+    classSignup: {
+      eyebrow: "Reserve A Class Time",
+      title: "Sign up for a class in under a minute.",
+      text: "Prefer not to deal with an online booking system? Just share your info and pick a time below — our team will personally confirm your spot.",
+      friendNote: "Bring a friend!! Your first class is even better with company.",
+      namePlaceholder: "Full Name",
+      phonePlaceholder: "Phone Number",
+      emailPlaceholder: "Email Address",
+      selectLabel: "Select a Class Time",
+      selectPlaceholder: "Choose a day and time",
+      button: "Sign Me Up",
+      note: "We'll reach out to confirm your class time. This does not book you through Mindbody directly.",
+      autoresponse:
+        "Congratulations — you're signed up! We received your requested class time and someone from The Fusion House team will personally confirm it with you shortly. Grab your water bottle, wear something comfortable, and get ready to work. And remember... bring a friend!! We can't wait to see you both in class.",
+      schedule: [
+        {
+          day: "Monday",
+          sessions: [
+            { time: "5:30 AM", className: "Circuit Training", trainer: "Brock Duncan" },
+            { time: "9:00 AM", className: "Circuit Training", trainer: "Brock Duncan" },
+            { time: "6:00 PM", className: "Circuit Training", trainer: "Anthony Moreno" },
+          ],
+        },
+        {
+          day: "Tuesday",
+          sessions: [
+            { time: "5:30 AM", className: "Core & Cardio", trainer: "Anthony Moreno" },
+          ],
+        },
+        {
+          day: "Wednesday",
+          sessions: [
+            { time: "5:30 AM", className: "Strength Training", trainer: "Brock Duncan" },
+            { time: "9:00 AM", className: "Strength Training", trainer: "Brock Duncan" },
+            { time: "6:00 PM", className: "Circuit Training", trainer: "Gerard Michno" },
+          ],
+        },
+        {
+          day: "Thursday",
+          sessions: [
+            { time: "5:30 AM", className: "Core & Cardio", trainer: "Anthony Moreno" },
+          ],
+        },
+        {
+          day: "Friday",
+          sessions: [
+            { time: "5:30 AM", className: "Circuit Training", trainer: "Brock Duncan" },
+            { time: "9:00 AM", className: "Circuit Training", trainer: "Brock Duncan" },
+            { time: "5:30 PM", className: "Circuit Training", trainer: "Gerard Michno" },
+          ],
+        },
+        {
+          day: "Saturday",
+          sessions: [
+            { time: "9:00 AM", className: "Circuit Training", trainer: "Bernard Horton" },
+          ],
+        },
+      ],
     },
   },
 

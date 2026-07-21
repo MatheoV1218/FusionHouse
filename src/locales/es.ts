@@ -109,6 +109,7 @@ const es = {
       primaryButton: "Reserva Tu Sesión",
       secondaryButton: "Explorar Membresías",
     },
+    freeTrialButton: "Reserva Tu Prueba Gratuita",
     personal: {
       imageAlt: "Entrenamiento personal en The Fusion House Fitness",
       title: "Entrenamiento Personal",
@@ -197,6 +198,65 @@ const es = {
       title: "¿Listo Para Empezar?",
       text: "Explora clases disponibles y citas de coaching privado a través de nuestro calendario de Mindbody.",
       button: "Abrir Calendario De Reservas",
+    },
+    classSignup: {
+      eyebrow: "Reserva Un Horario De Clase",
+      title: "Regístrate para una clase en menos de un minuto.",
+      text: "¿Prefieres no usar un sistema de reservas en línea? Solo comparte tu información y elige un horario abajo — nuestro equipo confirmará tu lugar personalmente.",
+      friendNote: "¡Trae a un amigo!! Tu primera clase es aún mejor con compañía.",
+      namePlaceholder: "Nombre Completo",
+      phonePlaceholder: "Número De Teléfono",
+      emailPlaceholder: "Correo Electrónico",
+      selectLabel: "Selecciona Un Horario De Clase",
+      selectPlaceholder: "Elige un día y horario",
+      button: "Registrarme",
+      note: "Nos pondremos en contacto para confirmar tu horario de clase. Esto no te reserva directamente a través de Mindbody.",
+      autoresponse:
+        "Felicidades — ¡ya estás registrado! Recibimos tu horario de clase solicitado y alguien del equipo de The Fusion House se pondrá en contacto contigo personalmente para confirmarlo. Trae tu botella de agua, usa ropa cómoda y prepárate para entrenar. Y recuerda... ¡trae a un amigo!! No podemos esperar a verlos a ambos en clase.",
+      schedule: [
+        {
+          day: "Lunes",
+          sessions: [
+            { time: "5:30 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+            { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+            { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Anthony Moreno" },
+          ],
+        },
+        {
+          day: "Martes",
+          sessions: [
+            { time: "5:30 AM", className: "Core Y Cardio", trainer: "Anthony Moreno" },
+          ],
+        },
+        {
+          day: "Miércoles",
+          sessions: [
+            { time: "5:30 AM", className: "Entrenamiento De Fuerza", trainer: "Brock Duncan" },
+            { time: "9:00 AM", className: "Entrenamiento De Fuerza", trainer: "Brock Duncan" },
+            { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Gerard Michno" },
+          ],
+        },
+        {
+          day: "Jueves",
+          sessions: [
+            { time: "5:30 AM", className: "Core Y Cardio", trainer: "Anthony Moreno" },
+          ],
+        },
+        {
+          day: "Viernes",
+          sessions: [
+            { time: "5:30 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+            { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+            { time: "5:30 PM", className: "Entrenamiento En Circuito", trainer: "Gerard Michno" },
+          ],
+        },
+        {
+          day: "Sábado",
+          sessions: [
+            { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Bernard Horton" },
+          ],
+        },
+      ],
     },
   },
 
