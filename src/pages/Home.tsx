@@ -75,10 +75,20 @@ function Home() {
           <p className="hero-subtitle">{t("home.heroSubtitle")}</p>
 
           <div className="hero-buttons">
+            {/* Mindbody booking link — temporarily swapped for the internal
+                /reserve page this month so signups can be tracked directly.
+                Restore this href when the promo period ends.
             <a
               href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
               target="_blank"
               rel="noreferrer"
+              className="btn primary"
+            >
+              {t("home.reserveYourSession")}
+            </a>
+            */}
+            <Link
+              to={localizedPath("/reserve")}
               className="btn primary"
               onClick={() =>
                 track("Book Free Trial Home", {
@@ -87,7 +97,7 @@ function Home() {
               }
             >
               {t("home.reserveYourSession")}
-            </a>
+            </Link>
 
             <Link
               to={localizedPath("/services")}
@@ -103,10 +113,8 @@ function Home() {
           </div>
 
           <div className="action-cards">
-            <a
-              href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to={localizedPath("/reserve")}
               onClick={() =>
                 track("Book Now Home", {
                   location: "Action Card",
@@ -116,7 +124,7 @@ function Home() {
               <span>{actions[0].number}</span>
               <h3>{actions[0].title}</h3>
               <p>{actions[0].text}</p>
-            </a>
+            </Link>
 
             <Link
               to={localizedPath("/faq")}
@@ -352,10 +360,20 @@ function Home() {
         <h2>{t("home.finalTitle")}</h2>
         <p>{t("home.finalText")}</p>
 
+        {/* Mindbody booking link — temporarily swapped for the internal
+            /reserve page this month so signups can be tracked directly.
+            Restore this href when the promo period ends.
         <a
           href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
           target="_blank"
           rel="noreferrer"
+          className="btn primary"
+        >
+          {t("home.reserveYourSession")}
+        </a>
+        */}
+        <Link
+          to={localizedPath("/reserve")}
           className="btn primary"
           onClick={() =>
             track("Book Free Trial Home", {
@@ -364,7 +382,7 @@ function Home() {
           }
         >
           {t("home.reserveYourSession")}
-        </a>
+        </Link>
       </section>
     </main>
   );

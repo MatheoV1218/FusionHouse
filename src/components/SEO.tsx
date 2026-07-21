@@ -69,6 +69,18 @@ const pages = {
         "Respuestas a preguntas comunes sobre The Fusion House, incluyendo entrenamiento personal, membresías, reservas, pruebas y información del gimnasio.",
     },
   },
+  "/reserve": {
+    en: {
+      title: "Reserve Your Spot | The Fusion House White Plains",
+      description:
+        "Reserve your class or trial session at The Fusion House in White Plains, NY. Pick a time from our weekly schedule and our team will confirm your spot.",
+    },
+    es: {
+      title: "Reserva Tu Lugar | The Fusion House White Plains",
+      description:
+        "Reserva tu clase o sesión de prueba en The Fusion House en White Plains, NY. Elige un horario de nuestro calendario semanal y nuestro equipo confirmará tu lugar.",
+    },
+  },
   "/guide": {
     en: {
       title: "Reservation Guide | How to Book The Fusion House on Mindbody",

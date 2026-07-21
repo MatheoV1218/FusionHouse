@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import FAQ from "./components/FAQ";
 import Chatbot from "./components/Chatbot";
 import Guide from "./pages/Guide";
+import Reserve from "./pages/Reserve";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import ScrollToTop from "./components/ScrollToTop";
@@ -52,6 +53,8 @@ function App() {
           <Route path="/es/faq" element={<FAQ />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/es/guide" element={<Guide />} />
+          <Route path="/reserve" element={<Reserve />} />
+          <Route path="/es/reserve" element={<Reserve />} />
         </Routes>
         <Footer />
         <Chatbot />

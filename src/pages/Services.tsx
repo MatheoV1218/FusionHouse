@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Services.css";
 import gympic8 from "../assets/FHgympic8.webp";
@@ -10,8 +11,11 @@ import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
 
-export const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
+// Mindbody booking link — temporarily swapped for the internal /reserve page
+// this month so signups can be tracked directly. Restore this href when the
+// promo period ends.
+// export const mindbodyLink =
+//   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
 const ownerEmail = "Infofusionhouse@gmail.com";
 
@@ -29,9 +33,15 @@ type ScheduleDay = {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 function Services() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isSpanish = i18n.language === "es";
   const [classSignupStatus, setClassSignupStatus] =
     useState<FormStatus>("idle");
+
+  const localizedPath = (path: string) => {
+    if (!isSpanish) return path;
+    return path === "/" ? "/es" : `/es${path}`;
+  };
 
   const personalPoints = t("services.personal.points", {
     returnObjects: true,
@@ -128,10 +138,8 @@ function Services() {
           <p>{t("services.hero.text")}</p>
 
           <div className="services-hero-actions">
-            <a
-              href={mindbodyLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={localizedPath("/reserve")}
               onClick={() =>
                 track("Reserve Your Session Services", {
                   location: "Services Hero",
@@ -139,7 +147,7 @@ function Services() {
               }
             >
               {t("services.hero.primaryButton")}
-            </a>
+            </Link>
 
             <a
               href="#personal"
@@ -177,10 +185,8 @@ function Services() {
               ))}
             </div>
 
-            <a
-              href={mindbodyLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={localizedPath("/reserve")}
               className="service-cta-btn"
               onClick={() =>
                 track("Book Free Trial Services", {
@@ -189,7 +195,7 @@ function Services() {
               }
             >
               {t("services.freeTrialButton")}
-            </a>
+            </Link>
           </div>
 
           <details className="service-dropdown" id="membership-options">
@@ -234,10 +240,8 @@ function Services() {
               ))}
             </div>
 
-            <a
-              href={mindbodyLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={localizedPath("/reserve")}
               className="service-cta-btn"
               onClick={() =>
                 track("Book Free Trial Services", {
@@ -246,7 +250,7 @@ function Services() {
               }
             >
               {t("services.freeTrialButton")}
-            </a>
+            </Link>
           </div>
 
           <details className="service-dropdown" id="pricing">
@@ -286,10 +290,8 @@ function Services() {
               ))}
             </div>
 
-            <a
-              href={mindbodyLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={localizedPath("/reserve")}
               className="service-cta-btn"
               onClick={() =>
                 track("Book Free Trial Services", {
@@ -298,7 +300,7 @@ function Services() {
               }
             >
               {t("services.freeTrialButton")}
-            </a>
+            </Link>
           </div>
         </article>
       </section>
@@ -418,10 +420,8 @@ function Services() {
         <h2>{t("services.booking.title")}</h2>
         <p>{t("services.booking.text")}</p>
 
-        <a
-          href={mindbodyLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={localizedPath("/reserve")}
           onClick={() =>
             track("Open Booking Schedule", {
               location: "Services Bottom CTA",
@@ -429,7 +429,7 @@ function Services() {
           }
         >
           {t("services.booking.button")}
-        </a>
+        </Link>
       </section>
     </main>
   );

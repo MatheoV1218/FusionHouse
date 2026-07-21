@@ -8,8 +8,11 @@ import { track } from "@vercel/analytics";
 
 import FusionLogo from "../assets/FusionLogo.png";
 
-const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
+// Mindbody booking link — temporarily swapped for the internal /reserve page
+// this month so signups can be tracked directly. Restore this href when the
+// promo period ends.
+// const mindbodyLink =
+//   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -72,10 +75,8 @@ function Navbar() {
           {t("nav.language")}
         </button>
 
-        <a
-          href={mindbodyLink}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to={localizedPath("/reserve")}
           className="mobile-book"
           onClick={() => {
             track("Book Now", {
@@ -85,7 +86,7 @@ function Navbar() {
           }}
         >
           {t("nav.bookNow")}
-        </a>
+        </Link>
       </nav>
 
       <div className="nav-right">
@@ -93,10 +94,8 @@ function Navbar() {
           {t("nav.language")}
         </button>
 
-        <a
-          href={mindbodyLink}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to={localizedPath("/reserve")}
           className="nav-book"
           onClick={() =>
             track("Book Now", {
@@ -105,7 +104,7 @@ function Navbar() {
           }
         >
           {t("nav.bookNow")}
-        </a>
+        </Link>
 
         <button
           className="hamburger"

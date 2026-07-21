@@ -13,8 +13,11 @@ import fusiontest7 from "../assets/fusiontest7.png";
 
 import { track } from "@vercel/analytics";
 
-const mindbodyLink =
-  "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
+// Mindbody booking link — temporarily swapped for the internal /reserve page
+// this month so signups can be tracked directly. Restore this href when the
+// promo period ends.
+// const mindbodyLink =
+//   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
 const stepImages = [
   fusiontest1,
@@ -55,10 +58,8 @@ function Guide() {
           <p>{t("guide.hero.text")}</p>
 
           <div className="guide-actions">
-            <a
-              href={mindbodyLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={localizedPath("/reserve")}
               onClick={() =>
                 track("Open Mindbody From Guide", {
                   location: "Guide Hero",
@@ -66,7 +67,7 @@ function Guide() {
               }
             >
               {t("guide.hero.primaryButton")}
-            </a>
+            </Link>
 
             <Link to={localizedPath("/contact")}>
               {t("guide.hero.secondaryButton")}
@@ -107,10 +108,8 @@ function Guide() {
         <h2>{t("guide.final.title")}</h2>
         <p>{t("guide.final.text")}</p>
 
-        <a
-          href={mindbodyLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={localizedPath("/reserve")}
           onClick={() =>
             track("Open Mindbody From Guide", {
               location: "Guide Final CTA",
@@ -118,7 +117,7 @@ function Guide() {
           }
         >
           {t("guide.final.button")}
-        </a>
+        </Link>
       </section>
     </main>
   );

@@ -81,10 +81,20 @@ function Footer() {
           <h3>{t("footer.cardTitle")}</h3>
           <p>{t("footer.cardText")}</p>
 
+          {/* Mindbody booking link — temporarily swapped for the internal
+              /reserve page this month so signups can be tracked directly.
+              Restore this href when the promo period ends.
           <a
             href="https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1"
             target="_blank"
             rel="noreferrer"
+            className="footer-btn"
+          >
+            {t("footer.cardButton")}
+          </a>
+          */}
+          <Link
+            to={localizedPath("/reserve")}
             className="footer-btn"
             onClick={() =>
               track("Reserve Your Trial Session", {
@@ -93,7 +103,7 @@ function Footer() {
             }
           >
             {t("footer.cardButton")}
-          </a>
+          </Link>
         </div>
 
         <div className="footer-info">

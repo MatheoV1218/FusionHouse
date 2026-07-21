@@ -479,8 +479,11 @@ const es = {
           "Puedes reservar cualquier clase o cita a través de Mindbody usando los botones de Reserva Tu Sesión en el sitio web. La página de reservas se abre en una pestaña nueva para mayor comodidad.",
         link: {
           label: "Abrir calendario de reservas",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -490,8 +493,11 @@ const es = {
           "Sí. Los visitantes nuevos pueden comenzar con una clase de prueba gratuita para conocer el espacio, conocer a los coaches y ver si The Fusion House es una buena opción.",
         link: {
           label: "Reservar clase de prueba",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -513,8 +519,11 @@ const es = {
           "Sí. Puedes reservar una clase de prueba gratuita o contactar a nuestro equipo para orientación sobre el mejor punto de inicio.",
         link: {
           label: "Reservar clase de prueba",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -530,8 +539,11 @@ const es = {
           "Mindbody puede pedirte iniciar sesión o crear una cuenta para administrar reservaciones y citas.",
         link: {
           label: "Abrir Mindbody",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -541,8 +553,11 @@ const es = {
           "Sí. Todos los botones de reserva llevan a nuestro calendario oficial de Mindbody para asegurar tu reservación.",
         link: {
           label: "Reservar por Mindbody",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -552,8 +567,11 @@ const es = {
           "La disponibilidad el mismo día depende del calendario, disponibilidad del coach y cupos abiertos en clase.",
         link: {
           label: "Revisar disponibilidad",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -563,8 +581,11 @@ const es = {
           "La reprogramación puede estar disponible a través de Mindbody dependiendo del tipo de cita y la ventana de cancelación.",
         link: {
           label: "Administrar reserva",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -580,8 +601,11 @@ const es = {
           "La disponibilidad varía según los horarios de clases y disponibilidad de coaches. Revisa el calendario de Mindbody para opciones actuales.",
         link: {
           label: "Ver calendario",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -684,8 +708,11 @@ const es = {
           "Si hay espacio disponible, es posible que puedas ajustar tu reservación a través de Mindbody.",
         link: {
           label: "Administrar clases",
-          url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-          external: true,
+          // Mindbody booking link — temporarily swapped for the internal /reserve
+          // page this month so signups can be tracked directly. Restore this url
+          // (and external: true) when the promo period ends.
+          // url: "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+          url: "/reserve",
         },
       },
       {
@@ -952,9 +979,12 @@ const es = {
         answer:
           "Puedes reservar clases, citas de coaching privado y sesiones de prueba a través de Mindbody. Se abre en una pestaña nueva para mayor comodidad.",
         linkText: "Abrir Horario De Reservas",
-        linkUrl:
-          "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-        external: true,
+        // Mindbody booking link — temporarily swapped for the internal /reserve
+        // page this month so signups can be tracked directly. Restore this linkUrl
+        // (and external: true) when the promo period ends.
+        // linkUrl:
+        //   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+        linkUrl: "/reserve",
       },
       {
         keywords: [
@@ -1079,9 +1109,12 @@ const es = {
         answer:
           "Sí. Los visitantes nuevos pueden comenzar con una clase de prueba gratuita para conocer el espacio, los coaches y el estilo de entrenamiento.",
         linkText: "Reservar Clase De Prueba",
-        linkUrl:
-          "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
-        external: true,
+        // Mindbody booking link — temporarily swapped for the internal /reserve
+        // page this month so signups can be tracked directly. Restore this linkUrl
+        // (and external: true) when the promo period ends.
+        // linkUrl:
+        //   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1",
+        linkUrl: "/reserve",
       },
       {
         keywords: [
@@ -1262,6 +1295,115 @@ const es = {
     address2: "White Plains, NY",
     bottom:
       "© 2026 The Fusion House by Boutique. Todos los derechos reservados.",
+  },
+
+  reserve: {
+    hero: {
+      eyebrow: "Tiempo Limitado — Reserva Prioritaria",
+      title: "Tu primera clase va por nuestra cuenta. Vamos a agendarte.",
+      text: "Sáltate el sitio de reservas externo. Cuéntanos un poco sobre ti, elige un horario de clase abajo, y una persona real de nuestro equipo confirmará tu lugar personalmente.",
+      button: "Reservar Mi Lugar",
+    },
+    trust: {
+      points: [
+        "Coaches Certificados Y Con Experiencia",
+        "Entrenamiento En Grupos Pequeños",
+        "Comunidad Galardonada",
+        "Horarios De Clase Flexibles",
+      ],
+    },
+    info: {
+      eyebrow: "Horario De Esta Semana",
+      title: "Encuentra un horario que te funcione y resérvalo abajo.",
+      text: "Cada clase es dirigida por un coach, en grupo pequeño, y diseñada para adultos que quieren resultados reales sin intimidación. Explora el horario de esta semana y reserva el momento que se ajuste a tu vida.",
+      friendNote: "¡Trae a un amigo!! Tu primera clase es aún mejor con compañía.",
+    },
+    schedule: [
+      {
+        day: "Lunes",
+        sessions: [
+          { time: "5:30 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+          { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+          { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Anthony Moreno" },
+        ],
+      },
+      {
+        day: "Martes",
+        sessions: [
+          { time: "5:30 AM", className: "Core Y Cardio", trainer: "Anthony Moreno" },
+        ],
+      },
+      {
+        day: "Miércoles",
+        sessions: [
+          { time: "5:30 AM", className: "Entrenamiento De Fuerza", trainer: "Brock Duncan" },
+          { time: "9:00 AM", className: "Entrenamiento De Fuerza", trainer: "Brock Duncan" },
+          { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Gerard Michno" },
+        ],
+      },
+      {
+        day: "Jueves",
+        sessions: [
+          { time: "5:30 AM", className: "Core Y Cardio", trainer: "Anthony Moreno" },
+        ],
+      },
+      {
+        day: "Viernes",
+        sessions: [
+          { time: "5:30 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+          { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
+          { time: "5:30 PM", className: "Entrenamiento En Circuito", trainer: "Gerard Michno" },
+        ],
+      },
+      {
+        day: "Sábado",
+        sessions: [
+          { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Bernard Horton" },
+        ],
+      },
+      {
+        day: "Domingo",
+        sessions: [],
+      },
+    ],
+    restDayLabel: "No hay clases programadas",
+    form: {
+      title: "Reserva Tu Lugar",
+      subtitle: "Toma menos de un minuto — no necesitas una cuenta.",
+      namePlaceholder: "Nombre Completo",
+      phonePlaceholder: "Número De Teléfono",
+      emailPlaceholder: "Correo Electrónico",
+      selectLabel: "Selecciona Un Horario De Clase",
+      selectPlaceholder: "Elige un día y horario",
+      button: "Reservar Mi Lugar",
+      sending: "Reservando...",
+      note: "Nos pondremos en contacto para confirmar tu horario de clase. Esto no te reserva directamente a través de Mindbody.",
+      successTitle: "¡Ya Estás Reservado!",
+      successText:
+        "Recibimos tu horario de clase solicitado. Alguien de nuestro equipo se pondrá en contacto contigo personalmente para confirmarlo.",
+      signUpAnother: "Reservar Otra Clase",
+      errorText:
+        "Algo salió mal al enviar tu solicitud. Por favor intenta de nuevo o llámanos directamente.",
+      autoresponse:
+        "Felicidades — ¡ya estás reservado! Recibimos tu horario de clase solicitado y alguien del equipo de The Fusion House se pondrá en contacto contigo personalmente para confirmarlo. Trae tu botella de agua, usa ropa cómoda y prepárate para entrenar. Y recuerda... ¡trae a un amigo!! No podemos esperar a verlos a ambos en clase.",
+    },
+    steps: {
+      title: "¿Qué pasa después de reservar?",
+      items: [
+        {
+          title: "Envía Tu Información",
+          text: "Comparte tu nombre, teléfono, correo y horario de clase preferido — toma menos de un minuto.",
+        },
+        {
+          title: "Confirmamos Tu Lugar",
+          text: "Un miembro real de nuestro equipo se pondrá en contacto personalmente para confirmar tu horario y responder tus preguntas.",
+        },
+        {
+          title: "Ven Y Entrena",
+          text: "Llega unos minutos antes, conoce a tu coach y disfruta tu primera clase. ¡No olvides traer a un amigo!",
+        },
+      ],
+    },
   },
 };
 
