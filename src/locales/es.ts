@@ -226,7 +226,7 @@ const es = {
           sessions: [
             { time: "5:30 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
             { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
-            { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Anthony Moreno" },
+            { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Gerard Michno" },
           ],
         },
         {
@@ -1324,7 +1324,7 @@ const es = {
         sessions: [
           { time: "5:30 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
           { time: "9:00 AM", className: "Entrenamiento En Circuito", trainer: "Brock Duncan" },
-          { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Anthony Moreno" },
+          { time: "6:00 PM", className: "Entrenamiento En Circuito", trainer: "Gerard Michno" },
         ],
       },
       {
