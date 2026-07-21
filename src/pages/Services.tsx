@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import "./Services.css";
 import gympic8 from "../assets/FHgympic8.webp";
@@ -25,8 +26,12 @@ type ScheduleDay = {
   sessions: ClassSession[];
 };
 
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 function Services() {
   const { t } = useTranslation();
+  const [classSignupStatus, setClassSignupStatus] =
+    useState<FormStatus>("idle");
 
   const personalPoints = t("services.personal.points", {
     returnObjects: true,
@@ -63,6 +68,42 @@ function Services() {
   const classSchedule = t("services.classSignup.schedule", {
     returnObjects: true,
   }) as ScheduleDay[];
+
+  const handleClassSignupSubmit = async (
+    event: FormEvent<HTMLFormElement>,
+  ) => {
+    event.preventDefault();
+
+    track("Class Signup Form Submitted", {
+      location: "Services Page",
+    });
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setClassSignupStatus("loading");
+
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${ownerEmail}`,
+        {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: formData,
+        },
+      );
+
+      const result = await response.json();
+      if (!response.ok || result.success !== "true") {
+        throw new Error("Submission failed");
+      }
+
+      form.reset();
+      setClassSignupStatus("success");
+    } catch {
+      setClassSignupStatus("error");
+    }
+  };
 
   useEffect(() => {
     if (window.location.hash) {
@@ -275,79 +316,101 @@ function Services() {
             </p>
           </div>
 
-          <form
-            className="classsignup-form"
-            action={`https://formsubmit.co/${ownerEmail}`}
-            method="POST"
-            onSubmit={() =>
-              track("Class Signup Form Submitted", {
-                location: "Services Page",
-              })
-            }
-          >
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Class Sign-Up - The Fusion House"
-            />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input
-              type="hidden"
-              name="_autoresponse"
-              value={t("services.classSignup.autoresponse")}
-            />
-
-            <input
-              type="text"
-              name="Name"
-              placeholder={t("services.classSignup.namePlaceholder")}
-              required
-            />
-            <input
-              type="tel"
-              name="Phone"
-              placeholder={t("services.classSignup.phonePlaceholder")}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder={t("services.classSignup.emailPlaceholder")}
-              required
-            />
-
-            <select
-              name="Preferred Class"
-              defaultValue=""
-              required
-              aria-label={t("services.classSignup.selectLabel")}
+          {classSignupStatus === "success" ? (
+            <div
+              className="classsignup-form form-success"
+              role="status"
+              aria-live="polite"
             >
-              <option value="" disabled>
-                {t("services.classSignup.selectPlaceholder")}
-              </option>
-              {classSchedule.map(
-                (day) =>
-                  day.sessions.length > 0 && (
-                    <optgroup label={day.day} key={day.day}>
-                      {day.sessions.map((session) => (
-                        <option
-                          key={`${day.day}-${session.time}-${session.className}`}
-                          value={`${day.day} ${session.time} — ${session.className} (${session.trainer})`}
-                        >
-                          {session.time} — {session.className} (
-                          {session.trainer})
-                        </option>
-                      ))}
-                    </optgroup>
-                  ),
+              <div className="form-success-icon">✓</div>
+              <h2>{t("services.classSignup.successTitle")}</h2>
+              <p>{t("services.classSignup.successText")}</p>
+              <button
+                type="button"
+                onClick={() => setClassSignupStatus("idle")}
+              >
+                {t("services.classSignup.signUpAnother")}
+              </button>
+            </div>
+          ) : (
+            <form
+              className="classsignup-form"
+              onSubmit={handleClassSignupSubmit}
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Class Sign-Up - The Fusion House"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value={t("services.classSignup.autoresponse")}
+              />
+
+              <input
+                type="text"
+                name="Name"
+                placeholder={t("services.classSignup.namePlaceholder")}
+                required
+              />
+              <input
+                type="tel"
+                name="Phone"
+                placeholder={t("services.classSignup.phonePlaceholder")}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder={t("services.classSignup.emailPlaceholder")}
+                required
+              />
+
+              <select
+                name="Preferred Class"
+                defaultValue=""
+                required
+                aria-label={t("services.classSignup.selectLabel")}
+              >
+                <option value="" disabled>
+                  {t("services.classSignup.selectPlaceholder")}
+                </option>
+                {classSchedule.map(
+                  (day) =>
+                    day.sessions.length > 0 && (
+                      <optgroup label={day.day} key={day.day}>
+                        {day.sessions.map((session) => (
+                          <option
+                            key={`${day.day}-${session.time}-${session.className}`}
+                            value={`${day.day} ${session.time} — ${session.className} (${session.trainer})`}
+                          >
+                            {session.time} — {session.className} (
+                            {session.trainer})
+                          </option>
+                        ))}
+                      </optgroup>
+                    ),
+                )}
+              </select>
+
+              <button type="submit" disabled={classSignupStatus === "loading"}>
+                {classSignupStatus === "loading"
+                  ? t("services.classSignup.sending")
+                  : t("services.classSignup.button")}
+              </button>
+
+              {classSignupStatus === "error" && (
+                <p className="form-error">
+                  {t("services.classSignup.errorText")}
+                </p>
               )}
-            </select>
 
-            <button type="submit">{t("services.classSignup.button")}</button>
-
-            <p className="form-note">{t("services.classSignup.note")}</p>
-          </form>
+              <p className="form-note">{t("services.classSignup.note")}</p>
+            </form>
+          )}
         </div>
       </section>
 

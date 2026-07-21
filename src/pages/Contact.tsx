@@ -1,3 +1,5 @@
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "./Contact.css";
@@ -8,12 +10,49 @@ import { track } from "@vercel/analytics";
 
 const ownerEmail = "Infofusionhouse@gmail.com";
 
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 function Contact() {
   const { t } = useTranslation();
+  const [status, setStatus] = useState<FormStatus>("idle");
 
   const hours = t("contact.info.hoursList", {
     returnObjects: true,
   }) as string[];
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    track("Contact Form Submitted Contact Page", {
+      location: "Contact Page",
+    });
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("loading");
+
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${ownerEmail}`,
+        {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: formData,
+        },
+      );
+
+      const result = await response.json();
+      if (!response.ok || result.success !== "true") {
+        throw new Error("Submission failed");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <main
@@ -77,48 +116,58 @@ function Contact() {
       </section>
 
       <section className="contact-main">
-        <form
-          className="contact-form"
-          action={`https://formsubmit.co/${ownerEmail}`}
-          method="POST"
-          onSubmit={() =>
-            track("Contact Form Submitted Contact Page", {
-              location: "Contact Page",
-            })
-          }
-        >
-          <input
-            type="hidden"
-            name="_subject"
-            value="New The Fusion House Website Message"
-          />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
+        {status === "success" ? (
+          <div className="contact-form form-success" role="status" aria-live="polite">
+            <div className="form-success-icon">✓</div>
+            <h2>{t("contact.form.successTitle")}</h2>
+            <p>{t("contact.form.successText")}</p>
+            <button type="button" onClick={() => setStatus("idle")}>
+              {t("contact.form.sendAnother")}
+            </button>
+          </div>
+        ) : (
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="hidden"
+              name="_subject"
+              value="New The Fusion House Website Message"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
 
-          <h2>{t("contact.form.title")}</h2>
+            <h2>{t("contact.form.title")}</h2>
 
-          <input
-            type="text"
-            name="name"
-            placeholder={t("contact.form.name")}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder={t("contact.form.email")}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder={t("contact.form.message")}
-            required
-          ></textarea>
+            <input
+              type="text"
+              name="name"
+              placeholder={t("contact.form.name")}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder={t("contact.form.email")}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder={t("contact.form.message")}
+              required
+            ></textarea>
 
-          <button type="submit">{t("contact.form.button")}</button>
+            <button type="submit" disabled={status === "loading"}>
+              {status === "loading"
+                ? t("contact.form.sending")
+                : t("contact.form.button")}
+            </button>
 
-          <p className="form-note">{t("contact.form.note")}</p>
-        </form>
+            {status === "error" && (
+              <p className="form-error">{t("contact.form.errorText")}</p>
+            )}
+
+            <p className="form-note">{t("contact.form.note")}</p>
+          </form>
+        )}
 
         <div className="contact-info">
           <h2>{t("contact.info.title")}</h2>

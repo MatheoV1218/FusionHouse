@@ -208,7 +208,14 @@ const en = {
       selectLabel: "Select a Class Time",
       selectPlaceholder: "Choose a day and time",
       button: "Sign Me Up",
+      sending: "Signing You Up...",
       note: "We'll reach out to confirm your class time. This does not book you through Mindbody directly.",
+      successTitle: "You're Signed Up!",
+      successText:
+        "We received your requested class time. Someone from our team will personally confirm it with you shortly.",
+      signUpAnother: "Sign Up For Another Class",
+      errorText:
+        "Something went wrong submitting your request. Please try again or call us directly.",
       autoresponse:
         "Congratulations — you're signed up! We received your requested class time and someone from The Fusion House team will personally confirm it with you shortly. Grab your water bottle, wear something comfortable, and get ready to work. And remember... bring a friend!! We can't wait to see you both in class.",
       schedule: [
@@ -353,7 +360,14 @@ const en = {
       email: "Email",
       message: "Message",
       button: "Send Message",
+      sending: "Sending...",
       note: "Your message will be sent to our team, and you’ll receive a direct reply at the email address you provide.",
+      successTitle: "Message Sent!",
+      successText:
+        "Thanks for reaching out. Our team will get back to you shortly at the email address you provided.",
+      sendAnother: "Send Another Message",
+      errorText:
+        "Something went wrong sending your message. Please try again or call us directly.",
     },
     info: {
       title: "Gym Information",

@@ -210,7 +210,14 @@ const es = {
       selectLabel: "Selecciona Un Horario De Clase",
       selectPlaceholder: "Elige un día y horario",
       button: "Registrarme",
+      sending: "Registrando...",
       note: "Nos pondremos en contacto para confirmar tu horario de clase. Esto no te reserva directamente a través de Mindbody.",
+      successTitle: "¡Ya Estás Registrado!",
+      successText:
+        "Recibimos tu horario de clase solicitado. Alguien de nuestro equipo se pondrá en contacto contigo personalmente para confirmarlo.",
+      signUpAnother: "Registrarme Para Otra Clase",
+      errorText:
+        "Algo salió mal al enviar tu solicitud. Por favor intenta de nuevo o llámanos directamente.",
       autoresponse:
         "Felicidades — ¡ya estás registrado! Recibimos tu horario de clase solicitado y alguien del equipo de The Fusion House se pondrá en contacto contigo personalmente para confirmarlo. Trae tu botella de agua, usa ropa cómoda y prepárate para entrenar. Y recuerda... ¡trae a un amigo!! No podemos esperar a verlos a ambos en clase.",
       schedule: [
@@ -355,7 +362,14 @@ const es = {
       email: "Correo Electrónico",
       message: "Mensaje",
       button: "Enviar Mensaje",
+      sending: "Enviando...",
       note: "Tu mensaje será enviado a nuestro equipo, y recibirás una respuesta directa al correo electrónico que proporciones.",
+      successTitle: "¡Mensaje Enviado!",
+      successText:
+        "Gracias por contactarnos. Nuestro equipo te responderá pronto al correo electrónico que proporcionaste.",
+      sendAnother: "Enviar Otro Mensaje",
+      errorText:
+        "Algo salió mal al enviar tu mensaje. Por favor intenta de nuevo o llámanos directamente.",
     },
     info: {
       title: "Información Del Gimnasio",

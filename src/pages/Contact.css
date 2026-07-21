@@ -142,6 +142,64 @@
   line-height: 1.5;
 }
 
+.contact-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: #e63b2e;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-top: 0.9rem;
+  line-height: 1.5;
+}
+
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 320px;
+}
+
+.form-success-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #ff5a3d;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.form-success h2 {
+  margin-bottom: 0.6rem;
+}
+
+.form-success p {
+  color: #555;
+  line-height: 1.65;
+  max-width: 380px;
+  margin-bottom: 1.6rem;
+}
+
+.form-success button {
+  width: auto;
+  min-height: 52px;
+  padding: 0 1.6rem;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+}
+
 .contact-info {
   display: grid;
   gap: 1.3rem;
