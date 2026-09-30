@@ -14,8 +14,6 @@ import heroImage from "../assets/FHgympic10.webp";
 
 import { track } from "@vercel/analytics";
 
-const ownerEmail = "Infofusionhouse@gmail.com";
-
 type ClassSession = {
   time: string;
   className: string;
@@ -68,7 +66,7 @@ function Reserve() {
 
     try {
       const response = await fetch(
-        `https://formsubmit.co/ajax/${ownerEmail}`,
+        "/api/send-email",
         {
           method: "POST",
           headers: { Accept: "application/json" },

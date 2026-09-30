@@ -8,8 +8,6 @@ import grainyBackground from "../assets/grainyBackground.png";
 
 import { track } from "@vercel/analytics";
 
-const ownerEmail = "Infofusionhouse@gmail.com";
-
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 function Contact() {
@@ -34,7 +32,7 @@ function Contact() {
 
     try {
       const response = await fetch(
-        `https://formsubmit.co/ajax/${ownerEmail}`,
+        "/api/send-email",
         {
           method: "POST",
           headers: { Accept: "application/json" },

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -8,8 +9,6 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import "./Chatbot.css";
-
-const ownerEmail = "Infofusionhouse@gmail.com";
 
 // const mindbodyLink =
 //   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
@@ -48,6 +47,7 @@ function Chatbot() {
   const [mode, setMode] = useState<"chat" | "contact">("chat");
   const [question, setQuestion] = useState("");
   const [showOptions, setShowOptions] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -175,6 +175,39 @@ function Chatbot() {
     }
   }
 
+  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setSending(true);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+
+      const result = await response.json();
+      if (!response.ok || result.success !== "true") {
+        throw new Error("Submission failed");
+      }
+
+      form.reset();
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: t("contact.form.successText") },
+      ]);
+      setMode("chat");
+    } catch {
+      alert(t("contact.form.errorText"));
+    } finally {
+      setSending(false);
+    }
+  }
+
   return (
     <>
       <button
@@ -289,8 +322,7 @@ function Chatbot() {
           ) : (
             <form
               className="chatbot-contact-form"
-              action={`https://formsubmit.co/${ownerEmail}`}
-              method="POST"
+              onSubmit={handleContactSubmit}
             >
               <input
                 type="hidden"
@@ -315,7 +347,9 @@ function Chatbot() {
                 <textarea name="message" required></textarea>
               </label>
 
-              <button type="submit">{t("chatbot.form.button")}</button>
+              <button type="submit" disabled={sending}>
+                {sending ? t("contact.form.sending") : t("chatbot.form.button")}
+              </button>
 
               <p>{t("chatbot.form.note")}</p>
             </form>

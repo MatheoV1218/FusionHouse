@@ -17,8 +17,6 @@ import { track } from "@vercel/analytics";
 // export const mindbodyLink =
 //   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
 
-const ownerEmail = "Infofusionhouse@gmail.com";
-
 type ClassSession = {
   time: string;
   className: string;
@@ -95,7 +93,7 @@ function Services() {
 
     try {
       const response = await fetch(
-        `https://formsubmit.co/ajax/${ownerEmail}`,
+        "/api/send-email",
         {
           method: "POST",
           headers: { Accept: "application/json" },
