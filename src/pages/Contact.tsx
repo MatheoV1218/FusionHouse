@@ -3,6 +3,7 @@ import type { FormEvent } from "react";
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "./Contact.css";
+import SpamGuard from "../components/SpamGuard";
 
 import grainyBackground from "../assets/grainyBackground.png";
 
@@ -130,6 +131,7 @@ function Contact() {
               name="_subject"
               value="New The Fusion House Website Message"
             />
+            <SpamGuard />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
 

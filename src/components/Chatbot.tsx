@@ -9,6 +9,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import "./Chatbot.css";
+import SpamGuard from "./SpamGuard";
 
 // const mindbodyLink =
 //   "https://clients.mindbodyonline.com/classic/ws?studioid=470306&stype=-7&sView=week&sLoc=1";
@@ -329,6 +330,7 @@ function Chatbot() {
                 name="_subject"
                 value="New Website Message"
               />
+              <SpamGuard />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
 

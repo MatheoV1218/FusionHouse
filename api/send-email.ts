@@ -16,6 +16,43 @@ const json = (body: object, status = 200) =>
     headers: { "Content-Type": "application/json" },
   });
 
+// Random-case gibberish like "QnfraNHnNhCLwcJzumqphqW": one long word that
+// flips from lowercase to uppercase several times
+const looksRandom = (value: string) =>
+  value
+    .split(/\s+/)
+    .some(
+      (word) => word.length >= 10 && (word.match(/[a-z][A-Z]/g) || []).length >= 3,
+    );
+
+function detectSpam(
+  formData: FormData,
+  fields: [string, string][],
+  senderEmail: string,
+) {
+  // Honeypot: hidden from people, but bots fill in every field
+  if (String(formData.get("website") || "").trim()) return "honeypot";
+
+  // Missing load time means the form was never loaded in a browser;
+  // under 3 seconds is faster than a person can fill it in
+  const loadedAt = Number(formData.get("_ts"));
+  if (!loadedAt) return "no timestamp";
+  const elapsed = Date.now() - loadedAt;
+  if (elapsed >= 0 && elapsed < 3000) return "too fast";
+
+  // Gmail ignores dots, so bots pad addresses like m.a.g.ica.p.ug8.4@gmail.com
+  const [local, domain = ""] = senderEmail.toLowerCase().split("@");
+  if (domain === "gmail.com" && (local.match(/\./g) || []).length >= 3) {
+    return "dotted gmail";
+  }
+
+  if (fields.some(([key, value]) => key !== "email" && looksRandom(value))) {
+    return "gibberish";
+  }
+
+  return null;
+}
+
 export async function POST(request: Request) {
   const user = process.env.GMAIL_USER;
   const pass = process.env.GMAIL_APP_PASSWORD;
@@ -37,7 +74,8 @@ export async function POST(request: Request) {
   // Fields starting with "_" are settings, not visitor answers
   const fields: [string, string][] = [];
   for (const [key, value] of formData.entries()) {
-    if (key.startsWith("_") || typeof value !== "string") continue;
+    if (key.startsWith("_") || key === "website") continue;
+    if (typeof value !== "string") continue;
     fields.push([key, value.trim()]);
   }
 
@@ -46,6 +84,13 @@ export async function POST(request: Request) {
 
   if (fields.length === 0 || !validSender) {
     return json({ success: "false", message: "Missing required fields" }, 400);
+  }
+
+  // Bots get a normal success reply so they don't adapt, but nothing is sent
+  const spamReason = detectSpam(formData, fields, senderEmail);
+  if (spamReason) {
+    console.log("Blocked spam submission:", spamReason, senderEmail);
+    return json({ success: "true" });
   }
 
   const rows = fields

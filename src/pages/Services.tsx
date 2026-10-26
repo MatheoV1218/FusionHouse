@@ -3,6 +3,7 @@ import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Services.css";
+import SpamGuard from "../components/SpamGuard";
 import gympic8 from "../assets/FHgympic8.webp";
 // import gympic9 from "../assets/FHgympic9.webp";
 import membership from "../assets/FHmembership.jpg";
@@ -342,6 +343,7 @@ function Services() {
                 name="_subject"
                 value="New Class Sign-Up - The Fusion House"
               />
+              <SpamGuard />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input

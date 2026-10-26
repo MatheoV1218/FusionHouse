@@ -8,6 +8,7 @@ import {
   FaRegClock,
 } from "react-icons/fa";
 import "./Reserve.css";
+import SpamGuard from "../components/SpamGuard";
 
 import grainyBackground from "../assets/grainyBackground.png";
 import heroImage from "../assets/FHgympic10.webp";
@@ -177,6 +178,7 @@ function Reserve() {
                 name="_subject"
                 value="New Priority Reservation - The Fusion House"
               />
+              <SpamGuard />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input
